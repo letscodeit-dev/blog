@@ -8,6 +8,8 @@ status: "published"
 featured: false
 coverImage: "/uploads/ai-wont-replace-developers/cover.svg"
 thumbnail: "/uploads/ai-wont-replace-developers/thumb.svg"
+author: "Anton Kuptsov"
+authorEmail: "anton@letscodeit.dev"
 ---
 
 For about two years, the internet had a very specific flavor of panic: AI is coming for developers. Every week brought a new headline — "ChatGPT writes code better than you," "GitHub Copilot replaces junior engineers," "The end of programming is here."
