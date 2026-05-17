@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 640" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="title-glossary-cover">
+  <title id="title-glossary-cover">AI &amp; LLM Glossary — cover illustration</title>
+  <defs>
+    <linearGradient id="grad-glossary-cover" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f54e00"/>
+      <stop offset="100%" stop-color="#ffb38a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="640" fill="url(#grad-glossary-cover)"/>
+  <!-- grid lines -->
+  <g stroke="#fdfdf8" stroke-opacity="0.16" stroke-width="1.2">
+    <line x1="0" y1="128" x2="1920" y2="128"/>
+    <line x1="0" y1="256" x2="1920" y2="256"/>
+    <line x1="0" y1="384" x2="1920" y2="384"/>
+    <line x1="0" y1="512" x2="1920" y2="512"/>
+  </g>
+  <!-- knowledge graph dashed connectors -->
+  <g stroke="#fdfdf8" stroke-opacity="0.55" stroke-width="1.5" stroke-dasharray="6 6" fill="none">
+    <line x1="312" y1="240"  x2="436" y2="240"/>
+    <line x1="616" y1="240"  x2="740" y2="240"/>
+    <line x1="920" y1="240"  x2="1044" y2="240"/>
+    <line x1="1224" y1="240" x2="1348" y2="240"/>
+    <line x1="1528" y1="240" x2="1652" y2="240"/>
+    <line x1="222" y1="304"  x2="222" y2="396"/>
+    <line x1="526" y1="304"  x2="526" y2="396"/>
+    <line x1="830" y1="304"  x2="830" y2="396"/>
+    <line x1="1134" y1="304" x2="1134" y2="396"/>
+    <line x1="1438" y1="304" x2="1438" y2="396"/>
+    <line x1="1742" y1="304" x2="1742" y2="396"/>
+    <line x1="312" y1="460"  x2="436" y2="460"/>
+    <line x1="616" y1="460"  x2="740" y2="460"/>
+    <line x1="920" y1="460"  x2="1044" y2="460"/>
+    <line x1="1224" y1="460" x2="1348" y2="460"/>
+    <line x1="1528" y1="460" x2="1652" y2="460"/>
+  </g>
+  <!-- Term cards - row 1 -->
+  <g font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-weight="700" letter-spacing="1.8">
+    <!-- card render helper inline -->
+    <!-- AI -->
+    <rect x="132" y="180" width="180" height="120" rx="14" fill="#fdfdf8"/>
+    <rect x="132" y="180" width="180" height="120" rx="14" fill="none" stroke="#1e1f23" stroke-opacity="0.08"/>
+    <text x="152" y="224" font-size="22" fill="#1e1f23">AI</text>
+    <rect x="152" y="244" width="120" height="5" rx="2.5" fill="#1e1f23" fill-opacity="0.18"/>
+    <rect x="152" y="258" width="80"  height="5" rx="2.5" fill="#1e1f23" fill-opacity="0.12"/>
+    <text x="152" y="288" font-size="11" letter-spacing="1.2" fill="#1e1f23" fill-opacity="0.45">001 · artificial intel.</text>
+    <!-- ML -->
+    <rect x="436" y="180" width="180" height="120" rx="14" fill="#fdfdf8"/>
+    <rect x="436" y="180" width="180" height="120" rx="14" fill="none" stroke="#1e1f23" stroke-opacity="0.08"/>
+    <text x="456" y="224" font-size="22" fill="#1e1f23">ML</text>
+    <rect x="456" y="244" width="120" height="5" rx="2.5" fill="#1e1f23" fill-opacity="0.18"/>
+    <rect x="456" y="258" width="80"  height="5" rx="2.5" fill="#1e1f23" fill-opacity="0.12"/>
+    <text x="456" y="288" font-size="11" letter-spacing="1.2" fill="#1e1f23" fill-opacity="0.45">002 · machine learn.</text>
+    <!-- DL -->
+    <rect x="740" y="180" width="180" height="120" rx="14" fill="#fdfdf8"/>
+    <rect x="740" y="180" width="180" height="120" rx="14" fill="none" stroke="#1e1f23" stroke-opacity="0.08"/>
+    <text x="760" y="224" font-size="22" fill="#1e1f23">DL</text>
+    <rect x="760" y="244" width="120" height="5" rx="2.5" fill="#1e1f23" fill-opacity="0.18"/>
+    <rect x="760" y="258" width="80"  height="5" rx="2.5" fill="#1e1f23" fill-opacity="0.12"/>
+    <text x="760" y="288" font-size="11" letter-spacing="1.2" fill="#1e1f23" fill-opacity="0.45">003 · deep learn.</text>
+    <!-- LLM (accent dark card) -->
+    <rect x="1044" y="180" width="180" height="120" rx="14" fill="#1e1f23"/>
+    <text x="1064" y="224" font-size="22" fill="#fdfdf8">LLM</text>
+    <rect x="1064" y="244" width="120" height="5" rx="2.5" fill="#fdfdf8" fill-opacity="0.45"/>
+    <rect x="1064" y="258" width="80"  height="5" rx="2.5" fill="#fdfdf8" fill-opacity="0.30"/>
+    <text x="1064" y="288" font-size="11" letter-spacing="1.2" fill="#fdfdf8" fill-opacity="0.65">004 · large lang. model</text>
+    <!-- RAG -->
+    <rect x="1348" y="180" width="180" height="120" rx="14" fill="#fdfdf8"/>
+    <rect x="1348" y="180" width="180" height="120" rx="14" fill="none" stroke="#1e1f23" stroke-opacity="0.08"/>
+    <text x="1368" y="224" font-size="22" fill="#1e1f23">RAG</text>
+    <rect x="1368" y="244" width="120" height="5" rx="2.5" fill="#1e1f23" fill-opacity="0.18"/>
+    <rect x="1368" y="258" width="80"  height="5" rx="2.5" fill="#1e1f23" fill-opacity="0.12"/>
+    <text x="1368" y="288" font-size="11" letter-spacing="1.2" fill="#1e1f23" fill-opacity="0.45">005 · retrieval aug.</text>
+    <!-- RLHF -->
+    <rect x="1652" y="180" width="180" height="120" rx="14" fill="#fdfdf8"/>
+    <rect x="1652" y="180" width="180" height="120" rx="14" fill="none" stroke="#1e1f23" stroke-opacity="0.08"/>
+    <text x="1672" y="224" font-size="22" fill="#1e1f23">RLHF</text>
+    <rect x="1672" y="244" width="120" height="5" rx="2.5" fill="#1e1f23" fill-opacity="0.18"/>
+    <rect x="1672" y="258" width="80"  height="5" rx="2.5" fill="#1e1f23" fill-opacity="0.12"/>
+    <text x="1672" y="288" font-size="11" letter-spacing="1.2" fill="#1e1f23" fill-opacity="0.45">006 · rlhf feedback</text>
+    <!-- Row 2 -->
+    <!-- EMB -->
+    <rect x="132" y="400" width="180" height="120" rx="14" fill="#fdfdf8"/>
+    <rect x="132" y="400" width="180" height="120" rx="14" fill="none" stroke="#1e1f23" stroke-opacity="0.08"/>
+    <text x="152" y="444" font-size="22" fill="#1e1f23">EMB</text>
+    <rect x="152" y="464" width="120" height="5" rx="2.5" fill="#1e1f23" fill-opacity="0.18"/>
+    <rect x="152" y="478" width="80"  height="5" rx="2.5" fill="#1e1f23" fill-opacity="0.12"/>
+    <text x="152" y="508" font-size="11" letter-spacing="1.2" fill="#1e1f23" fill-opacity="0.45">007 · embeddings</text>
+    <!-- PROMPT -->
+    <rect x="436" y="400" width="180" height="120" rx="14" fill="#fdfdf8"/>
+    <rect x="436" y="400" width="180" height="120" rx="14" fill="none" stroke="#1e1f23" stroke-opacity="0.08"/>
+    <text x="456" y="444" font-size="20" fill="#1e1f23">PROMPT</text>
+    <rect x="456" y="464" width="120" height="5" rx="2.5" fill="#1e1f23" fill-opacity="0.18"/>
+    <rect x="456" y="478" width="80"  height="5" rx="2.5" fill="#1e1f23" fill-opacity="0.12"/>
+    <text x="456" y="508" font-size="11" letter-spacing="1.2" fill="#1e1f23" fill-opacity="0.45">008 · prompt eng.</text>
+    <!-- TOKEN -->
+    <rect x="740" y="400" width="180" height="120" rx="14" fill="#fdfdf8"/>
+    <rect x="740" y="400" width="180" height="120" rx="14" fill="none" stroke="#1e1f23" stroke-opacity="0.08"/>
+    <text x="760" y="444" font-size="22" fill="#1e1f23">TOKEN</text>
+    <rect x="760" y="464" width="120" height="5" rx="2.5" fill="#1e1f23" fill-opacity="0.18"/>
+    <rect x="760" y="478" width="80"  height="5" rx="2.5" fill="#1e1f23" fill-opacity="0.12"/>
+    <text x="760" y="508" font-size="11" letter-spacing="1.2" fill="#1e1f23" fill-opacity="0.45">009 · tokenization</text>
+    <!-- AGENT (orange accent) -->
+    <rect x="1044" y="400" width="180" height="120" rx="14" fill="#f54e00"/>
+    <rect x="1044" y="400" width="180" height="120" rx="14" fill="none" stroke="#fdfdf8" stroke-opacity="0.5"/>
+    <text x="1064" y="444" font-size="22" fill="#fdfdf8">AGENT</text>
+    <rect x="1064" y="464" width="120" height="5" rx="2.5" fill="#fdfdf8" fill-opacity="0.55"/>
+    <rect x="1064" y="478" width="80"  height="5" rx="2.5" fill="#fdfdf8" fill-opacity="0.35"/>
+    <text x="1064" y="508" font-size="11" letter-spacing="1.2" fill="#fdfdf8" fill-opacity="0.85">010 · ai agent</text>
+    <!-- FT -->
+    <rect x="1348" y="400" width="180" height="120" rx="14" fill="#fdfdf8"/>
+    <rect x="1348" y="400" width="180" height="120" rx="14" fill="none" stroke="#1e1f23" stroke-opacity="0.08"/>
+    <text x="1368" y="444" font-size="22" fill="#1e1f23">FT</text>
+    <rect x="1368" y="464" width="120" height="5" rx="2.5" fill="#1e1f23" fill-opacity="0.18"/>
+    <rect x="1368" y="478" width="80"  height="5" rx="2.5" fill="#1e1f23" fill-opacity="0.12"/>
+    <text x="1368" y="508" font-size="11" letter-spacing="1.2" fill="#1e1f23" fill-opacity="0.45">011 · fine-tuning</text>
+    <!-- MCP -->
+    <rect x="1652" y="400" width="180" height="120" rx="14" fill="#fdfdf8"/>
+    <rect x="1652" y="400" width="180" height="120" rx="14" fill="none" stroke="#1e1f23" stroke-opacity="0.08"/>
+    <text x="1672" y="444" font-size="22" fill="#1e1f23">MCP</text>
+    <rect x="1672" y="464" width="120" height="5" rx="2.5" fill="#1e1f23" fill-opacity="0.18"/>
+    <rect x="1672" y="478" width="80"  height="5" rx="2.5" fill="#1e1f23" fill-opacity="0.12"/>
+    <text x="1672" y="508" font-size="11" letter-spacing="1.2" fill="#1e1f23" fill-opacity="0.45">012 · context proto.</text>
+  </g>
+  <!-- Top label -->
+  <g font-family="ui-monospace,SFMono-Regular,Menlo,monospace" letter-spacing="2.4" fill="#fdfdf8">
+    <text x="132" y="92" font-size="18" font-weight="700" fill-opacity="0.95">FIG. 01 · AI FOUNDATIONS / GLOSSARY</text>
+    <text x="132" y="118" font-size="13" fill-opacity="0.65" letter-spacing="1.6">a field guide for developers · 28 terms · plain english</text>
+  </g>
+  <!-- Bottom captions -->
+  <g font-family="ui-monospace,SFMono-Regular,Menlo,monospace" letter-spacing="1.6" fill="#fdfdf8">
+    <text x="132" y="592" font-size="13" font-weight="700" fill-opacity="0.85">GLOSSARY · 28 TERMS · v1.0</text>
+    <text x="1788" y="592" font-size="13" text-anchor="end" fill-opacity="0.70">letscodeit.dev</text>
+  </g>
+</svg>

@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 640" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="title-academy-cover">
+  <title id="title-academy-cover">Anthropic Academy — guide to free AI courses</title>
+  <defs>
+    <linearGradient id="grad-academy-cover-light" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#bfc1b7"/>
+      <stop offset="100%" stop-color="#eeefe9"/>
+    </linearGradient>
+    <linearGradient id="grad-academy-cover-dark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#5a5d54"/>
+      <stop offset="100%" stop-color="#3a3d34"/>
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="640" fill="url(#grad-academy-cover-light)" class="svg-light-only"/>
+  <rect width="1920" height="640" fill="url(#grad-academy-cover-dark)"  class="svg-dark-only"/>
+
+  <!-- soft grid -->
+  <g stroke="#1e1f23" stroke-opacity="0.06" stroke-width="1">
+    <line x1="0" y1="160" x2="1920" y2="160"/>
+    <line x1="0" y1="320" x2="1920" y2="320"/>
+    <line x1="0" y1="480" x2="1920" y2="480"/>
+  </g>
+
+  <!-- horizontal carousel of course cards -->
+  <g font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-weight="700" letter-spacing="1.6">
+    <!-- 1 CLAUDE 101 -->
+    <g transform="translate(160 200) rotate(-5)">
+      <rect width="260" height="360" rx="18" fill="#bfc1b7" stroke="#1e1f23" stroke-opacity="0.15"/>
+      <text x="24" y="50" font-size="16" fill="#1e1f23" fill-opacity="0.85">CLAUDE 101</text>
+      <rect x="24" y="68" width="120" height="4" rx="2" fill="#1e1f23" fill-opacity="0.25"/>
+      <text x="24" y="332" font-size="11" letter-spacing="1.2" fill="#1e1f23" fill-opacity="0.6">CERT · 45M</text>
+    </g>
+    <!-- 2 PROMPT ENG. -->
+    <g transform="translate(380 180) rotate(-3)">
+      <rect width="260" height="360" rx="18" fill="#eeefe9" stroke="#1e1f23" stroke-opacity="0.15"/>
+      <text x="24" y="50" font-size="16" fill="#1e1f23">PROMPT ENG.</text>
+      <rect x="24" y="68" width="120" height="4" rx="2" fill="#1e1f23" fill-opacity="0.25"/>
+      <text x="24" y="332" font-size="11" letter-spacing="1.2" fill="#1e1f23" fill-opacity="0.6">CORE · 1H 20M</text>
+    </g>
+    <!-- 3 REAL-WORLD -->
+    <g transform="translate(600 168) rotate(-1)">
+      <rect width="260" height="360" rx="18" fill="#fdfdf8" stroke="#1e1f23" stroke-opacity="0.15"/>
+      <text x="24" y="50" font-size="16" fill="#1e1f23">REAL-WORLD</text>
+      <rect x="24" y="68" width="120" height="4" rx="2" fill="#1e1f23" fill-opacity="0.25"/>
+      <text x="24" y="332" font-size="11" letter-spacing="1.2" fill="#1e1f23" fill-opacity="0.6">PROJECT · 2H</text>
+    </g>
+    <!-- 4 MCP DEEP DIVE (orange centerpiece) -->
+    <g transform="translate(820 140) rotate(2)">
+      <rect width="280" height="400" rx="20" fill="#f54e00"/>
+      <text x="24" y="56" font-size="18" fill="#fdfdf8">MCP DEEP DIVE</text>
+      <rect x="24" y="74" width="140" height="5" rx="2.5" fill="#fdfdf8" fill-opacity="0.55"/>
+      <text x="24" y="100" font-size="11" letter-spacing="1.2" fill="#fdfdf8" fill-opacity="0.85">ADVANCED · 2H 15M</text>
+      <!-- play triangle -->
+      <circle cx="140" cy="220" r="44" fill="#fdfdf8" fill-opacity="0.18"/>
+      <polygon points="124,196 124,244 168,220" fill="#fdfdf8"/>
+      <text x="24" y="372" font-size="11" letter-spacing="1.2" fill="#fdfdf8" fill-opacity="0.85">FREE · CERTIFICATE</text>
+    </g>
+    <!-- 5 API USAGE -->
+    <g transform="translate(1080 168) rotate(4)">
+      <rect width="260" height="360" rx="18" fill="#1e1f23"/>
+      <text x="24" y="50" font-size="16" fill="#fdfdf8">API USAGE</text>
+      <rect x="24" y="68" width="120" height="4" rx="2" fill="#fdfdf8" fill-opacity="0.35"/>
+      <text x="24" y="332" font-size="11" letter-spacing="1.2" fill="#fdfdf8" fill-opacity="0.65">DEV · 1H 50M</text>
+    </g>
+    <!-- 6 BUILD WITH CLAUDE -->
+    <g transform="translate(1300 180) rotate(6)">
+      <rect width="260" height="360" rx="18" fill="#eeefe9" stroke="#1e1f23" stroke-opacity="0.15"/>
+      <text x="24" y="50" font-size="16" fill="#1e1f23">BUILD W/ CLAUDE</text>
+      <rect x="24" y="68" width="120" height="4" rx="2" fill="#1e1f23" fill-opacity="0.25"/>
+      <text x="24" y="332" font-size="11" letter-spacing="1.2" fill="#1e1f23" fill-opacity="0.6">PROJECT · 3H</text>
+    </g>
+    <!-- 7 FUNDAMENTALS -->
+    <g transform="translate(1520 200) rotate(8)">
+      <rect width="260" height="360" rx="18" fill="#bfc1b7" stroke="#1e1f23" stroke-opacity="0.15"/>
+      <text x="24" y="50" font-size="16" fill="#1e1f23">FUNDAMENTALS</text>
+      <rect x="24" y="68" width="120" height="4" rx="2" fill="#1e1f23" fill-opacity="0.25"/>
+      <text x="24" y="332" font-size="11" letter-spacing="1.2" fill="#1e1f23" fill-opacity="0.6">INTRO · 1H</text>
+    </g>
+  </g>
+
+  <!-- dashed learning path -->
+  <path d="M 110 540 Q 960 600 1810 100" fill="none" stroke="#1e1f23" stroke-opacity="0.28" stroke-width="1.5" stroke-dasharray="6 6"/>
+
+  <!-- Top label -->
+  <g font-family="ui-monospace,SFMono-Regular,Menlo,monospace" letter-spacing="2.4" fill="#1e1f23">
+    <text x="132" y="88"  font-size="18" font-weight="700" fill-opacity="0.85">FIG. 01 · ANTHROPIC ACADEMY</text>
+    <text x="132" y="114" font-size="13" fill-opacity="0.55" letter-spacing="1.6">free self-paced courses · claude · mcp · api · prompt engineering</text>
+  </g>
+
+  <!-- Bottom captions -->
+  <g font-family="ui-monospace,SFMono-Regular,Menlo,monospace" letter-spacing="1.6" fill="#1e1f23">
+    <text x="132"  y="600" font-size="13" font-weight="700" fill-opacity="0.75">ANTHROPIC ACADEMY · FREE · 8 COURSES</text>
+    <text x="1788" y="600" font-size="13" text-anchor="end" fill-opacity="0.55">letscodeit.dev</text>
+  </g>
+</svg>
