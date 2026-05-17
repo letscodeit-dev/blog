@@ -8,7 +8,7 @@ status: "published"
 featured: false
 coverImage: "/uploads/ai-wont-replace-developers/cover.svg"
 thumbnail: "/uploads/ai-wont-replace-developers/thumb.svg"
-author: "Anton Kuptsov"
+author: "Anton K."
 authorEmail: "anton@letscodeit.dev"
 ---
 

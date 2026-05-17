@@ -8,7 +8,7 @@ status: "published"
 featured: false
 coverImage: "/uploads/anthropic-academy/cover.svg"
 thumbnail: "/uploads/anthropic-academy/thumb.svg"
-author: "Anton Kuptsov"
+author: "Anton K."
 authorEmail: "anton@letscodeit.dev"
 ---
 

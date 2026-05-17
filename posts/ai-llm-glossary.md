@@ -8,7 +8,7 @@ status: "published"
 featured: true
 coverImage: "/uploads/ai-llm-glossary/cover.svg"
 thumbnail: "/uploads/ai-llm-glossary/thumb.svg"
-author: "Anton Kuptsov"
+author: "Anton K."
 authorEmail: "anton@letscodeit.dev"
 ---
 
