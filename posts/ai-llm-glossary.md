@@ -8,8 +8,6 @@ status: "published"
 featured: true
 coverImage: "/uploads/ai-llm-glossary/cover.svg"
 thumbnail: "/uploads/ai-llm-glossary/thumb.svg"
-author: "Anton K."
-authorEmail: "anton@letscodeit.dev"
 ---
 
 If you've been around tech lately, you've probably opened an article and immediately wanted to close it — AI, ML, LLM, RAG, RLHF... It feels like everyone started speaking a language you forgot to learn. But beneath the buzzwords are real concepts - and once you understand them, the whole field clicks into place.
