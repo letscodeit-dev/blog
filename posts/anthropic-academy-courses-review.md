@@ -8,8 +8,6 @@ status: "published"
 featured: false
 coverImage: "/uploads/anthropic-academy/cover.svg"
 thumbnail: "/uploads/anthropic-academy/thumb.svg"
-author: "Anton K."
-authorEmail: "anton@letscodeit.dev"
 ---
 
 Anthropic — the company behind Claude — runs a free learning platform called [Anthropic Academy](https://anthropic.skilljar.com/). It's a collection of self-paced courses covering everything from "what is AI" to advanced developer topics like building MCP servers.
