@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 300" role="img" aria-labelledby="title-tool">
+  <title id="title-tool">Tool use loop: model asks, code runs, model answers</title>
+  <defs>
+    <marker id="arr-t" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#f54e00"/>
+    </marker>
+  </defs>
+  <rect width="960" height="300" rx="12" fill="#fdfdf8" stroke="#1e1f23" stroke-opacity="0.1"/>
+  <text x="480" y="32" font-family="ui-monospace,Menlo,monospace" font-size="13" font-weight="700" fill="#1e1f23" text-anchor="middle">TOOLS: MODEL NEVER RUNS CODE ITSELF</text>
+  <!-- arrows behind boxes -->
+  <g stroke="#f54e00" stroke-width="2" fill="none" marker-end="url(#arr-t)">
+    <line x1="190" y1="130" x2="250" y2="130"/>
+    <line x1="450" y1="130" x2="510" y2="130"/>
+    <line x1="690" y1="130" x2="750" y2="130"/>
+    <path d="M 835 80 L 835 52 L 115 52 L 115 80"/>
+    <path d="M 115 180 L 115 238 L 380 238"/>
+  </g>
+  <text x="475" y="48" font-size="10" font-family="ui-monospace,Menlo,monospace" fill="#f54e00" text-anchor="middle">back to LLM</text>
+  <g font-family="ui-monospace,Menlo,monospace" font-weight="700" font-size="12">
+    <rect x="40" y="80" width="150" height="100" rx="10" fill="#1e1f23"/>
+    <text x="115" y="118" fill="#fdfdf8" text-anchor="middle">LLM</text>
+    <text x="115" y="140" font-size="10" font-weight="400" fill="#fdfdf8" fill-opacity="0.75" text-anchor="middle">text only</text>
+    <rect x="250" y="80" width="200" height="100" rx="10" fill="#f54e00" fill-opacity="0.12" stroke="#f54e00" stroke-width="2"/>
+    <text x="350" y="112" fill="#1e1f23" text-anchor="middle">tool call</text>
+    <text x="350" y="132" font-size="10" font-weight="400" fill="#1e1f23" fill-opacity="0.65" text-anchor="middle">web_search(...)</text>
+    <text x="350" y="152" font-size="10" font-weight="400" fill="#1e1f23" fill-opacity="0.65" text-anchor="middle">JSON request</text>
+    <rect x="510" y="80" width="180" height="100" rx="10" fill="#fdfdf8" stroke="#1e1f23" stroke-opacity="0.2"/>
+    <text x="600" y="118" fill="#1e1f23" text-anchor="middle">App / product</text>
+    <text x="600" y="140" font-size="10" font-weight="400" fill="#1e1f23" fill-opacity="0.6" text-anchor="middle">runs the tool call</text>
+    <rect x="750" y="80" width="170" height="100" rx="10" fill="#fdfdf8" stroke="#1e1f23" stroke-opacity="0.2"/>
+    <text x="835" y="118" fill="#1e1f23" text-anchor="middle">Result</text>
+    <text x="835" y="140" font-size="10" font-weight="400" fill="#1e1f23" fill-opacity="0.6" text-anchor="middle">pages, data</text>
+    <rect x="380" y="210" width="200" height="56" rx="10" fill="#f54e00"/>
+    <text x="480" y="244" fill="#fdfdf8" text-anchor="middle">Answer to you</text>
+  </g>
+  <text x="480" y="292" font-family="ui-monospace,Menlo,monospace" font-size="11" fill="#1e1f23" fill-opacity="0.7" text-anchor="middle">Fresh data only after the tool runs</text>
+</svg>

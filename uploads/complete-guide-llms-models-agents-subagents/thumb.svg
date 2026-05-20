@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 244" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="title-guide-thumb">
+  <title id="title-guide-thumb">LLMs, Models, Agents - hierarchy thumbnail</title>
+  <defs>
+    <linearGradient id="grad-guide-thumb" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f54e00"/>
+      <stop offset="100%" stop-color="#ffb38a"/>
+    </linearGradient>
+    <marker id="arrow-guide-thumb" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#fdfdf8" fill-opacity="0.8"/>
+    </marker>
+  </defs>
+  <rect width="352" height="244" fill="url(#grad-guide-thumb)"/>
+  <g stroke="#fdfdf8" stroke-opacity="0.18" stroke-width="1">
+    <line x1="0" y1="61" x2="352" y2="61"/>
+    <line x1="0" y1="122" x2="352" y2="122"/>
+    <line x1="0" y1="183" x2="352" y2="183"/>
+  </g>
+  <g stroke="#fdfdf8" stroke-opacity="0.5" stroke-width="1.5" fill="none" marker-end="url(#arrow-guide-thumb)">
+    <line x1="176" y1="58" x2="176" y2="78"/>
+    <line x1="176" y1="108" x2="176" y2="128"/>
+    <line x1="176" y1="158" x2="176" y2="178"/>
+  </g>
+  <g font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-weight="700" letter-spacing="1.2">
+    <rect x="116" y="28" width="120" height="36" rx="8" fill="#1e1f23"/>
+    <text x="176" y="52" font-size="14" fill="#fdfdf8" text-anchor="middle">LLM</text>
+    <rect x="96" y="78" width="160" height="36" rx="8" fill="#fdfdf8"/>
+    <rect x="96" y="78" width="160" height="36" rx="8" fill="none" stroke="#1e1f23" stroke-opacity="0.08"/>
+    <text x="176" y="102" font-size="12" fill="#1e1f23" text-anchor="middle">MODEL</text>
+    <rect x="86" y="128" width="180" height="36" rx="8" fill="#fdfdf8" fill-opacity="0.9"/>
+    <rect x="86" y="128" width="180" height="36" rx="8" fill="none" stroke="#1e1f23" stroke-opacity="0.08"/>
+    <text x="176" y="152" font-size="11" fill="#1e1f23" text-anchor="middle">PRODUCT</text>
+    <rect x="106" y="178" width="140" height="36" rx="8" fill="#f54e00"/>
+    <text x="176" y="202" font-size="13" fill="#fdfdf8" text-anchor="middle">AGENT</text>
+  </g>
+  <g font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" fill="#fdfdf8" fill-opacity="0.85" letter-spacing="1">
+    <text x="16" y="232" font-weight="700">LLM &#8594; AGENT</text>
+    <text x="336" y="232" text-anchor="end">GUIDE</text>
+  </g>
+</svg>
