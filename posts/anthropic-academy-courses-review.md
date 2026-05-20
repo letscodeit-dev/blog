@@ -2,6 +2,7 @@
 title: "Anthropic Academy: A Complete Guide to Their Free AI Courses"
 slug: "anthropic-academy-guide-free-ai-courses"
 canonical: "https://letscodeit.dev/blog/anthropic-academy-guide-free-ai-courses"
+publishedAt: "2026-05-13"
 description: "A walkthrough of Anthropic's free self-paced learning platform - what courses are available, who they're for, and what you'll actually learn, from Claude 101 to building MCP servers."
 category: "AI Foundations"
 tags: ["ai", "anthropic", "claude", "courses", "learning"]

@@ -2,6 +2,7 @@
 title: "The Complete Guide (Almost): LLMs, Models, Agents, and Subagents in Plain English"
 slug: "complete-guide-llms-models-agents-subagents"
 canonical: "https://letscodeit.dev/blog/complete-guide-llms-models-agents-subagents"
+publishedAt: "2026-05-20"
 description: "From the GPT brand to the subagent: the AI hierarchy without confusing the terms."
 category: "AI Foundations"
 tags: ["ai", "agents", "llm", "beginners"]
