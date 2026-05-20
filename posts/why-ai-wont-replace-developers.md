@@ -2,6 +2,7 @@
 title: "Why We Stopped Pretending AI Will Replace Developers"
 slug: "why-ai-wont-replace-developers"
 canonical: "https://letscodeit.dev/blog/why-ai-wont-replace-developers"
+publishedAt: "2026-04-29"
 description: "After two years of hype about AI replacing programmers, here's what actually happened when we used these tools on real projects - and why developers are becoming more dangerous, not obsolete."
 category: "Industry"
 tags: ["ai", "developers", "career"]

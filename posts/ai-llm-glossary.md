@@ -2,6 +2,7 @@
 title: "AI & LLM Glossary: Terms Every Developer Should Know"
 slug: "ai-llm-glossary-terms-every-developer-should-know"
 canonical: "https://letscodeit.dev/blog/ai-llm-glossary-terms-every-developer-should-know"
+publishedAt: "2026-05-06"
 description: "A plain-English field guide to AI and LLM terminology - definitions, analogies, and context for terms like RAG, RLHF, embeddings, and prompt engineering, without needing a CS degree."
 category: "AI Foundations"
 tags: ["ai", "llm", "beginners", "prompt-engineering", "embeddings", "rag"]
