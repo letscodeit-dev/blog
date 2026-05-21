@@ -16,35 +16,7 @@ If you've ever opened an article about AI and felt like everyone else is speakin
 
 LLM, agent, subagent, model — people often use these words as synonyms, but they mean different things. **"The complete guide (almost)"** because the focus here is the **vocabulary and hierarchy**. Prompts, context, skills, and MCP — briefly; there's a "go deeper" section at the end.
 
-**Running example.** One task for the whole article: *"Research competitors and write a report."* In each section we look at what happens at that level. **Summary of all levels** — in the [table below](#all-levels-at-a-glance) (section 6).
-
-### Table of contents
-
-1. [Glossary: from AI to product](#glossary-from-ai-to-product)
-2. [How to talk to a model](#how-to-talk-to-a-model)
-3. [Tools: the model's "hands"](#tools-the-models-hands)
-4. [Agent](#agent)
-5. [Subagent](#subagent)
-6. [How it all fits together](#how-it-all-fits-together) — [level summary](#all-levels-at-a-glance)
-7. [Workflows and agents](#workflows-and-agents-when-to-use-what)
-8. [Why this matters](#why-this-matters)
-9. [Practical example](#practical-example-writing-code)
-10. [What to remember](#what-to-remember)
-11. [Go deeper](#go-deeper)
-
-### Cheat sheet
-
-| Term | What it actually is |
-|---|---|
-| AI | Umbrella: any "smart" system |
-| LLM | Neural net for text: predicts what comes next |
-| GPT, Claude… | Family name, not a specific version |
-| GPT-4o, Sonnet 4.6… | A specific model (one frozen "edition" after training) |
-| ChatGPT, Cursor… | Product: an app built around a model |
-| Agent | Model + tools + step-by-step plan |
-| Subagent | An agent launched by another agent |
-
-### Hierarchy {#hierarchy}
+### Hierarchy
 
 ![Full hierarchy: from AI to agent with subagents](/uploads/complete-guide-llms-models-agents-subagents/figures/hierarchy.svg)
 
@@ -102,7 +74,7 @@ Opus 4.6 and Sonnet 4.6 are **different** models: different weights, speed, and 
 
 > **Common mistake.** ChatGPT **won't update a file on your disk by itself** — the product has no access until you grant it. Expecting "chat in the browser" to act on your machine means confusing a product with an agent.
 
-> **Running example → product.** You write in ChatGPT with search enabled: "Research competitors and write a report." You get text in the chat, often with up-to-date data. There is no `report.md` on disk — the product replied, but didn't touch your system.
+> In ChatGPT with search enabled: "Research competitors and write a report." You get text in the chat, often with up-to-date data. There is no `report.md` on disk — the product replied, but didn't touch your system.
 
 ### Why everything gets confused
 
@@ -125,7 +97,7 @@ On its own, a model **cannot**:
 
 Like a LEGO robot on a table: it assembles from bricks you put in the prompt. It doesn't go to the store for new pieces or onto the internet. **Tools** and **agents** handle that.
 
-> **Running example → model.** LLM in chat only, no search or files: "Research competitors…" → a plan, tips, a report template. No real prices or live sites "as of today" unless the model is wired to tools.
+> Ask an LLM in chat only, with no search or files, to "research competitors…" — you get a plan, tips, a report template. No real prices or live sites "as of today" unless tools are wired in.
 
 ## How to talk to a model
 
@@ -175,7 +147,7 @@ Include: company overview, requirements, responsibilities, benefits, how to appl
 
 **The first line matters a lot.** Prefer a direct instruction, not a hint: not "I was reading about Redis…", but "Name three companies that use Redis in production and what they use it for."
 
-> **Running example → prompt.** Weak: "Write a report on competitors." Better: "Research 5 direct competitors in niche X. Table: name, pricing, key features. Then 2 paragraphs of takeaways. Markdown format."
+> Weak: "Write a report on competitors." Better: "Research 5 direct competitors in niche X. Table: name, pricing, key features. Then 2 paragraphs of takeaways. Markdown format."
 
 Deeper techniques (prompt markup, in-prompt examples, evaluation on datasets) belong in separate posts; the loop above is enough to start.
 
@@ -193,7 +165,7 @@ The model doesn't hit your database or disk by itself. It returns something like
 
 > If you're parsing the model's reply with regex to "extract" a fact — you probably needed a **tool**, not a longer prompt.
 
-> **Running example → tools.** The model decides it needs `web_search` → the product (or your backend) fetches pages → they go back into context → the model writes the report from **fresh** data. Without a tool — only what was in training.
+> For a competitor report, the model may request `web_search` → your app fetches pages → results return to context → the model writes from **fresh** data. Without a tool — only what was in training.
 
 ## Agent
 
@@ -210,7 +182,7 @@ An agent can search the web, run code, read and write files, call APIs.
 
 **The model knows. The agent acts.**
 
-> **Running example → agent.** "Research competitors and write a report" — the agent picks the steps: search → read sites → compare → save `report.md`. You set the goal, not every click.
+> "Research competitors and write a report" — the agent picks the steps: search → read sites → compare → save `report.md`. You set the goal, not every click.
 
 ## Subagent
 
@@ -218,7 +190,7 @@ A **subagent** is an agent **started by another agent** for part of a job.
 
 ![Subagents: manager delegates search, analysis, and writing](/uploads/complete-guide-llms-models-agents-subagents/figures/subagents.svg)
 
-> **Running example → subagents.** Same task: "research competitors and write a report." The manager agent delegates:
+> For the same competitor-report task, the manager agent delegates:
 
 - searcher subagent — the web
 - analyst subagent — compare pricing and features
@@ -232,7 +204,7 @@ The manager assembles the result.
 
 ## How it all fits together
 
-### All levels at a glance {#all-levels-at-a-glance}
+### All levels at a glance
 
 One task — *"Research competitors and write a report"* — looks different at each level:
 
@@ -258,7 +230,7 @@ Example: bug screenshot → description → repro steps → completeness check �
 
 An **agent** gets a **goal and tools**; the model chooses the order of steps.
 
-> **Running example → workflow vs agent.** Fixed plan: (1) list 5 competitors, (2) price table, (3) conclusion text — three scripted model calls → **workflow**. One line "make the report," steps chosen on the fly → **agent**.
+> Fixed plan: (1) list 5 competitors, (2) price table, (3) conclusion text — three scripted model calls → **workflow**. One line "make the report," steps chosen on the fly → **agent**.
 
 | | Workflow | Agent |
 |---|---|---|
