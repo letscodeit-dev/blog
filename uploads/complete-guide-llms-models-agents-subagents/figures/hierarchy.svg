@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" role="img" aria-labelledby="title-hierarchy">
-  <title id="title-hierarchy">AI hierarchy: from umbrella AI to subagents</title>
+  <title id="title-hierarchy">AI hierarchy: from AI to subagents</title>
   <defs>
     <linearGradient id="grad-h" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#fff8f4"/>
@@ -13,7 +13,7 @@
   <text x="480" y="36" font-family="ui-monospace,Menlo,monospace" font-size="14" font-weight="700" fill="#1e1f23" text-anchor="middle" letter-spacing="1.2">FULL STACK: WHAT SITS INSIDE WHAT</text>
   <g font-family="ui-monospace,Menlo,monospace" font-weight="700" font-size="13" letter-spacing="0.8">
     <rect x="330" y="52" width="300" height="40" rx="10" fill="#1e1f23" fill-opacity="0.12" stroke="#1e1f23" stroke-opacity="0.2"/>
-    <text x="480" y="78" fill="#1e1f23" text-anchor="middle">AI (umbrella)</text>
+    <text x="480" y="78" fill="#1e1f23" text-anchor="middle">AI</text>
     <rect x="360" y="108" width="240" height="40" rx="10" fill="#1e1f23"/>
     <text x="480" y="134" fill="#fdfdf8" text-anchor="middle">LLM</text>
     <rect x="300" y="164" width="160" height="36" rx="8" fill="#fdfdf8" stroke="#1e1f23" stroke-opacity="0.15"/>

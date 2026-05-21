@@ -30,7 +30,7 @@ An LLM doesn't "understand" language like a human and doesn't "recognize" speech
 
 **How is an LLM different from "just AI"?**
 
-**AI** is the big umbrella: systems that do tasks that used to need a human.
+**AI** is any system that does tasks that used to need a human.
 
 **LLM** is one kind of those systems: built for **text** (and anything you can turn into text — code, JSON, prompts).
 
