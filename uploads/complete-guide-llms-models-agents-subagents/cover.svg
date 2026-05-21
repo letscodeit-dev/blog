@@ -24,7 +24,7 @@
   </g>
   <g font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-weight="700" letter-spacing="1.6">
     <rect x="760" y="108" width="400" height="56" rx="12" fill="#fdfdf8" fill-opacity="0.22" stroke="#fdfdf8" stroke-opacity="0.5"/>
-    <text x="960" y="144" font-size="20" fill="#fdfdf8" text-anchor="middle">AI / umbrella</text>
+    <text x="960" y="144" font-size="20" fill="#fdfdf8" text-anchor="middle">AI</text>
     <rect x="820" y="208" width="280" height="56" rx="12" fill="#1e1f23"/>
     <text x="960" y="244" font-size="22" fill="#fdfdf8" text-anchor="middle">LLM</text>
     <rect x="680" y="308" width="200" height="56" rx="12" fill="#fdfdf8"/>
