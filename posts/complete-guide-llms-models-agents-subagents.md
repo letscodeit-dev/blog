@@ -49,7 +49,7 @@ An LLM doesn't "understand" language like a human and doesn't "recognize" speech
 
 Family examples: **GPT** (OpenAI), **Claude** (Anthropic), **Llama** (Meta) — plus Gemini, Kimi, DeepSeek, Qwen.
 
-A **specific model** is one **frozen** version after training: fixed weights, size, release date. Like a printed book — it isn't rewritten on the fly.
+A **specific model** is one **frozen** version after training: fixed weights, size, release date. Ship it to production, and it stays exactly what it was on that day — no silent updates, no patches.
 
 Examples: **GPT-4o, o1** · **Claude Opus 4.6, Sonnet 4.6, Haiku 4.5** · **Llama 3.1 70B** · and counterparts from Gemini, DeepSeek, Qwen.
 
@@ -70,7 +70,7 @@ Opus 4.6 and Sonnet 4.6 are **different** models: different weights, speed, and 
 - **Copilot** — an editor extension that uses various models
 - **Codex** — used to be a separate code-focused model; today the name can also appear on products — don't confuse it with "just a chat"
 
-**Analogy.** The model is the **engine**. The product is the **car**. In ChatGPT you get in the car; the engine (GPT-4o, etc.) isn't visible. In Cursor it's a different car — it might use the same engine (GPT-4o, Claude Sonnet 4.6) but with a different interface and features.
+**Analogy.** The model is the **CPU**. The product is the **OS**. You work in the OS — the processor underneath isn't something you see or configure. In Cursor it's a different OS — it might use the same CPU (GPT-4o, Claude Sonnet 4.6) but with a different interface and features.
 
 > **Common mistake.** ChatGPT **won't update a file on your disk by itself** — the product has no access until you grant it. Expecting "chat in the browser" to act on your machine means confusing a product with an agent.
 
@@ -88,14 +88,7 @@ The model is only one step. Same logic for a competitor report: finished text in
 
 A model is a **text predictor**. You give text — it continues. It doesn't "think" or "decide" in the human sense.
 
-On its own, a model **cannot**:
-
-- Open a browser and search Google
-- Write a file on your computer
-- Send an email
-- Run your code and check if it works
-
-Like a LEGO robot on a table: it assembles from bricks you put in the prompt. It doesn't go to the store for new pieces or onto the internet. **Tools** and **agents** handle that.
+On its own, a model cannot open a browser, write to your disk, send an email, or run your code. I kept expecting it to "just do it" early on — until I realized I was confusing the model with the agent wrapped around it. **Tools** and **agents** handle that.
 
 > Ask an LLM in chat only, with no search or files, to "research competitors…" — you get a plan, tips, a report template. No real prices or live sites "as of today" unless tools are wired in.
 
@@ -275,7 +268,7 @@ Same model inside — different experience outside.
 
 ## Go deeper
 
-Short notes on topics that deserve full posts of their own.
+These came up while writing and I kept cutting them — they each deserve a full post. Here's just enough to know what they are.
 
 ### Context window
 
