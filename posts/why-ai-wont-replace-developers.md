@@ -34,7 +34,7 @@ AI is genuinely good at several things that used to eat up hours of a developer'
 
 **Documentation.** AI writes docs that are actually readable. Not perfect, but readable. And readable docs beat the usual alternative — which is no docs at all.
 
-All of this is real. All of this is valuable. And none of it means AI can replace a developer.
+All of this is real. All of this is valuable. And none of it means AI can replace a developer. If agents and chat blur together for you, [LLM vs model vs agent](/blog/complete-guide-llms-models-agents-subagents) is a short map of what actually acts on your code.
 
 ## Where AI Falls Apart
 

@@ -284,7 +284,7 @@ A regular LLM is like a consultant who gives advice. An agent is like a consulta
 
 An AI agent tasked with "research competitors and write a comparison report" might: search the web, scrape websites, analyze pricing data, draft a report, and save it to your Google Drive — all on its own.
 
-Agents are hyped, and for good reason. But they're also unpredictable. The more autonomy you give an AI, the more ways it can go off the rails. Start with simple tool use before going full agent.
+Agents are hyped, and for good reason. But they're also unpredictable. The more autonomy you give an AI, the more ways it can go off the rails. Start with simple tool use before going full agent. For the full stack (LLM → model → product → agent → subagent), see [The Complete Guide to LLMs, Models, Agents, and Subagents](/blog/complete-guide-llms-models-agents-subagents).
 
 ### Function Calling (Tool Use)
 
@@ -294,7 +294,7 @@ The model is like a manager who can't use the tools directly but knows exactly w
 
 A user asks "What's the weather in Tokyo?" The model outputs: get_weather(city="Tokyo"). Your system calls the weather API, gets the result, feeds it back, and the model generates a natural language response.
 
-This is the building block for agents. Before you have agents, you have function calling.
+This is the building block for agents. Before you have agents, you have function calling. See also [how tool use fits in the hierarchy](/blog/complete-guide-llms-models-agents-subagents).
 
 ## Evaluation & Safety
 
