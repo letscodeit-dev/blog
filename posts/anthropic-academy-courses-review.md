@@ -68,6 +68,8 @@ The deepest developer course on the platform. Covers the range of working with A
 
 Learn to build MCP servers and clients from scratch using Python. Covers the three core primitives — tools, resources, and prompts — for connecting Claude with external services.
 
+New to the vocabulary? Read [LLMs, models, agents, and subagents explained](/blog/complete-guide-llms-models-agents-subagents) first.
+
 **Best for:** Developers who want to extend Claude with custom integrations.
 **Time:** ~1-2 hours.
 

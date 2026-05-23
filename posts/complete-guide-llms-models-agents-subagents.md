@@ -3,9 +3,9 @@ title: "The Complete Guide (Almost): LLMs, Models, Agents, and Subagents in Plai
 slug: "complete-guide-llms-models-agents-subagents"
 canonical: "https://letscodeit.dev/blog/complete-guide-llms-models-agents-subagents"
 publishedAt: "2026-05-20"
-description: "From the GPT brand to the subagent: the AI hierarchy without confusing the terms."
+description: "Plain-English guide: LLM vs model vs ChatGPT vs AI agent vs subagent. Learn the hierarchy, tool use, workflows, and when you need an agent—not just a chat."
 category: "AI Foundations"
-tags: ["ai", "agents", "llm", "beginners"]
+tags: ["ai", "llm", "agents", "tool-use", "mcp", "workflows", "prompt-engineering"]
 status: "published"
 featured: true
 coverImage: "/uploads/complete-guide-llms-models-agents-subagents/cover.svg"
@@ -14,9 +14,9 @@ thumbnail: "/uploads/complete-guide-llms-models-agents-subagents/thumb.svg"
 
 If you've ever opened an article about AI and felt like everyone else is speaking a different language — you're not alone. Let's figure it out together.
 
-LLM, agent, subagent, model — people often use these words as synonyms, but they mean different things. **"The complete guide (almost)"** because the focus here is the **vocabulary and hierarchy**. Prompts, context, skills, and MCP — briefly; there's a "go deeper" section at the end.
+LLM, agent, subagent, model — people often use these words as synonyms, but they mean different things. **"The complete guide (almost)"** because the focus here is the **vocabulary and hierarchy**. Prompts, context, skills, and MCP — briefly; there's a "go deeper" section at the end. For isolated definitions of other terms, see the [AI and LLM glossary](/blog/ai-llm-glossary-terms-every-developer-should-know).
 
-### Hierarchy
+## Hierarchy
 
 ![Full hierarchy: from AI to agent with subagents](/uploads/complete-guide-llms-models-agents-subagents/figures/hierarchy.svg)
 
@@ -49,7 +49,9 @@ An LLM doesn't "understand" language like a human and doesn't "recognize" speech
 
 Family examples: **GPT** (OpenAI), **Claude** (Anthropic), **Llama** (Meta) — plus Gemini, Kimi, DeepSeek, Qwen.
 
-A **specific model** is one **frozen** version after training: fixed weights, size, release date. Ship it to production, and it stays exactly what it was on that day — no silent updates, no patches.
+A **specific model** is a **checkpoint** after training: fixed weights for that release, with a known size and version name. The math doesn't change until someone trains and ships a new version.
+
+What you use day to day is often different: ChatGPT, Claude.ai, and Cursor may swap which checkpoint they route to, add tools, or change the system prompt — even when the marketing name stays the same. For production APIs, many providers let you **pin a snapshot** (e.g. `gpt-4o-2024-08-06`) so behavior stays closer to what you tested.
 
 Examples: **GPT-4o, o1** · **Claude Opus 4.6, Sonnet 4.6, Haiku 4.5** · **Llama 3.1 70B** · and counterparts from Gemini, DeepSeek, Qwen.
 
@@ -68,11 +70,11 @@ Opus 4.6 and Sonnet 4.6 are **different** models: different weights, speed, and 
 - **ChatGPT** — a web UI for GPT models
 - **Claude Code** — a coding tool built on Claude
 - **Copilot** — an editor extension that uses various models
-- **Codex** — used to be a separate code-focused model; today the name can also appear on products — don't confuse it with "just a chat"
+- **Codex** — OpenAI's coding **agent** (CLI and IDE integrations), powered by Codex-specific models. Not the same as "just chat," and not the old standalone API name alone
 
 **Analogy.** The model is the **CPU**. The product is the **OS**. You work in the OS — the processor underneath isn't something you see or configure. In Cursor it's a different OS — it might use the same CPU (GPT-4o, Claude Sonnet 4.6) but with a different interface and features.
 
-> **Common mistake.** ChatGPT **won't update a file on your disk by itself** — the product has no access until you grant it. Expecting "chat in the browser" to act on your machine means confusing a product with an agent.
+> **Common mistake.** ChatGPT **won't edit files in your local project by itself** — the browser product has no access until you grant it (uploads and connectors are different; still not the same as an agent working in your repo). Expecting "chat in the browser" to act on your machine means confusing a product with an agent.
 
 > In ChatGPT with search enabled: "Research competitors and write a report." You get text in the chat, often with up-to-date data. There is no `report.md` on disk — the product replied, but didn't touch your system.
 
@@ -203,9 +205,9 @@ One task — *"Research competitors and write a report"* — looks different at 
 
 | Level | What you get |
 |---|---|
-| **Model** in chat | Advice and a plan, no real search, no file |
-| **Product** with search (ChatGPT, etc.) | Report in chat with fresh data, disk untouched |
-| **+ tools** | Web search, fresh data in the reply |
+| **Model** in chat | Advice and a plan, no live search, no file on your machine |
+| **Product** with built-in search (ChatGPT, etc.) | Report in the chat with fresh data; your repo files stay untouched |
+| **Your app + tools** | You wire `web_search`, databases, disk — the model requests, your code runs |
 | **Agent** | Search, draft, `report.md` in your project |
 | **Agent + subagents** | Search, analysis, and writing in parallel; manager merges |
 
@@ -235,7 +237,7 @@ An **agent** gets a **goal and tools**; the model chooses the order of steps.
 
 Think ChatGPT **is** the model → you expect actions chat can't do. "Why didn't it update my file?" — because it's a product without disk access.
 
-Think an agent is just a smart chat → you're surprised by odd choices. An agent **acts**; more capability — more ways to get it wrong.
+Think an agent is just a smart chat → you're surprised by odd choices. An agent **acts**; more capability — more ways to get it wrong. On real projects, that gap between hype and judgment still matters — see [why AI won't replace developers](/blog/why-ai-wont-replace-developers) for what we actually saw in production.
 
 Confuse agent and subagent → you overcomplicate simple work. Three subagents for one function is too much.
 
@@ -245,7 +247,7 @@ Confuse agent and subagent → you overcomplicate simple work. Three subagents f
 
 **Product (ChatGPT in the browser).** Nice back-and-forth; files on disk still don't change on their own.
 
-**Agent (Cursor, Copilot Workspace).** "Add auth to my project" → finds files, writes code, checks the build.
+**Agent (Cursor, GitHub Copilot coding agent in VS Code).** "Add auth to my project" → finds files, writes code, checks the build.
 
 **Agent + subagents.** "Auth, tests, and docs" → one writes code, another tests, a third updates docs; the lead agent checks consistency.
 
@@ -257,7 +259,7 @@ Same model inside — different experience outside.
 |---|---|
 | **GPT, Claude…** | Family name, not a version |
 | **LLM / model** | Text predictor: knows, doesn't act |
-| **GPT-4o, Sonnet 4.6…** | One trained, frozen version |
+| **GPT-4o, Sonnet 4.6…** | One trained checkpoint (pin versions in APIs) |
 | **ChatGPT, Cursor…** | Product around a model |
 | **Agent** | Model + tools + plan |
 | **Subagent** | Helper agent for a subtask |
@@ -290,7 +292,7 @@ Unlike a one-off prompt, a skill hooks in **automatically** when the task fits. 
 
 A **tool** is what the model can call. **MCP** is who already built a tool pack for GitHub, databases, the cloud, and so on.
 
-Without MCP you describe every function yourself. With MCP you connect a server and get a bundle of capabilities.
+Without MCP you describe every function yourself. With MCP you connect a server and get a bundle of capabilities. To learn MCP hands-on, see the [Anthropic Academy courses review](/blog/anthropic-academy-guide-free-ai-courses) (intro and advanced MCP tracks).
 
 ### Prompt engineering, in more depth
 
