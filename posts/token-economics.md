@@ -7,7 +7,7 @@ description: "LLM APIs charge by tokens, not words. See how language and tokeniz
 category: "AI Foundations"
 tags: ["ai", "llm", "tokens", "tokenization", "api", "cost", "multilingual"]
 status: "published"
-featured: false
+featured: true
 coverImage: "/uploads/token-economics/cover.svg"
 thumbnail: "/uploads/token-economics/thumb.svg"
 ---
