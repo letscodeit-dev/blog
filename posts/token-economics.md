@@ -3,7 +3,7 @@ title: "Token Economics: What Your Text Actually Costs"
 slug: "token-economics"
 canonical: "https://letscodeit.dev/blog/token-economics"
 publishedAt: "2026-05-28"
-description: "LLM APIs charge by tokens, not words. See how language and tokenizer choice change cost—from Latin scripts to Amharic—and what a real system prompt costs at scale."
+description: "LLM APIs charge by tokens, not words. See how language and tokenizer choice change cost-from Latin scripts to Amharic-and what a real system prompt costs at scale."
 category: "AI Foundations"
 tags: ["ai", "llm", "tokens", "tokenization", "api", "cost", "multilingual"]
 status: "published"
@@ -14,13 +14,13 @@ thumbnail: "/uploads/token-economics/thumb.svg"
 
 When you send a message to an LLM, you are not paying for characters or words. You pay for **tokens**.
 
-A token is the unit the model splits text into before processing: every major model API bills on tokens. For an individual user, the language of a request changes what you spend—or how fast you burn through limits on a subscription. For a company handling millions of requests per day, the difference can be hundreds of thousands of dollars per year.
+A token is the unit the model splits text into before processing: every major model API bills on tokens. For an individual user, the language of a request changes what you spend-or how fast you burn through limits on a subscription. For a company handling millions of requests per day, the difference can be hundreds of thousands of dollars per year.
 
 Many people hit token limits when using LLM agents heavily. I wanted to see how much the language of your prompts actually affects token count.
 
 ## Known tokenization problems
 
-Modern language models use **Byte Pair Encoding (BPE)**: text is split into bytes first, then the most frequent byte pairs are merged into a single token—repeated until the vocabulary reaches the target size.
+Modern language models use **Byte Pair Encoding (BPE)**: text is split into bytes first, then the most frequent byte pairs are merged into a single token-repeated until the vocabulary reaches the target size.
 
 The tokenizer vocabulary is trained on a text corpus. The more often a word or syllable appears in training data, the more likely it becomes its own token.
 
@@ -30,7 +30,7 @@ Note that proprietary models use their own closed tokenizers; the exact vocabula
 
 ### The multilingual gap
 
-Most large language models were trained primarily on English text. That means the tokenizer vocabulary is dense with English words and morphemes—they often encode in a single token. Other languages look different.
+Most large language models were trained primarily on English text. That means the tokenizer vocabulary is dense with English words and morphemes-they often encode in a single token. Other languages look different.
 
 When you send text in an underrepresented language, whole words are split into many small tokens. That means:
 
@@ -40,7 +40,7 @@ When you send text in an underrepresented language, whole words are split into m
 
 More detail with examples below.
 
-An important nuance: models are not only more expensive on non-Latin text—they also **perform worse**. Most internal representations and reasoning patterns were shaped on English. Working in another language spends part of the model’s “intellectual budget” on translation rather than on the task itself.
+An important nuance: models are not only more expensive on non-Latin text-they also **perform worse**. Most internal representations and reasoning patterns were shaped on English. Working in another language spends part of the model’s “intellectual budget” on translation rather than on the task itself.
 
 ## Languages: comparative tokenization tables
 
@@ -50,20 +50,20 @@ All data below uses OpenAI’s current `o200k_base` tokenizer (GPT-4o, GPT-4o mi
 
 We start from English source text: *"Many words map to one token, but some don't: indivisible. Unicode characters like emojis may be split into many tokens containing the underlying bytes. Sequences of characters commonly found next to each other may be grouped together: 1234567890"*, the example used in the tokenizer at [platform.openai.com/tokenizer](https://platform.openai.com/tokenizer) (official, OpenAI only). We translate it into other languages with an LLM and compare token counts.
 
-![English source text in the OpenAI tokenizer — 49 tokens, 246 characters](/uploads/token-economics/tokenizer-en-49.png)
+![English source text in the OpenAI tokenizer - 49 tokens, 246 characters](/uploads/token-economics/tokenizer-en-49.png)
 
-**Group 1 — Basic Latin** (overhead up to +31%)
+**Group 1 - Basic Latin** (overhead up to +31%)
 
 | Language | Characters | o200k | Δ vs EN |
 |----------|------------|-------|---------|
-| English (EN) | 246 | 49 | — |
+| English (EN) | 246 | 49 | - |
 | Spanish (ES) | 293 | 63 | +14 (+29%) |
 | French (FR) | 300 | 62 | +13 (+27%) |
 | German (DE) | 281 | 64 | +15 (+31%) |
 
-All three are very close to English—the tokenizer covers Latin script well. Small overhead comes from accented characters (ü, ö, ä, é, ñ, etc.) and slightly longer translations. German is a bit pricier because of long compounds (*Zeichenfolgen*, *zugrunde*) that do not fit in the vocabulary as whole tokens.
+All three are very close to English-the tokenizer covers Latin script well. Small overhead comes from accented characters (ü, ö, ä, é, ñ, etc.) and slightly longer translations. German is a bit pricier because of long compounds (*Zeichenfolgen*, *zugrunde*) that do not fit in the vocabulary as whole tokens.
 
-**Group 2 — Cyrillic and CJK** (overhead +27–96%)
+**Group 2 - Cyrillic and CJK** (overhead +27–96%)
 
 | Language | Characters | o200k | Δ vs EN |
 |----------|------------|-------|---------|
@@ -71,9 +71,9 @@ All three are very close to English—the tokenizer covers Latin script well. Sm
 | Ukrainian (UK) | 266 | 88 | +39 (+80%) |
 | Belarusian (BE) | 279 | 96 | +47 (+96%) |
 
-![Russian text in the OpenAI tokenizer — 72 tokens, 274 characters](/uploads/token-economics/tokenizer-ru-72.png)
+![Russian text in the OpenAI tokenizer - 72 tokens, 274 characters](/uploads/token-economics/tokenizer-ru-72.png)
 
-Belarusian vs Ukrainian vs Russian — 96 / 88 / 74 tokens on the same alphabet. The gap reflects training data volume: the fewer texts the model saw in a language, the fewer words made it into the tokenizer vocabulary.
+Belarusian vs Ukrainian vs Russian - 96 / 88 / 74 tokens on the same alphabet. The gap reflects training data volume: the fewer texts the model saw in a language, the fewer words made it into the tokenizer vocabulary.
 
 | Language | Characters | o200k | Δ vs EN |
 |----------|------------|-------|---------|
@@ -87,11 +87,11 @@ Belarusian vs Ukrainian vs Russian — 96 / 88 / 74 tokens on the same alphabet.
 
 Chinese is surprisingly efficient: only +27% vs English despite logographic writing. One character often carries the meaning of a whole word, and the tokenizer covers frequent characters well.
 
-![Japanese text in the OpenAI tokenizer — 95 tokens, 148 characters](/uploads/token-economics/tokenizer-ja-95.png)
+![Japanese text in the OpenAI tokenizer - 95 tokens, 148 characters](/uploads/token-economics/tokenizer-ja-95.png)
 
 The Japanese paradox: one of the shortest translations by character count (148 vs 246 for EN), but nearly 2× the token cost. Mixing three writing systems (hiragana, katakana, kanji) makes tokenization harder.
 
-**Group 3 — “Token-heavy” scripts** (overhead +80–549%)
+**Group 3 - “Token-heavy” scripts** (overhead +80–549%)
 
 | Language | Characters | o200k | Δ vs EN |
 |----------|------------|-------|---------|
@@ -111,11 +111,11 @@ The exception is **Amharic**: the only language where the transition barely help
 
 Note: Amharic is one of Ethiopia’s main languages and a working language of the federal government.
 
-![Amharic text in the OpenAI tokenizer — 318 tokens, 184 characters. Each character is split into its own token](/uploads/token-economics/tokenizer-am-318.png)
+![Amharic text in the OpenAI tokenizer - 318 tokens, 184 characters. Each character is split into its own token](/uploads/token-economics/tokenizer-am-318.png)
 
 ### Comparing tokenizers across models
 
-For cross-model comparison I use [tiktokenizer.vercel.app](https://tiktokenizer.vercel.app/)—it supports several tokenizers and is handy for side-by-side checks.
+For cross-model comparison I use [tiktokenizer.vercel.app](https://tiktokenizer.vercel.app/)-it supports several tokenizers and is handy for side-by-side checks.
 
 The same text in different languages is measured on four tokenizers: o200k (OpenAI: GPT-4o, o1, GPT-5.x), DeepSeek-V3, Qwen3, and Llama 3.3. Rare languages are omitted here.
 
@@ -130,22 +130,22 @@ The same text in different languages is measured on four tokenizers: o200k (Open
 
 **What stands out:**
 
-- **Chinese is cheaper than English** on DeepSeek-V3 (−16%) and nearly even on Qwen3 (−4%)—both tokenizers are optimized for Chinese: characters are encoded as whole words and bigrams, not byte-by-byte. For the first time in these tables, a language beats English on efficiency.
+- **Chinese is cheaper than English** on DeepSeek-V3 (−16%) and nearly even on Qwen3 (−4%)-both tokenizers are optimized for Chinese: characters are encoded as whole words and bigrams, not byte-by-byte. For the first time in these tables, a language beats English on efficiency.
 
 - **o200k (GPT-4o, o1, GPT-5.x) is consistently best for European languages.** For Russian, the delta vs English is slightly worse than DeepSeek (+45% vs +38%), but better than Qwen3 and Llama 3.3 (+60%).
 
-- **Russian on Asian-origin models:** DeepSeek-V3 gives the best Cyrillic result (+38%)—Russian-language content is well represented in Chinese models’ training data. Qwen3 and Llama 3.3 both land at +60%.
+- **Russian on Asian-origin models:** DeepSeek-V3 gives the best Cyrillic result (+38%)-Russian-language content is well represented in Chinese models’ training data. Qwen3 and Llama 3.3 both land at +60%.
 
-- **European languages (DE/FR/ES)** stay within +27–52% of English—small gaps, roughly similar across tokenizers.
+- **European languages (DE/FR/ES)** stay within +27–52% of English-small gaps, roughly similar across tokenizers.
 
 **Academic references:**
 
-- Petrov et al. (2023) — "Language Model Tokenizers Introduce Unfairness Between Languages" `arXiv:2305.15425` — measures "fertility" (tokens per word) for 164 languages
-- Rust et al. (2021) — "How Good is Your Tokenizer?" `arXiv:2012.15613`
+- Petrov et al. (2023) - "Language Model Tokenizers Introduce Unfairness Between Languages" `arXiv:2305.15425` - measures "fertility" (tokens per word) for 164 languages
+- Rust et al. (2021) - "How Good is Your Tokenizer?" `arXiv:2012.15613`
 
 ### Practical takeaway: a real system prompt
 
-Now for the interesting part—what this costs in practice.
+Now for the interesting part-what this costs in practice.
 
 Take a simple SaaS support system prompt (~280 words, ~1300–1640 characters depending on language). Translations were done with an LLM.
 
@@ -162,17 +162,17 @@ Take a simple SaaS support system prompt (~280 words, ~1300–1640 characters de
 
 Russian on o200k is +24% vs English. The gap is modest, but at high volume it still matters: at 1M requests per day that is 66,000 extra tokens.
 
-![English system prompt, o200k tokenizer — 280 tokens](/uploads/token-economics/tokenizer-system-en-o200k.png)
+![English system prompt, o200k tokenizer - 280 tokens](/uploads/token-economics/tokenizer-system-en-o200k.png)
 
-Chinese again beats English on DeepSeek-V4 (−9%) and Qwen3 (−7%). The Chinese translation uses 2.6× fewer characters (500 vs 1294)—each character carries more meaning.
+Chinese again beats English on DeepSeek-V4 (−9%) and Qwen3 (−7%). The Chinese translation uses 2.6× fewer characters (500 vs 1294)-each character carries more meaning.
 
-![English system prompt, DeepSeek tokenizer — 286 tokens](/uploads/token-economics/tokenizer-system-en-deepseek.png)
+![English system prompt, DeepSeek tokenizer - 286 tokens](/uploads/token-economics/tokenizer-system-en-deepseek.png)
 
-![Chinese system prompt, DeepSeek tokenizer — 260 tokens (less than English)](/uploads/token-economics/tokenizer-system-zh-deepseek.png)
+![Chinese system prompt, DeepSeek tokenizer - 260 tokens (less than English)](/uploads/token-economics/tokenizer-system-zh-deepseek.png)
 
-![Chinese system prompt, o200k tokenizer — 295 tokens](/uploads/token-economics/tokenizer-system-zh-o200k.png)
+![Chinese system prompt, o200k tokenizer - 295 tokens](/uploads/token-economics/tokenizer-system-zh-o200k.png)
 
-![Chinese system prompt, Qwen2.5-72B tokenizer — 268 tokens](/uploads/token-economics/tokenizer-system-zh-qwen.png)
+![Chinese system prompt, Qwen2.5-72B tokenizer - 268 tokens](/uploads/token-economics/tokenizer-system-zh-qwen.png)
 
 **System prompt cost at 1M requests**
 
@@ -193,15 +193,15 @@ Input token prices (no cache / with cache). Accurate as of May 2026.
 
 **Notable observations:**
 
-- **DeepSeek-V4-flash is 5–19× cheaper than GPT-5.4** for the same text and language. A Chinese prompt on DeepSeek costs $37 per 1M requests—roughly **$0.000037 per request**.
+- **DeepSeek-V4-flash is 5–19× cheaper than GPT-5.4** for the same text and language. A Chinese prompt on DeepSeek costs $37 per 1M requests-roughly **$0.000037 per request**.
 - **Without cache:** GPT-5.4 is **~15–19×** more expensive than DeepSeek-V4-flash depending on language. GPT-5.4-mini is **~4–5×**.
-- **With cache:** GPT-5.4 ($70–94) vs DeepSeek-V4-flash (~$1–2)—the gap grows to **~57×**, because DeepSeek’s cache discount is 50× vs GPT-5.4’s 10×. GPT-5.4-mini with cache ($21–28) vs DeepSeek-V4-flash with cache (~$1–2) is **~15–20×**.
+- **With cache:** GPT-5.4 ($70–94) vs DeepSeek-V4-flash (~$1–2)-the gap grows to **~57×**, because DeepSeek’s cache discount is 50× vs GPT-5.4’s 10×. GPT-5.4-mini with cache ($21–28) vs DeepSeek-V4-flash with cache (~$1–2) is **~15–20×**.
 - **Russian is not the most expensive** on o200k: $865 vs $932–935 for French and German.
 - **Chinese is cheaper than English** on DeepSeek and Qwen3 thanks to tokenizer optimization for characters.
 
 **So is it worth it, or penny-pinching?**
 
-It all depends on token price—for cheap models the savings are small but real. With prompt caching, the language effect is close to zero.
+It all depends on token price-for cheap models the savings are small but real. With prompt caching, the language effect is close to zero.
 
 For a typical user, the language of a prompt probably does not matter much.
 
@@ -209,6 +209,6 @@ For a business, it can.
 
 ## Conclusion
 
-**Language matters, but less than it used to.** Current tokenizers (o200k) improved the picture for most languages. Russian on GPT-5.x costs only 24% more than English—that is no longer a disaster. But for Amharic, Burmese, and several others, the problem remains acute. Model and tokenizer choice affect cost as much as price per token: DeepSeek with cache can be 50–60× cheaper than GPT-5.4 with cache on the same text.
+**Language matters, but less than it used to.** Current tokenizers (o200k) improved the picture for most languages. Russian on GPT-5.x costs only 24% more than English-that is no longer a disaster. But for Amharic, Burmese, and several others, the problem remains acute. Model and tokenizer choice affect cost as much as price per token: DeepSeek with cache can be 50–60× cheaper than GPT-5.4 with cache on the same text.
 
-Understanding tokenization helps you make deliberate choices: which language to write prompts in, how to format data, when to enable cache, and how to structure a conversation. It is not complicated—but you need to know the variable exists.
+Understanding tokenization helps you make deliberate choices: which language to write prompts in, how to format data, when to enable cache, and how to structure a conversation. It is not complicated-but you need to know the variable exists.
