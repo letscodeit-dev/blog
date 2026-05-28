@@ -7,7 +7,7 @@ description: "A plain-English field guide to AI and LLM terminology - definition
 category: "AI Foundations"
 tags: ["ai", "llm", "beginners", "prompt-engineering", "embeddings", "rag"]
 status: "published"
-featured: true
+featured: false
 coverImage: "/uploads/ai-llm-glossary/cover.svg"
 thumbnail: "/uploads/ai-llm-glossary/thumb.svg"
 ---
