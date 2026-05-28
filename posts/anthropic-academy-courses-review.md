@@ -12,7 +12,7 @@ coverImage: "/uploads/anthropic-academy/cover.svg"
 thumbnail: "/uploads/anthropic-academy/thumb.svg"
 ---
 
-Anthropic — the company behind Claude — runs a free learning platform called [Anthropic Academy](https://anthropic.skilljar.com/). It's a collection of self-paced courses covering everything from "what is AI" to advanced developer topics like building MCP servers.
+Anthropic - the company behind Claude - runs a free learning platform called [Anthropic Academy](https://anthropic.skilljar.com/). It's a collection of self-paced courses covering everything from "what is AI" to advanced developer topics like building MCP servers.
 
 No Anthropic account required. No paywall. Just sign up on Skilljar and start. Here's a quick walkthrough of what's there.
 
@@ -27,14 +27,14 @@ The starting point. Covers how to use Claude for everyday work tasks, core featu
 
 ### AI Fluency: Framework & Foundations
 
-A broader course on collaborating with AI systems — covers the mindset and framework for working alongside AI, not just the mechanics. Touches on ethics too, which most courses skip.
+A broader course on collaborating with AI systems - covers the mindset and framework for working alongside AI, not just the mechanics. Touches on ethics too, which most courses skip.
 
 **Best for:** Anyone who wants a structured approach to AI collaboration.
 **Time:** ~1-2 hours.
 
 ### AI Capabilities and Limitations
 
-An introductory course about how AI actually works — what it's good at, where it fails, and why understanding both matters more than hype.
+An introductory course about how AI actually works - what it's good at, where it fails, and why understanding both matters more than hype.
 
 **Best for:** People who want to separate realistic AI capabilities from marketing.
 
@@ -57,7 +57,7 @@ Takes Claude Code 101 further - integrating it into real development workflows r
 
 ### Building with the Claude API
 
-The deepest developer course on the platform. Covers the range of working with Anthropic models through their API — from basic prompts to production patterns.
+The deepest developer course on the platform. Covers the range of working with Anthropic models through their API - from basic prompts to production patterns.
 
 **Best for:** Developers building applications on top of Claude.
 **Time:** ~2-3 hours.
@@ -66,7 +66,7 @@ The deepest developer course on the platform. Covers the range of working with A
 
 ### Introduction to Model Context Protocol (MCP)
 
-Learn to build MCP servers and clients from scratch using Python. Covers the three core primitives — tools, resources, and prompts — for connecting Claude with external services.
+Learn to build MCP servers and clients from scratch using Python. Covers the three core primitives - tools, resources, and prompts - for connecting Claude with external services.
 
 New to the vocabulary? Read [LLMs, models, agents, and subagents explained](/blog/complete-guide-llms-models-agents-subagents) first.
 
@@ -81,7 +81,7 @@ The follow-up to the intro MCP course. Covers sampling, notifications, file syst
 
 ### Introduction to Agent Skills
 
-Learn to build, configure, and share Skills in Claude Code — reusable markdown instructions that Claude automatically applies to the right tasks. Covers creation, distribution across teams, and troubleshooting.
+Learn to build, configure, and share Skills in Claude Code - reusable markdown instructions that Claude automatically applies to the right tasks. Covers creation, distribution across teams, and troubleshooting.
 
 **Best for:** Teams standardizing AI workflows.
 
@@ -119,7 +119,7 @@ For those who want to teach and assess AI Fluency in instructor-led settings.
 
 ### AI Fluency for Nonprofits
 
-AI fluency for nonprofit professionals — how to increase organizational impact while staying true to mission and values.
+AI fluency for nonprofit professionals - how to increase organizational impact while staying true to mission and values.
 
 **Best for:** Nonprofit teams.
 
@@ -170,6 +170,6 @@ Most AI education lives behind paywalls or in scattered YouTube videos. Anthropi
 - **It's structured.** Courses have clear progression paths, not random tips.
 - **It covers the whole range.** From "what is AI" to production MCP servers.
 
-The courses won't make you an AI researcher. But they'll give you practical skills you can use immediately — and that's what most people actually need.
+The courses won't make you an AI researcher. But they'll give you practical skills you can use immediately - and that's what most people actually need.
 
 [Start learning →](https://anthropic.skilljar.com/)
