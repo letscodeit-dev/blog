@@ -1,13 +1,13 @@
 ---
-title: "What GEO is and what actually gets you cited by chatbots"
+title: "GEO for developers: what gets cited by ChatGPT and Perplexity"
 slug: "generative-engine-optimization-what-i-tested"
 canonical: "https://letscodeit.dev/blog/generative-engine-optimization-what-i-tested"
 publishedAt: "2026-06-17"
-description: "Generative engine optimization shapes content so ChatGPT and Perplexity cite you. We ran experiments on our dev blog and separated signal from GEO hype."
+description: "Structure content so AI answer engines quote you. Real experiments: SEO vs GEO tables, crawler list, checklist, and FAQ—no fake stats."
 category: "AI Foundations"
 tags: ["ai", "geo", "seo", "llms-txt", "perplexity", "chatgpt", "content"]
 status: "published"
-featured: false
+featured: true
 coverImage: "/uploads/geo-generative-engine-optimization/cover.svg"
 thumbnail: "/uploads/geo-generative-engine-optimization/thumb.svg"
 ---
