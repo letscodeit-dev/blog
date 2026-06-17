@@ -1,20 +1,20 @@
 ---
-title: "The Complete Guide (Almost): LLMs, Models, Agents, and Subagents in Plain English"
+title: "LLM vs Agent vs Model: Plain-English Hierarchy for Developers"
 slug: "complete-guide-llms-models-agents-subagents"
 canonical: "https://letscodeit.dev/blog/complete-guide-llms-models-agents-subagents"
-publishedAt: "2026-05-20"
-description: "Plain-English guide: LLM vs model vs ChatGPT vs AI agent vs subagent. Learn the hierarchy, tool use, workflows, and when you need an agent-not just a chat."
+publishedAt: "2026-06-17"
+description: "LLM, model, agent, and subagent mean different things. Comparison tables map the hierarchy, tool use, workflows, and when a fixed plan beats an agent."
 category: "AI Foundations"
-tags: ["ai", "llm", "agents", "tool-use", "mcp", "workflows", "prompt-engineering"]
+tags: ["ai", "llm", "agents", "subagents", "tool-use", "mcp", "workflows", "prompt-engineering"]
 status: "published"
 featured: true
 coverImage: "/uploads/complete-guide-llms-models-agents-subagents/cover.svg"
 thumbnail: "/uploads/complete-guide-llms-models-agents-subagents/thumb.svg"
 ---
 
-If you've ever opened an article about AI and felt like everyone else is speaking a different language - you're not alone. Let's figure it out together.
+An **LLM** is a text predictor: you send words in, it predicts the next token until the reply is done. An **agent** wraps that same model with tools and a plan so it can search, write files, or call APIs. A **subagent** is a helper agent spun up by another agent for one slice of a bigger job. Same stack, different layers.
 
-LLM, agent, subagent, model - people often use these words as synonyms, but they mean different things. **"The complete guide (almost)"** because the focus here is the **vocabulary and hierarchy**. Prompts, context, skills, and MCP - briefly; there's a "go deeper" section at the end. For isolated definitions of other terms, see the [AI and LLM glossary](/blog/ai-llm-glossary-terms-every-developer-should-know).
+If you've ever opened an article about AI and felt like everyone else is speaking a different language, you're not alone. People swap "LLM," "model," "ChatGPT," and "agent" like synonyms. They aren't. This post maps the **vocabulary and hierarchy**. Prompts, context, skills, plus MCP get a short pass here; isolated definitions of other terms live in the [AI and LLM glossary](/blog/ai-llm-glossary-terms-every-developer-should-know).
 
 ## Hierarchy
 
@@ -22,17 +22,17 @@ LLM, agent, subagent, model - people often use these words as synonyms, but they
 
 ## Glossary: from AI to product
 
-### LLM - large language model
+### LLM: large language model
 
-An **LLM (Large Language Model)** is a neural network trained on huge amounts of text. You give it text as input - it **predicts the next word, again and again**, until it has a full answer: a chat reply, code, a translation, a summary.
+An **LLM (Large Language Model)** is a neural network trained on huge amounts of text. You give it text as input. It **predicts the next word, again and again**, until it has a full answer: a chat reply, code, a translation, a summary.
 
-An LLM doesn't "understand" language like a human and doesn't "recognize" speech (voice uses other systems). It continues a phrase the way similar phrases appeared in training data. *Language* means text; *large* means scale (billions of parameters).
+An LLM doesn't "understand" language like a human and doesn't "recognize" speech (voice uses other systems). It continues a phrase the way similar phrases appeared in training data. *Language* means text. *Large* means scale (billions of parameters).
 
 **How is an LLM different from "just AI"?**
 
 **AI** is any system that does tasks that used to need a human.
 
-**LLM** is one kind of those systems: built for **text** (and anything you can turn into text - code, JSON, prompts).
+**LLM** is one kind of those systems: built for **text** (and anything you can turn into text: code, JSON, prompts).
 
 | "Just AI" | LLM |
 |---|---|
@@ -45,38 +45,38 @@ An LLM doesn't "understand" language like a human and doesn't "recognize" speech
 
 ### Families and specific models
 
-**GPT, Claude, Llama, Gemini, Kimi, DeepSeek, Qwen** are not individual models - they're **family names** (product lines). Like "iPhone" at Apple: the word alone doesn't tell you if it's a Pro or an SE.
+**GPT, Claude, Llama, Gemini, Kimi, DeepSeek, Qwen** are not individual models. They're **family names** (product lines). Like "iPhone" at Apple: the word alone doesn't tell you if it's a Pro or an SE.
 
-Family examples: **GPT** (OpenAI), **Claude** (Anthropic), **Llama** (Meta) - plus Gemini, Kimi, DeepSeek, Qwen.
+Family examples: **GPT** (OpenAI), **Claude** (Anthropic), **Llama** (Meta), plus Gemini, Kimi, DeepSeek, Qwen.
 
 A **specific model** is a **checkpoint** after training: fixed weights for that release, with a known size and version name. The math doesn't change until someone trains and ships a new version.
 
-What you use day to day is often different: ChatGPT, Claude.ai, and Cursor may swap which checkpoint they route to, add tools, or change the system prompt - even when the marketing name stays the same. For production APIs, many providers let you **pin a snapshot** (e.g. `gpt-4o-2024-08-06`) so behavior stays closer to what you tested.
+What you use day to day is often different. ChatGPT, Claude.ai, and Cursor may swap which checkpoint they route to, add tools, or change the system prompt, even when the marketing name stays the same. For production APIs, many providers let you **pin a snapshot** (e.g. `gpt-4o-2024-08-06`) so behavior stays closer to what you tested.
 
 Examples: **GPT-4o, o1** · **Claude Opus 4.6, Sonnet 4.6, Haiku 4.5** · **Llama 3.1 70B** · and counterparts from Gemini, DeepSeek, Qwen.
 
 Inside the Claude family there are three tiers:
 
-- **Opus** - highest quality, most expensive
-- **Sonnet** - balance of cost and quality
-- **Haiku** - faster and cheaper
+- **Opus**: highest quality, most expensive
+- **Sonnet**: balance of cost and quality
+- **Haiku**: faster and cheaper
 
-Opus 4.6 and Sonnet 4.6 are **different** models: different weights, speed, and price.
+Opus 4.6 and Sonnet 4.6 are **different** models: different weights, different speed, different price.
 
 ### Products are not models
 
 **ChatGPT, Claude Code, GitHub Copilot, Cursor** are **products**: applications that *use* models inside them.
 
-- **ChatGPT** - a web UI for GPT models
-- **Claude Code** - a coding tool built on Claude
-- **Copilot** - an editor extension that uses various models
-- **Codex** - OpenAI's coding **agent** (CLI and IDE integrations), powered by Codex-specific models. Not the same as "just chat," and not the old standalone API name alone
+- **ChatGPT**: a web UI for GPT models
+- **Claude Code**: a coding tool built on Claude
+- **Copilot**: an editor extension that uses various models
+- **Codex**: OpenAI's coding **agent** (CLI and IDE integrations), powered by Codex-specific models. It goes beyond "just chat," and it isn't the old standalone API name by itself
 
-**Analogy.** The model is the **CPU**. The product is the **OS**. You work in the OS - the processor underneath isn't something you see or configure. In Cursor it's a different OS - it might use the same CPU (GPT-4o, Claude Sonnet 4.6) but with a different interface and features.
+**Analogy.** The model is the **CPU**. The product is the **OS**. You work in the OS. The processor underneath isn't something you see or configure. In Cursor it's a different OS. It might use the same CPU (GPT-4o, Claude Sonnet 4.6) with a different interface and features.
 
-> **Common mistake.** ChatGPT **won't edit files in your local project by itself** - the browser product has no access until you grant it (uploads and connectors are different; still not the same as an agent working in your repo). Expecting "chat in the browser" to act on your machine means confusing a product with an agent.
+> **Common mistake.** ChatGPT **won't edit files in your local project by itself**. The browser product has no access until you grant it (uploads and connectors are different; still not the same as an agent working in your repo). Expecting "chat in the browser" to act on your machine means confusing a product with an agent.
 
-> In ChatGPT with search enabled: "Research competitors and write a report." You get text in the chat, often with up-to-date data. There is no `report.md` on disk - the product replied, but didn't touch your system.
+> In ChatGPT with search enabled: "Research competitors and write a report." You get text in the chat, often with up-to-date data. There is no `report.md` on disk. The product replied, but didn't touch your system.
 
 ### Why everything gets confused
 
@@ -84,15 +84,15 @@ When you type "find the weather" in ChatGPT, it feels like **ChatGPT** went on t
 
 ![One ChatGPT window: you, product, tool, model, answer](/uploads/complete-guide-llms-models-agents-subagents/figures/chatgpt-layers.svg)
 
-The model is only one step. Same logic for a competitor report: finished text in the chat, but inside - search first, then the model wording the answer.
+The model is only one step. Same logic for a competitor report: finished text in the chat, but inside the product runs search first, then the model words the answer.
 
 ### What a model cannot do on its own
 
-A model is a **text predictor**. You give text - it continues. It doesn't "think" or "decide" in the human sense.
+A model is a **text predictor**. You give text. It continues. It doesn't "think" or "decide" in the human sense.
 
-On its own, a model cannot open a browser, write to your disk, send an email, or run your code. I kept expecting it to "just do it" early on - until I realized I was confusing the model with the agent wrapped around it. **Tools** and **agents** handle that.
+On its own, a model cannot open a browser, write to your disk, send an email, or run your code. I kept expecting it to "just do it" early on, until I realized I was confusing the model with the agent wrapped around it. **Tools** and **agents** handle that.
 
-> Ask an LLM in chat only, with no search or files, to "research competitors…" - you get a plan, tips, a report template. No real prices or live sites "as of today" unless tools are wired in.
+> Ask an LLM in chat only, with no search or files, to "research competitors…" and you get a plan, tips, a report template. No real prices or live sites "as of today" unless tools are wired in.
 
 ## How to talk to a model
 
@@ -106,20 +106,20 @@ A **system prompt** is a hidden instruction for the whole conversation. You usua
 
 Same model, same question "How do I solve 5x + 2 = 3?":
 
-- without a system prompt - straight to "x = 0.2";
-- with a prompt like "you're a tutor, don't give the final answer, guide step by step" - questions instead of the answer.
+- without a system prompt: straight to "x = 0.2";
+- with a prompt like "you're a tutor, don't give the final answer, guide step by step": questions instead of the answer.
 
-**ChatGPT**, **Cursor**, **Claude Code** - each has its own system prompt (helpful assistant, code, files).
+**ChatGPT**, **Cursor**, **Claude Code**: each has its own system prompt (helpful assistant, code, files).
 
-### Prompt engineering - not magic, a loop
+### Prompt engineering: not magic, a loop
 
-**Prompt engineering** isn't "spells" - it's steadily improving how you phrase the task.
+**Prompt engineering** isn't "spells." It's steadily improving how you phrase the task.
 
-1. **Set a goal** - what should the output be?
-2. **Write a draft** - keep it simple
+1. **Set a goal**: what should the output be?
+2. **Write a draft**: keep it simple
 3. **Check the result**
-4. **Refine** - format, details, steps
-5. **Check again** - until it's good enough
+4. **Refine**: format, details, steps
+5. **Check again**: until it's good enough
 
 **Example: job posting.**
 
@@ -140,7 +140,7 @@ Terms: remote, salary range $120k–$180k USD.
 Include: company overview, requirements, responsibilities, benefits, how to apply.
 ```
 
-**The first line matters a lot.** Prefer a direct instruction, not a hint: not "I was reading about Redis…", but "Name three companies that use Redis in production and what they use it for."
+**The first line matters a lot.** Prefer a direct instruction, not a hint. Skip "I was reading about Redis…" and write "Name three companies that use Redis in production and what they use it for."
 
 > Weak: "Write a report on competitors." Better: "Research 5 direct competitors in niche X. Table: name, pricing, key features. Then 2 paragraphs of takeaways. Markdown format."
 
@@ -158,9 +158,9 @@ The model doesn't hit your database or disk by itself. It returns something like
 
 **When you don't:** general knowledge, translation, a one-off question with no action.
 
-> If you're parsing the model's reply with regex to "extract" a fact - you probably needed a **tool**, not a longer prompt.
+> If you're parsing the model's reply with regex to "extract" a fact, you probably needed a **tool**, not a longer prompt.
 
-> For a competitor report, the model may request `web_search` → your app fetches pages → results return to context → the model writes from **fresh** data. Without a tool - only what was in training.
+> For a competitor report, the model may request `web_search` → your app fetches pages → results return to context → the model writes from **fresh** data. Without a tool, only what was in training.
 
 ## Agent
 
@@ -177,45 +177,45 @@ An agent can search the web, run code, read and write files, call APIs.
 
 **The model knows. The agent acts.**
 
-> "Research competitors and write a report" - the agent picks the steps: search → read sites → compare → save `report.md`. You set the goal, not every click.
+> "Research competitors and write a report": the agent picks the steps (search, read sites, compare, save `report.md`). You set the goal, not every click.
 
 ## Subagent
 
 A **subagent** is an agent **started by another agent** for part of a job.
 
-![Subagents: manager delegates search, analysis, and writing](/uploads/complete-guide-llms-models-agents-subagents/figures/subagents.svg)
+![Subagents diagram: manager agent delegates search and writing tasks](/uploads/complete-guide-llms-models-agents-subagents/figures/subagents.svg)
 
 > For the same competitor-report task, the manager agent delegates:
 
-- searcher subagent - the web
-- analyst subagent - compare pricing and features
-- writer subagent - final text
+- searcher subagent: the web
+- analyst subagent: compare pricing and features
+- writer subagent: final text
 
 The manager assembles the result.
 
 **Why:** separate roles, parallel work, less noise in each agent's context.
 
-**When it's overkill:** a one-sentence task ("write a sort function") - one agent or even plain chat with a model is enough.
+**When it's overkill:** a one-sentence task ("write a sort function"). One agent, or even plain chat with a model, is enough.
 
 ## How it all fits together
 
 ### All levels at a glance
 
-One task - *"Research competitors and write a report"* - looks different at each level:
+One task (*"Research competitors and write a report"*) looks different at each level:
 
 | Level | What you get |
 |---|---|
 | **Model** in chat | Advice and a plan, no live search, no file on your machine |
 | **Product** with built-in search (ChatGPT, etc.) | Report in the chat with fresh data; your repo files stay untouched |
-| **Your app + tools** | You wire `web_search`, databases, disk - the model requests, your code runs |
+| **Your app + tools** | You wire `web_search`, databases, disk; the model requests, your code runs |
 | **Agent** | Search, draft, `report.md` in your project |
-| **Agent + subagents** | Search, analysis, and writing in parallel; manager merges |
+| **Agent + subagents** | Parallel search and writing; manager merges |
 
 The full hierarchy (beyond this example) is in the [diagram at the top](#hierarchy).
 
-- **Model** - knows and answers
-- **Agent** - acts
-- **Subagents** - scale a large task
+- **Model**: knows and answers
+- **Agent**: acts
+- **Subagents**: scale a large task
 
 ## Workflows and agents: when to use what
 
@@ -225,7 +225,7 @@ Example: bug screenshot → description → repro steps → completeness check �
 
 An **agent** gets a **goal and tools**; the model chooses the order of steps.
 
-> Fixed plan: (1) list 5 competitors, (2) price table, (3) conclusion text - three scripted model calls → **workflow**. One line "make the report," steps chosen on the fly → **agent**.
+> Fixed plan: (1) list 5 competitors, (2) price table, (3) conclusion text. Three scripted model calls → **workflow**. One line "make the report," steps chosen on the fly → **agent**.
 
 | | Workflow | Agent |
 |---|---|---|
@@ -235,23 +235,23 @@ An **agent** gets a **goal and tools**; the model chooses the order of steps.
 
 ## Why this matters
 
-Think ChatGPT **is** the model → you expect actions chat can't do. "Why didn't it update my file?" - because it's a product without disk access.
+Think ChatGPT **is** the model → you expect actions chat can't do. "Why didn't it update my file?" Because it's a product without disk access.
 
-Think an agent is just a smart chat → you're surprised by odd choices. An agent **acts**; more capability - more ways to get it wrong. On real projects, that gap between hype and judgment still matters - see [why AI won't replace developers](/blog/why-ai-wont-replace-developers) for what we actually saw in production.
+Think an agent is just a smart chat → you're surprised by odd choices. An agent **acts**; more capability means more ways to get it wrong. On real projects, that gap between hype and judgment still matters. See [why AI won't replace developers](/blog/why-ai-wont-replace-developers) for what we actually saw in production.
 
 Confuse agent and subagent → you overcomplicate simple work. Three subagents for one function is too much.
 
 ## Practical example: writing code
 
-**Model.** "Write an auth function" → code in the reply → you copy, paste, and test yourself.
+**Model.** "Write an auth function" → code in the reply → you copy the snippet and test it yourself.
 
 **Product (ChatGPT in the browser).** Nice back-and-forth; files on disk still don't change on their own.
 
 **Agent (Cursor, GitHub Copilot coding agent in VS Code).** "Add auth to my project" → finds files, writes code, checks the build.
 
-**Agent + subagents.** "Auth, tests, and docs" → one writes code, another tests, a third updates docs; the lead agent checks consistency.
+**Agent + subagents.** "Auth plus tests plus docs" → one writes code, another runs tests, a third updates docs; the lead agent checks consistency.
 
-Same model inside - different experience outside.
+Same model inside. Different experience outside.
 
 ## What to remember
 
@@ -264,27 +264,45 @@ Same model inside - different experience outside.
 | **Agent** | Model + tools + plan |
 | **Subagent** | Helper agent for a subtask |
 
-**The model knows. The agent acts.** Everything else is wrappers, naming, and scale.
+**The model knows. The agent acts.** Everything else is wrappers, naming, scale.
+
+## Frequently asked questions
+
+### What is the difference between an LLM and an AI agent?
+
+An LLM predicts text from input. It answers questions and drafts content inside a conversation. An AI agent adds tools (search, files, APIs) and a plan loop so the model can act on your goal, not only reply. Same underlying model; the agent is the wrapper that runs real side effects.
+
+### Is ChatGPT a model or a product?
+
+ChatGPT is a **product**: a web app built around GPT-family models. GPT-4o is a **model** (a trained checkpoint). When someone says "ask ChatGPT," they mean the product interface, which may route to different model versions and system prompts than a raw API call, with its own tool wiring.
+
+### What is a subagent?
+
+A subagent is an agent spawned by a parent agent to handle one part of a larger task. A manager agent might delegate web search to one subagent and file editing to another, then merge results. Use subagents when roles differ or work can run in parallel; skip them for single-step jobs.
+
+### When should I use a workflow instead of an agent?
+
+Use a **workflow** when you already know every step (extract → classify → summarize → format) and want predictable control. Use an **agent** when the path is unclear and the model should choose tools and order on the fly. Workflows are easier to debug; agents handle messier goals.
 
 ---
 
 ## Go deeper
 
-These came up while writing and I kept cutting them - they each deserve a full post. Here's just enough to know what they are.
+These came up while writing and I kept cutting them. Each deserves a full post. Here's just enough to know what they are.
 
 ### Context window
 
 The **context window** is how much text a model can "hold in mind" in **one** conversation: your messages, replies, tool results. That's not the same as knowledge from training.
 
-Each model has its own limit (roughly hundreds of pages to very large volumes). **Context rot** - in long threads the model forgets the middle; don't fill the chat with junk.
+Each model has its own limit (roughly hundreds of pages to very large volumes). **Context rot**: in long threads the model forgets the middle; don't fill the chat with junk.
 
-Products sometimes **compact** old messages to free space. **Skills** load instructions in chunks - also to save context.
+Products sometimes **compact** old messages to free space. **Skills** load instructions in chunks, also to save context.
 
 ### Skills
 
 A **skill** is a bundle of instructions and files (often `SKILL.md`) that turns a general model into a **specialist** for a narrow job: SQL, your CRM, internal rules.
 
-Unlike a one-off prompt, a skill hooks in **automatically** when the task fits. It loads **in parts** - not the whole package into context at once.
+Unlike a one-off prompt, a skill hooks in **automatically** when the task fits. It loads **in parts**, not the whole package into context at once.
 
 ### MCP
 
@@ -298,13 +316,13 @@ Without MCP you describe every function yourself. With MCP you connect a server 
 
 If the write → check → refine loop is already familiar, next steps:
 
-- **Output requirements** - length, tone, structure (almost always)
-- **Process steps** - for hard analysis and debugging
-- **Examples in the prompt** - show the shape of answer you want
-- **Block markup** - separate instructions from code and data when the prompt is huge
+- **Output requirements**: length, tone, structure (almost always)
+- **Process steps**: for hard analysis and debugging
+- **Examples in the prompt**: show the shape of answer you want
+- **Block markup**: separate instructions from code and data when the prompt is huge
 
-In production, prompts are tested on **example sets** and scored against criteria - not eyeballed once.
+In production, prompts are tested on **example sets** and scored against criteria, not eyeballed once.
 
 ---
 
-**More terms:** RAG, embeddings, RLHF, fine-tuning, and others - in the [AI and LLM glossary](/blog/ai-llm-glossary-terms-every-developer-should-know).
+**More terms:** RAG, embeddings, RLHF, fine-tuning, and others, in the [AI and LLM glossary](/blog/ai-llm-glossary-terms-every-developer-should-know).
