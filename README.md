@@ -2,11 +2,15 @@
 
 Articles, tutorials, and guides from [letscodeit.dev](https://letscodeit.dev).
 
+**This repo is content only.** The [letscodeit.dev](https://github.com/anton-kuptsov/letscodeit.dev) Next.js site renders posts via CDN. Agent instructions: [AGENTS.md](AGENTS.md).
+
 ## Structure
 
 ```
 posts/          — Markdown articles with frontmatter metadata
 uploads/        — Cover images and thumbnails for each post
+.ai/            — Content strategy and SEO benchmarks
+.cursor/skills/ — blog-writing and seo-content-optimization skills
 ```
 
 ## License
