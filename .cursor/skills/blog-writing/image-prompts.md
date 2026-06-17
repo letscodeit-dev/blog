@@ -1,42 +1,34 @@
-# Image and diagram prompts
+# Image prompts
 
-Generate prompt blocks for each H2 (after intro) when drafting new posts. User creates assets in Figma or an image tool.
+Full rules: **[image-assets.md](image-assets.md)** (style, dimensions, SVG safety, validation).
 
-## Inline assets (this repo)
+## Quick reference
 
 ```
-uploads/[slug]/cover.svg       — coverImage
-uploads/[slug]/thumb.svg       — thumbnail
-uploads/[slug]/figures/*.svg   — diagrams
-uploads/[slug]/*.png           — screenshots
+uploads/[asset-folder]/
+  cover.svg    — 1920x640 viewBox
+  thumb.svg    — 352x244 viewBox
+  figures/*.svg
+  *.png
 ```
 
-Markdown: `![alt text](/uploads/[slug]/filename.png)`
+Validate before delivery:
 
-## Prompt block template
+```bash
+node .cursor/skills/blog-writing/scripts/validate-images.mjs posts/your-post.md
+```
 
-For each H2 section, output:
+## Prompt template (per H2 diagram)
 
 ```
 Image prompt — section [N]:
-[Detailed description. Style: clean diagram, terminal screenshot mockup, infographic, or split comparison. Specific UI elements or data viz. Dark or light theme — match post tone.]
+[Schematic diagram. Monospace labels, #1e1f23 + #f54e00, white/#eeefe9 cards.]
 
-Aspect ratio: [16:9 hero | 4:3 inline | 1:1 social]
+Aspect ratio: 960x560 viewBox for figures
 
-Alt text: [8–15 words, describes what the image shows]
+Alt text: [8–15 words]
 
-Filename: [section-keyword].png or figures/[name].svg
+Filename: figures/[section-keyword].svg
 ```
 
-## Alt text rules
-
-- Describe content: "English source text in OpenAI tokenizer, 49 tokens"
-- Not: "tokenizer screenshot" or "image 1"
-
-## When screenshots are enough
-
-For tokenizer tests, API dashboards, or course UIs: describe what to capture instead of generating art. Specify browser URL, visible metrics, and crop.
-
-## Out of scope
-
-This skill produces prompts and paths only. It does not generate SVG/PNG files.
+Generate SVG in ASCII-only text. Run validator after creating files.

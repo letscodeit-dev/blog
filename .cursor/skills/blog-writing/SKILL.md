@@ -86,9 +86,23 @@ Type A deep-dives: at least one comparison table ([ai-citation.md](ai-citation.m
 
 First paragraph = direct answer (40–80 words). Each H2 opens with the section answer. Full rules: [ai-citation.md](ai-citation.md).
 
-## Image prompts
+## Image assets
 
-For each H2 when drafting new posts, output prompt blocks per [image-prompts.md](image-prompts.md). Screenshots: specify URL, visible metrics, filename under `uploads/[slug]/`.
+Generate and validate per **[image-assets.md](image-assets.md)**.
+
+| Asset | Required |
+|-------|----------|
+| `cover.svg` + `thumb.svg` | every post |
+| `figures/*.svg` | Type A/B recommended |
+| `*.png` | screenshots when showing data |
+
+After creating images:
+
+```bash
+node .cursor/skills/blog-writing/scripts/validate-images.mjs posts/your-post.md
+```
+
+SVG text must be **ASCII-only** (no em-dash, arrows, or special Unicode). See [image-assets.md](image-assets.md) for visual style and dimensions.
 
 ## Repo conventions
 
@@ -160,10 +174,14 @@ Pick 3–4 questions people actually ask (Reddit, Stack Overflow, Discord).
 3. Propose: 3 title variants, hook paragraph, H2 outline
 4. **Wait for outline approval** unless user says "write it all"
 5. Draft section by section; answer-first under each H2
-6. Add image prompts ([image-prompts.md](image-prompts.md)) or screenshot specs
+6. Create image assets in `uploads/[asset-folder]/` per [image-assets.md](image-assets.md)
 7. Add FAQ if type and length warrant it
-8. Run `validate-draft.mjs`; rewrite until **PASS**
-9. Paste anti-AI self-check with counts
+8. Run both validators; fix until **PASS**:
+   ```bash
+   node .cursor/skills/blog-writing/scripts/validate-draft.mjs posts/your-post.md
+   node .cursor/skills/blog-writing/scripts/validate-images.mjs posts/your-post.md
+   ```
+9. Paste anti-AI self-check + image validation summary
 10. Present frontmatter; write file after approval
 11. Update [post-catalog.md](post-catalog.md) for new slugs
 
@@ -173,8 +191,8 @@ Pick 3–4 questions people actually ask (Reddit, Stack Overflow, Discord).
 2. List: outdated facts, anti-AI violations, missing cross-links
 3. Propose keep / rewrite / expand / remove plan; wait for approval
 4. Rewrite phrasing to pass validator (legacy posts will likely need substantial edits)
-5. Re-run validator until **PASS**
-6. Paste anti-AI self-check
+5. Re-run both validators until **PASS**
+6. Paste anti-AI self-check + image validation summary
 
 ## Self-check before delivery
 
@@ -190,6 +208,8 @@ Pick 3–4 questions people actually ask (Reddit, Stack Overflow, Discord).
 - [ ] Answer-first opening and H2 leads ([ai-citation.md](ai-citation.md))
 - [ ] At least one comparison table on Type A posts
 - [ ] No unsourced statistics
+- [ ] `validate-images.mjs` **PASS**; cover + thumb exist; SVGs render
+- [ ] Alt text 8–15 words on inline images
 
 ## Mistakes to confess if caught
 
@@ -197,6 +217,7 @@ Pick 3–4 questions people actually ask (Reddit, Stack Overflow, Discord).
 - Em-dash over budget → recount, replace with commas or new sentences
 - Invented statistic → remove immediately, never argue to keep
 - Validator claimed PASS without running → re-run and show output
+- SVG will not open → check ASCII-only text, run `validate-images.mjs`, fix with `xmllint`
 
 ## Related skills
 
@@ -204,7 +225,6 @@ Pick 3–4 questions people actually ask (Reddit, Stack Overflow, Discord).
 
 ## Out of scope
 
-- Cover/thumbnail SVG generation (describe assets; user creates in Figma)
 - Git commit/push unless explicitly requested
 - Site rendering / CMS (this repo is content only)
 
@@ -213,8 +233,10 @@ Pick 3–4 questions people actually ask (Reddit, Stack Overflow, Discord).
 - [voice-samples.md](voice-samples.md) — voice benchmark
 - [anti-ai-rules.md](anti-ai-rules.md) — GPTZero / Originality / Copyleaks rules
 - [ai-citation.md](ai-citation.md) — Perplexity / ChatGPT citation structure
-- [image-prompts.md](image-prompts.md) — asset prompt template
+- [image-assets.md](image-assets.md) — image generation and validation rules
+- [image-prompts.md](image-prompts.md) — quick prompt template
 - [post-catalog.md](post-catalog.md) — cross-link slugs
 - [.ai/content-strategy.md](../../.ai/content-strategy.md) — pillars and gaps
 - [AGENTS.md](../../AGENTS.md) — site repo, CDN, llms.txt
-- [scripts/validate-draft.mjs](scripts/validate-draft.mjs) — enforcement
+- [scripts/validate-draft.mjs](scripts/validate-draft.mjs) — prose lint
+- [scripts/validate-images.mjs](scripts/validate-images.mjs) — image lint
