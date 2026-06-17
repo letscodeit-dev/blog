@@ -2,7 +2,7 @@
 title: "Developer's AI glossary: tokens, RAG, agents in plain English"
 slug: "ai-llm-glossary-terms-every-developer-should-know"
 canonical: "https://letscodeit.dev/blog/ai-llm-glossary-terms-every-developer-should-know"
-publishedAt: "2026-06-17"
+publishedAt: "2026-05-06"
 description: "Plain-English definitions for LLM, RAG, embeddings, RLHF, and agents. 30+ terms with analogies, a comparison table, FAQ, and links to deeper guides."
 category: "AI Foundations"
 tags: ["ai", "llm", "beginners", "prompt-engineering", "embeddings", "rag"]
