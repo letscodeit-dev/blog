@@ -2,7 +2,7 @@
 title: "Anthropic Academy: free Claude courses reviewed (2026)"
 slug: "anthropic-academy-guide-free-ai-courses"
 canonical: "https://letscodeit.dev/blog/anthropic-academy-guide-free-ai-courses"
-publishedAt: "2026-06-17"
+publishedAt: "2026-05-13"
 description: "Free Anthropic Academy courses on Skilljar: Claude 101, API, MCP, and Code tracks. Who each fits, time estimates, learning paths, and FAQ."
 category: "AI Foundations"
 tags: ["anthropic-academy", "anthropic", "claude", "free-courses", "claude-code", "mcp", "learning"]

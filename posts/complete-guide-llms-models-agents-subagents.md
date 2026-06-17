@@ -2,7 +2,7 @@
 title: "LLM vs Agent vs Model: Plain-English Hierarchy for Developers"
 slug: "complete-guide-llms-models-agents-subagents"
 canonical: "https://letscodeit.dev/blog/complete-guide-llms-models-agents-subagents"
-publishedAt: "2026-06-17"
+publishedAt: "2026-05-20"
 description: "LLM, model, agent, and subagent mean different things. Comparison tables map the hierarchy, tool use, workflows, and when a fixed plan beats an agent."
 category: "AI Foundations"
 tags: ["ai", "llm", "agents", "subagents", "tool-use", "mcp", "workflows", "prompt-engineering"]
