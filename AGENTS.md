@@ -100,12 +100,19 @@ thumbnail: "/uploads/.../thumb.svg"
 
 Image paths in markdown use `/uploads/...` — the site resolves them to CDN/repo URLs at render time.
 
+Image rules and validation: `.cursor/skills/blog-writing/image-assets.md`
+
+```bash
+node .cursor/skills/blog-writing/scripts/validate-images.mjs posts/[filename].md
+```
+
 ## Writing workflow
 
 Use the **`blog-writing`** skill (`.cursor/skills/blog-writing/SKILL.md`):
 
 - Voice: `voice-samples.md`
 - Anti-AI detectors: `anti-ai-rules.md` + `scripts/validate-draft.mjs`
+- Image assets: `image-assets.md` + `scripts/validate-images.mjs`
 - LLM citation (ChatGPT, Perplexity, AI Overviews): `ai-citation.md`
 - SEO metadata only: `seo-content-optimization` skill + `.ai/seo-benchmarks.md`
 

@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 640" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="title-geo-cover">
+  <title id="title-geo-cover">GEO - generative engine optimization cover</title>
+  <defs>
+    <marker id="arrow-geo" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#1e1f23" fill-opacity="0.7"/>
+    </marker>
+    <marker id="arrow-geo-accent" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#f54e00"/>
+    </marker>
+  </defs>
+  <rect width="1920" height="640" fill="#ffffff"/>
+
+  <g stroke="#1e1f23" stroke-opacity="0.08" stroke-width="1.2">
+    <line x1="0" y1="128" x2="1920" y2="128"/>
+    <line x1="0" y1="256" x2="1920" y2="256"/>
+    <line x1="0" y1="384" x2="1920" y2="384"/>
+    <line x1="0" y1="512" x2="1920" y2="512"/>
+  </g>
+
+  <g>
+    <rect x="120" y="148" width="560" height="400" rx="16" fill="#eeefe9" stroke="#1e1f23" stroke-opacity="0.12"/>
+    <text x="148" y="188" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="14" font-weight="700" letter-spacing="1.6" fill="#1e1f23" fill-opacity="0.85">YOUR BLOG POST</text>
+    <rect x="148" y="208" width="504" height="56" rx="8" fill="#f54e00" fill-opacity="0.12" stroke="#f54e00" stroke-width="2"/>
+    <text x="164" y="232" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13" font-weight="700" fill="#f54e00">ANSWER-FIRST INTRO</text>
+    <text x="164" y="252" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="12" fill="#1e1f23" fill-opacity="0.65">GEO = structure content for AI citations</text>
+    <rect x="148" y="280" width="504" height="88" rx="8" fill="#fdfdf8" stroke="#1e1f23" stroke-opacity="0.1"/>
+    <text x="164" y="304" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="700" fill="#1e1f23" fill-opacity="0.5">COMPARISON TABLE</text>
+    <line x1="164" y1="318" x2="636" y2="318" stroke="#1e1f23" stroke-opacity="0.15"/>
+    <text x="164" y="336" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" fill="#1e1f23" fill-opacity="0.55">SEO | clicks from SERP</text>
+    <text x="164" y="352" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" fill="#1e1f23" fill-opacity="0.55">GEO | citations in chat</text>
+    <rect x="148" y="384" width="240" height="48" rx="8" fill="#1e1f23" fill-opacity="0.08"/>
+    <text x="164" y="414" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" fill="#1e1f23" fill-opacity="0.45">llms.txt | canonical | FAQ</text>
+    <path d="M 680 300 L 740 300" stroke="#f54e00" stroke-width="2.5" fill="none" marker-end="url(#arrow-geo-accent)"/>
+  </g>
+
+  <g>
+    <rect x="760" y="148" width="1040" height="400" rx="16" fill="#eeefe9" stroke="#1e1f23" stroke-opacity="0.12"/>
+    <text x="800" y="188" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="14" font-weight="700" letter-spacing="1.6" fill="#1e1f23" fill-opacity="0.85">AI ANSWER ENGINE</text>
+    <rect x="800" y="220" width="720" height="200" rx="20" fill="#fdfdf8" stroke="#1e1f23" stroke-opacity="0.15"/>
+    <text x="828" y="256" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13" fill="#1e1f23" fill-opacity="0.7">What is GEO?</text>
+    <text x="828" y="288" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="12" fill="#1e1f23" fill-opacity="0.55">Generative engine optimization shapes content so</text>
+    <text x="828" y="308" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="12" fill="#1e1f23" fill-opacity="0.55">chatbots can quote your pages</text>
+    <rect x="828" y="328" width="320" height="28" rx="6" fill="#f54e00" fill-opacity="0.15" stroke="#f54e00" stroke-opacity="0.5"/>
+    <text x="844" y="347" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="700" fill="#f54e00">letscodeit.dev/blog/</text>
+    <g font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="12" font-weight="700">
+      <rect x="1580" y="240" width="180" height="44" rx="10" fill="#1e1f23"/>
+      <text x="1670" y="268" fill="#fdfdf8" text-anchor="middle">ChatGPT</text>
+      <rect x="1580" y="296" width="180" height="44" rx="10" fill="#bfc1b7"/>
+      <text x="1670" y="324" fill="#1e1f23" text-anchor="middle">Perplexity</text>
+      <rect x="1580" y="352" width="180" height="44" rx="10" fill="#bfc1b7"/>
+      <text x="1670" y="380" fill="#1e1f23" text-anchor="middle">AI Overviews</text>
+    </g>
+  </g>
+
+  <g font-family="ui-monospace,SFMono-Regular,Menlo,monospace" letter-spacing="2.4" fill="#1e1f23">
+    <text x="120" y="92" font-size="18" font-weight="700" fill-opacity="0.9">FIG. 01 | AI FOUNDATIONS / GEO</text>
+    <text x="120" y="118" font-size="13" fill-opacity="0.45" letter-spacing="1.6">optimize for citations in chat, not only clicks in search</text>
+  </g>
+  <g font-family="ui-monospace,SFMono-Regular,Menlo,monospace" letter-spacing="1.6" fill="#1e1f23">
+    <text x="120" y="600" font-size="13" font-weight="700" fill-opacity="0.7">ANSWER-FIRST | LLMS.TXT | TABLES | CITATION</text>
+    <text x="1800" y="600" font-size="13" text-anchor="end" fill-opacity="0.4">letscodeit.dev</text>
+  </g>
+</svg>
