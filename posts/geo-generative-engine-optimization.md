@@ -147,10 +147,8 @@ No. SEO optimizes for search engine rankings and SERP clicks. GEO optimizes for 
 
 Check analytics referrers for domains like `perplexity.ai` or `chatgpt.com` if your host passes them through. Filter access logs for crawler user-agents such as `PerplexityBot`, `OAI-SearchBot`, or `GPTBot` (see table above). A crawl means the URL was fetched; it does not prove a citation. Manually ask tools questions your post answers and see whether your URL appears. There is no stable public API for "citation count" across all products as of June 2026. Referrer logs, bot logs, and manual spot checks are the practical stack.
 
-## What we would do next
-
-We will refresh older posts that still open with context instead of answers. We plan to add FAQ blocks where they are missing. Structured data (FAQPage JSON-LD) belongs in the Next.js repo. The FAQ text starts here in Markdown.
+## The bottom line
 
 GEO is younger than SEO. The products change monthly. What held this month: direct answers, tables, honest sources, and files machines can read without parsing a layout engine. We will keep measuring on our site and drop tactics that stop working.
 
-When you ask whether GEO is "worth it," our answer is narrow: if you already publish technical content, the marginal cost of answer-first structure and a real `llms.txt` is low. The upside is uneven attribution across products you do not control. We treat GEO like accessibility or performance: build it into the publishing workflow and verify occasionally, rather than buying a miracle playbook.
+If you already publish technical content, answer-first structure and a real `llms.txt` are cheap to add. Citations in ChatGPT and Perplexity stay uneven, and no vendor hands you a stable citation score. Treat GEO like accessibility or performance: bake it into the publishing workflow, run through the checklist above before you ship, and skip playbooks that promise guaranteed AI mentions.

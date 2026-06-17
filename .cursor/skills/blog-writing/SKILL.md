@@ -29,9 +29,10 @@ Produce posts that:
 1. [voice-samples.md](voice-samples.md) — **the voice benchmark** (no gold-standard posts in this repo)
 2. [anti-ai-rules.md](anti-ai-rules.md) — hard limits for AI detectors
 3. [ai-citation.md](ai-citation.md) — answer-first structure for AI search citation
-4. [post-catalog.md](post-catalog.md) — slugs for internal links
-5. [.ai/content-strategy.md](../../.ai/content-strategy.md) — pillars, patterns, topic gaps
-6. [AGENTS.md](../../AGENTS.md) — how this repo connects to letscodeit.dev, CDN, and llms.txt
+4. [../seo-content-optimization/semantic-kernel.md](../seo-content-optimization/semantic-kernel.md) — **semantic kernel** for SEO + GEO keyword mapping
+5. [post-catalog.md](post-catalog.md) — slugs for internal links
+6. [.ai/content-strategy.md](../../.ai/content-strategy.md) — pillars, patterns, topic gaps
+7. [AGENTS.md](../../AGENTS.md) — how this repo connects to letscodeit.dev, CDN, and llms.txt
 
 Existing files in `posts/` are **legacy content**. Use them for facts and structure ideas only. On refresh, bring them into anti-AI compliance. Do not copy their phrasing if it fails [anti-ai-rules.md](anti-ai-rules.md).
 
@@ -82,9 +83,33 @@ Type D skips FAQ. Types A, B, E should include FAQ for posts over 1200 words.
 
 Type A deep-dives: at least one comparison table ([ai-citation.md](ai-citation.md)).
 
+## Semantic kernel (SEO + GEO) — define before outline
+
+Before proposing H2 outline, define the post's **semantic kernel** per [semantic-kernel.md](../seo-content-optimization/semantic-kernel.md):
+
+| Layer | Draft now | Used later in |
+|-------|-----------|---------------|
+| Head term | One primary query | `title`, slug, opening paragraph |
+| Secondary terms | 4–8 concepts | H2 headings, `tags` |
+| Long-tail questions | 3–6 search phrasings | FAQ, section leads |
+| GEO questions | 3–5 chat-style questions | FAQ answers (40–80 words each) |
+| Entities | Tools, models, standards | Tables, definitions, outbound links |
+
+Present the kernel table at outline stage. User confirms before drafting prose.
+
+**Rules:**
+
+- One head term per post; check `post-catalog.md` for cannibalization
+- Map each secondary term to a planned H2 before writing
+- FAQ questions must come from long-tail + GEO rows — not invented after the fact
+- `tags` in frontmatter mirror secondary terms (5–8 max)
+- Natural mentions only — never paste keyword lists into body (hurts GEO; see geo post)
+
+For metadata-only tuning on published posts → `seo-content-optimization` skill (kernel audit + title/description).
+
 ## AI search citation (answer-first)
 
-First paragraph = direct answer (40–80 words). Each H2 opens with the section answer. Full rules: [ai-citation.md](ai-citation.md).
+First paragraph = direct answer to the **head term** as a question (40–80 words). Each H2 opens with the section answer. Full rules: [ai-citation.md](ai-citation.md).
 
 ## Image assets
 
@@ -171,12 +196,13 @@ Pick 3–4 questions people actually ask (Reddit, Stack Overflow, Discord).
 
 1. Confirm post type (A–E) with user
 2. Read [voice-samples.md](voice-samples.md) + [anti-ai-rules.md](anti-ai-rules.md)
-3. Propose: 3 title variants, hook paragraph, H2 outline
-4. **Wait for outline approval** unless user says "write it all"
-5. Draft section by section; answer-first under each H2
-6. Create image assets in `uploads/[asset-folder]/` per [image-assets.md](image-assets.md)
-7. Add FAQ if type and length warrant it
-8. Run both validators; fix until **PASS**:
+3. **Define semantic kernel** (head term, secondary, long-tail, GEO questions, entities) — show table; wait for approval
+4. Propose: 3 title variants (aligned to head term), hook paragraph, H2 outline mapped to kernel
+5. **Wait for outline approval** unless user says "write it all"
+6. Draft section by section; answer-first under each H2; cover kernel coverage as you go
+7. Create image assets in `uploads/[asset-folder]/` per [image-assets.md](image-assets.md)
+8. Add FAQ from long-tail + GEO rows in kernel (if type and length warrant it)
+9. Run both validators; fix until **PASS**:
    ```bash
    node .cursor/skills/blog-writing/scripts/validate-draft.mjs posts/your-post.md
    node .cursor/skills/blog-writing/scripts/validate-images.mjs posts/your-post.md
@@ -188,14 +214,17 @@ Pick 3–4 questions people actually ask (Reddit, Stack Overflow, Discord).
 ## Workflow — refresh existing post
 
 1. Read current post fully
-2. List: outdated facts, anti-AI violations, missing cross-links
-3. Propose keep / rewrite / expand / remove plan; wait for approval
-4. Rewrite phrasing to pass validator (legacy posts will likely need substantial edits)
-5. Re-run both validators until **PASS**
-6. Paste anti-AI self-check + image validation summary
+2. **Extract semantic kernel** (audit template in [semantic-kernel.md](../seo-content-optimization/semantic-kernel.md)) — show gaps vs current content
+3. List: outdated facts, anti-AI violations, missing cross-links, **keyword gaps** from kernel
+4. Propose keep / rewrite / expand / remove plan; wait for approval
+5. Rewrite phrasing to pass validator (legacy posts will likely need substantial edits)
+6. Re-run both validators until **PASS**
+7. Paste anti-AI self-check + image validation summary
 
 ## Self-check before delivery
 
+- [ ] Semantic kernel table delivered; head term in title + opening paragraph
+- [ ] Each planned secondary term has an H2 or subsection; FAQ covers long-tail + GEO rows
 - [ ] [voice-samples.md](voice-samples.md) tone, not generic AI blog voice
 - [ ] Validator **PASS** (not "probably fine")
 - [ ] Anti-AI self-check pasted with real counts
@@ -221,7 +250,7 @@ Pick 3–4 questions people actually ask (Reddit, Stack Overflow, Discord).
 
 ## Related skills
 
-- **SEO metadata only** (title, description, CTR) → `seo-content-optimization` skill. Reads `.ai/seo-benchmarks.md`. Does not rewrite body.
+- **SEO audit + metadata** (semantic kernel, title, description, CTR) → `seo-content-optimization` skill. Reads [semantic-kernel.md](../seo-content-optimization/semantic-kernel.md) + `.ai/seo-benchmarks.md`. Does not rewrite body.
 
 ## Out of scope
 
@@ -233,6 +262,7 @@ Pick 3–4 questions people actually ask (Reddit, Stack Overflow, Discord).
 - [voice-samples.md](voice-samples.md) — voice benchmark
 - [anti-ai-rules.md](anti-ai-rules.md) — GPTZero / Originality / Copyleaks rules
 - [ai-citation.md](ai-citation.md) — Perplexity / ChatGPT citation structure
+- [../seo-content-optimization/semantic-kernel.md](../seo-content-optimization/semantic-kernel.md) — SEO + GEO keyword kernel
 - [image-assets.md](image-assets.md) — image generation and validation rules
 - [image-prompts.md](image-prompts.md) — quick prompt template
 - [post-catalog.md](post-catalog.md) — cross-link slugs

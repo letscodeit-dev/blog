@@ -2,6 +2,8 @@
 
 Rules for being cited by Claude, ChatGPT, Perplexity, and Google AI Overviews. Complements [anti-ai-rules.md](anti-ai-rules.md): human voice for detectors, answer-first structure for AI search.
 
+**Keyword foundation:** define the post's semantic kernel (head term, GEO questions) before drafting — see [semantic-kernel.md](../seo-content-optimization/semantic-kernel.md). GEO questions from the kernel become FAQ items and H2 answer leads.
+
 ## Answer-first
 
 **Under the title (no H2 yet):** 40–80 words that directly answer the post's main question.

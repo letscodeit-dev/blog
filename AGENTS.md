@@ -114,7 +114,7 @@ Use the **`blog-writing`** skill (`.cursor/skills/blog-writing/SKILL.md`):
 - Anti-AI detectors: `anti-ai-rules.md` + `scripts/validate-draft.mjs`
 - Image assets: `image-assets.md` + `scripts/validate-images.mjs`
 - LLM citation (ChatGPT, Perplexity, AI Overviews): `ai-citation.md`
-- SEO metadata only: `seo-content-optimization` skill + `.ai/seo-benchmarks.md`
+- SEO audit + metadata: `seo-content-optimization` skill (semantic kernel, title, description) + `.ai/seo-benchmarks.md`
 
 After adding a new published post, the **site** must redeploy or run slug sync so the post appears in listings and llms.txt.
 

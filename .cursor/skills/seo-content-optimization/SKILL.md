@@ -1,22 +1,25 @@
 ---
 name: seo-content-optimization
 description: >-
-  Optimizes Let's Code It blog post SEO metadata (title, description, frontmatter)
-  using category benchmarks. Use when improving CTR, rewriting meta descriptions,
-  analyzing Search Console performance, or editing .ai/seo-benchmarks.md. Does not
-  rewrite article body — use blog-writing skill for that.
+  SEO audit and metadata optimization for Let's Code It blog posts: extracts semantic
+  kernel (head term, secondary keywords, long-tail and GEO queries), then optimizes
+  title, description, and frontmatter using category benchmarks. Use for CTR recovery,
+  keyword mapping, Search Console analysis, semantic audits, or editing
+  .ai/seo-benchmarks.md. Does not rewrite article body — use blog-writing skill for that.
 ---
 
 # SEO content optimization — Let's Code It
 
-Data-driven metadata optimization for `posts/*.md` on letscodeit.dev. Does not hardcode benchmarks — read fresh every activation.
+Data-driven **semantic kernel extraction** and metadata optimization for `posts/*.md` on letscodeit.dev. Does not hardcode benchmarks — read fresh every activation.
 
 ## When this applies
 
-- Rewriting `title`, `description` in frontmatter
+- **SEO audit** — semantic kernel extraction, keyword gap analysis, cannibalization check
+- Rewriting `title`, `description`, `tags` in frontmatter
 - CTR recovery, SERP performance work
 - Updating `.ai/seo-benchmarks.md` after new GSC data
 - Cross-post metadata audit
+- GEO alignment check (FAQ ↔ long-tail questions, answer-first ↔ head term)
 
 ## Out of scope
 
@@ -29,9 +32,11 @@ Data-driven metadata optimization for `posts/*.md` on letscodeit.dev. Does not h
 
 1. Read [.ai/seo-benchmarks.md](../../../.ai/seo-benchmarks.md) — **never assume benchmarks from memory**
 2. Read [.ai/content-strategy.md](../../../.ai/content-strategy.md) for positioning
-3. Open target post; note `category` from frontmatter
-4. Find matching category section in seo-benchmarks.md
-5. If category not tracked: tell user and use cross-category principles
+3. Read [semantic-kernel.md](semantic-kernel.md) — extraction rules and output template
+4. Open target post; note `category` from frontmatter
+5. Find matching category section in seo-benchmarks.md
+6. If category not tracked: tell user and use cross-category principles
+7. Read `.cursor/skills/blog-writing/post-catalog.md` for cannibalization check
 
 ## Title rules
 
@@ -54,15 +59,32 @@ Data-driven metadata optimization for `posts/*.md` on letscodeit.dev. Does not h
 
 ## Workflow
 
-1. Read benchmarks + target post frontmatter
-2. Show current title, description, category benchmark
-3. Propose 3 title variants + 3 description variants
-4. For each variant: target query, trigger used, char count, why it beats current
-5. Wait for user selection
-6. Apply to frontmatter
-7. Self-check: sentence case, char counts
-8. Show diff
-9. Commit only if user asks: `seo: improve title and description for [slug]`
+### Phase 1 — Semantic kernel audit (always first)
+
+1. Read benchmarks + full target post (not only frontmatter)
+2. Extract semantic kernel per [semantic-kernel.md](semantic-kernel.md):
+   - Head term, intent, pillar/cluster
+   - Secondary terms, long-tail questions, entities, GEO questions
+   - Coverage map (✅ / ⚠️ / ❌) with section references
+3. Cannibalization check against `post-catalog.md`
+4. List **gaps** — missing H2, FAQ, table, or tag opportunities (recommendations only; body edits → blog-writing skill)
+5. Show kernel table to user; wait for confirmation or corrections
+
+### Phase 2 — Metadata optimization
+
+6. Show current title, description, tags, category benchmark
+7. Propose 3 title variants + 3 description variants (aligned to confirmed head term)
+8. For each variant: **target query** (= head or long-tail from kernel), trigger used, char count, why it beats current
+9. Propose `tags` update if secondary terms in kernel ≠ current tags
+10. Wait for user selection
+11. Apply to frontmatter
+12. Self-check: head term in title, sentence case, char counts, tags match kernel
+13. Show diff
+14. Commit only if user asks: `seo: improve title and description for [slug]`
+
+### Audit-only mode
+
+If user asks for SEO audit without metadata rewrite: deliver Phase 1 only (kernel table + gaps + cannibalization + metadata alignment flags).
 
 ## When user provides new GSC data
 
@@ -81,10 +103,15 @@ Data-driven metadata optimization for `posts/*.md` on letscodeit.dev. Does not h
 
 **May read:**
 
-- `posts/[slug].md` (target)
+- `posts/[slug].md` (target — full body for kernel extraction)
 - `.cursor/skills/blog-writing/post-catalog.md`
+- `.cursor/skills/blog-writing/ai-citation.md` (GEO alignment)
 
 **Writes (with approval):**
 
-- `posts/[slug].md` frontmatter only
+- `posts/[slug].md` frontmatter only (`title`, `description`, `tags`)
 - `.ai/seo-benchmarks.md`
+
+## Reference
+
+- [semantic-kernel.md](semantic-kernel.md) — head term, secondary/long-tail/GEO extraction, output templates, GSC rules
