@@ -12,21 +12,21 @@ coverImage: "/uploads/github-as-cms-markdown-nextjs/cover.svg"
 thumbnail: "/uploads/github-as-cms-markdown-nextjs/thumb.svg"
 ---
 
-We publish letscodeit.dev blog posts from a separate GitHub repository. The Next.js app fetches markdown at runtime with a one-hour cache, syncs slug metadata into Postgres on every build, and writes some assets back through the GitHub Contents API. There is no admin UI for long-form articles. Git is the editor.
+We publish *letscodeit.dev blog posts* from a separate *GitHub* repository. The *Next.js* app fetches markdown at runtime with a one-hour cache, syncs slug metadata into *Postgres* on every build, and writes some assets back through the *GitHub Contents API*. There is no admin UI for long-form articles. <u>Git is the editor.</u>
 
 ## Why we skipped a traditional CMS
 
 We have shipped blogs on other projects before. Some were fully custom. Others leaned on ready-made CMS products with their own admin UI, hosting line items, and migration stories we would rather forget. That history made the bar clear for letscodeit.dev: keep it simple, keep it free, and avoid setup that exists only to justify itself.
 
-Headless CMS platforms solve a different problem. They shine when you need relational content, editorial workflows, and preview URLs for non-technical authors. Our blog ships a few long articles per month. YAML frontmatter and a `posts/` folder are enough.
+*Headless CMS platforms* solve a different problem. They shine when you need relational content, editorial workflows, and preview URLs for non-technical authors. Our blog ships a few long articles per month. *YAML frontmatter* and a `posts/` folder are enough.
 
-The timing helped too. Right now you can spike an architecture quickly with an LLM in the loop. Vibe coding, if you like that label. We sketched alternatives in an afternoon: markdown inside the app repo, markdown in Postgres, a paid headless tier with another dashboard to learn. After a short research pass and a small prototype, the answer was boring in a good way. Put articles in a separate GitHub repository and let the Next.js app read them.
+The timing helped too. Right now you can spike an architecture quickly with an LLM in the loop. **Vibe coding**, if you like that label. We sketched alternatives in an afternoon: markdown inside the app repo, markdown in Postgres, a paid headless tier with another dashboard to learn. After a short research pass and a small prototype, the answer was boring in a good way. Put articles in a separate *GitHub* repository and let the *Next.js app* read them.
 
-We still wanted versioned markdown, plain diffs, and the freedom to edit in VS Code, Obsidian, or github.dev. That part did not change. What changed was how fast we could rule options out and land on this one.
+We still wanted versioned markdown, plain diffs, and the freedom to edit in *VS Code*, *Obsidian*, or *github.dev*. That part did not change. What changed was how fast we could rule options out and land on this one.
 
-Short notes on the site live in Postgres. They are tweet-length and change often. Blog posts are the opposite: slower cadence, heavier structure, and a writing flow that already lives in git. Storing that markdown in the application database felt wrong the first time we sketched the schema. We kept a `Post` model in Prisma early on and never used it for the public blog.
+Short notes on the site live in *Postgres*. They are tweet-length and change often. Blog posts are the opposite: slower cadence, heavier structure, and a writing flow that already lives in git. Storing that markdown in the application database felt wrong the first time we sketched the schema. We kept a `Post` model in Prisma early on and never used it for the public blog.
 
-We also did not want every typo fix to require redeploying the entire Next.js app. Runtime fetch from raw GitHub (or our CDN mirror) means content can update on cache expiry without a new app release. Listing pages and APIs still need a stable index of what exists. That is where the build step comes in.
+We also did not want every typo fix to require redeploying the entire *Next.js app*. Runtime fetch from raw *GitHub* (or our CDN mirror) means content can update on cache expiry without a new app release. Listing pages and APIs still need a stable index of what exists. That is where the build step comes in.
 
 ## Two repos, one product
 
@@ -97,7 +97,7 @@ await tx.blogPostSlug.upsert({
 });
 ```
 
-Why keep slugs in Postgres if markdown lives on GitHub? Three reasons we hit in practice.
+Why keep slugs in *Postgres* if markdown lives on GitHub? Three reasons we hit in practice.
 
 The like API checks `isPublishedBlogPostSlug()` before incrementing a counter. That should not require downloading every post body. Sitemap generation and category filters can trust the index. An app deploy also pins "what exists right now" even if runtime markdown cache is still warm from an older fetch.
 
@@ -107,13 +107,13 @@ The like API checks `isPublishedBlogPostSlug()` before incrementing a counter. T
 
 The first version was the obvious one. We pointed `CONTENT_REPO_URL` at `raw.githubusercontent.com` and it worked. Markdown loaded, images resolved, nothing mysterious. It also looked exactly like what it was: raw git hosting. URLs were long, the hostname screamed "implementation detail," and we are vain enough to care about that.
 
-So we added a proper deployment layer. The content repo connects to [Cloudflare Workers & Pages](https://developers.cloudflare.com/pages/): link the GitHub repository, pick a branch, and every push to `main` redeploys static files automatically. No separate build command for markdown. The repo *is* the site artifact. Each Pages build finishes in a few seconds for us right now, because there is nothing to compile, only static files to upload.
+So we added a proper deployment layer. The content repo connects to [Cloudflare Workers & Pages](https://developers.cloudflare.com/pages/): link the *GitHub* repository, pick a branch, and every push to `main` redeploys static files automatically. No separate build command for markdown. The repo *is* the site artifact. Each Pages build finishes in a few seconds for us right now, because there is nothing to compile, only static files to upload.
 
-Fair warning about the dashboard. Cloudflare groups Workers and Pages under one product name, and the UI does not make it obvious that you want a **Page** (static site from git), not a Worker (serverless script). We clicked the wrong mental model at least once 😆. Here is the path that actually worked for us.
+Fair warning about the dashboard. **Cloudflare** groups **Workers and Pages** under one product name, and the UI does not make it obvious that you want a **Page** (static site from git), not a *Worker* (serverless script). We clicked the wrong mental model at least once 😆. Here is the path that actually worked for us.
 
 ### Connect the repo to Cloudflare Pages
 
-**Step 1.** Open **Workers & Pages** in the Cloudflare sidebar, then click **Create application**.
+**Step 1.** Open **Workers & Pages** in the **Cloudflare** sidebar, then click **Create application**.
 
 ![Workers & Pages overview with Create application button](/uploads/github-as-cms-markdown-nextjs/figures/cloudflare-step-1-workers-pages.png)
 
@@ -133,7 +133,7 @@ If you get stuck, paste a screenshot into your coding agent and ask which button
 
 ![Cloudflare Pages custom domain cdn.letscodeit.dev active with SSL](/uploads/github-as-cms-markdown-nextjs/figures/cloudflare-custom-domains.png)
 
-That is the full Cloudflare setup for us. No extra access rules, no build plugins, no cache tricks beyond what Pages gives you for free. Static files in the repo are public on push. Markdown at `cdn.letscodeit.dev/posts/[slug].md`, images under `/uploads/`, all reachable without authentication. We want it that way. Crawlers and AI bots should be able to fetch plain content from a clean URL, not fight `raw.githubusercontent.com` or a dashboard-only origin. If you care about citation in ChatGPT, Perplexity, or Google AI Overviews, public CDN URLs are part of the stack. We wrote up what else matters in our [GEO field notes](/blog/generative-engine-optimization-what-i-tested).
+That is the full *Cloudflare* setup for us. No extra access rules, no build plugins, no cache tricks beyond what *Pages* gives you for free. Static files in the repo are public on push. Markdown at `cdn.letscodeit.dev/posts/[slug].md`, images under `/uploads/`, all reachable without authentication. We want it that way. Crawlers and AI bots should be able to fetch plain content from a clean URL, not fight `raw.githubusercontent.com` or a dashboard-only origin. If you care about citation in *ChatGPT*, *Perplexity*, or *Google AI Overviews*, public CDN URLs are part of the stack. We wrote up what else matters in our [GEO field notes](/blog/generative-engine-optimization-what-i-tested).
 
 ### Images in the same repo
 
@@ -148,7 +148,7 @@ thumbnail: "/uploads/token-economics/thumb.svg"
 ![Architecture diagram for GitHub as a CMS pipeline](/uploads/github-as-cms-markdown-nextjs/figures/cloudflare-step-1-workers-pages.png)
 ```
 
-Commit the SVG or PNG, push to `main`, and Cloudflare deploys it beside the article. The same path works in git, on `cdn.letscodeit.dev`, and in the Next.js renderer (`resolveBlogAssetUrl()` prefixes `/uploads/...` with `CONTENT_CDN_URL` in production). One folder per post, one path convention, no upload UI for blog art.
+Commit the SVG or PNG, push to `main`, and *Cloudflare* deploys it beside the article. The same path works in git, on `cdn.letscodeit.dev`, and in the *Next.js* renderer (`resolveBlogAssetUrl()` prefixes `/uploads/...` with `CONTENT_CDN_URL` in production). One folder per post, one path convention, no upload UI for blog art.
 
 Note images from the main site admin land in `uploads/notes/` through the GitHub API. Same repo, same CDN origin, different folder.
 
@@ -176,7 +176,7 @@ The CDN side of this stack is a few minutes of work once you know which Cloudfla
 
 [letscodeit.dev](https://letscodeit.dev) is a separate repository from this content repo. It fetches markdown from GitHub or `cdn.letscodeit.dev`, turns it into HTML, and wraps it in the editorial layout you see on `/blog` and `/blog/[slug]`.
 
-We built it as **server-side pages**, not a client bundle that fetches posts in the browser. Blog routes are React Server Components. The list page loads posts inside `BlogPostsSection` with `getAllPosts()`. Each article page is an `async` server component that resolves the slug, renders markdown to HTML, and outputs JSON-LD for search.
+We built it as **server-side pages**, not a client bundle that fetches posts in the browser. Blog routes are *React Server Components*. The list page loads posts inside `BlogPostsSection` with `getAllPosts()`. Each article page is an `async` server component that resolves the slug, renders markdown to HTML, and outputs JSON-LD for search.
 
 At deploy time, `generateStaticParams()` pre-builds a route for every published slug. Both `/blog` and `/blog/[slug]` export `revalidate = 3600`, so pages refresh on the server about once an hour without redeploying the app for every typo in markdown. Fetches from the content repo use the same one-hour cache (`unstable_cache` plus `fetch` with `revalidate: 3600`). A build step also syncs slugs into Postgres so likes and listings know which posts exist.
 
@@ -195,9 +195,9 @@ No headless CMS SDK. No MDX pipeline in the content repo. `gray-matter` plus `ma
 
 Almost all of this was vibe-coded in [Cursor](https://cursor.com/referral?code=3JFUY1BG5OKF) with agent mode. We started from the architecture sketch (git repo + CDN + Next reader) and iterated in the `letscodeit.dev` codebase. Most of the first working version landed with **Claude Opus 4.8** as the agent model. **Composer 2.5** (current as of writing this post) handles the same class of task well too: wire a server component, add slug sync, fix cache tags. Turn on Auto mode and keep talking to it.
 
-You do not need an enterprise budget to try this workflow. Cursor has a free **Hobby** tier that is enough to spike an architecture like ours. **Pro** was **$16/month on annual billing** when we wrote this (June 2026). Check [cursor.com](https://cursor.com/referral?code=3JFUY1BG5OKF) for current pricing before you commit.
+You do not need an enterprise budget to try this workflow. *Cursor* has a free **Hobby** tier that is enough to spike an architecture like ours. **Pro** was **$16/month on annual billing** when we wrote this (June 2026). Check [cursor.com](https://cursor.com/referral?code=3JFUY1BG5OKF) for current pricing before you commit.
 
-The split still matters. Content PRs stay in this repo. App PRs stay in letscodeit.dev. The agent is good at both, as long as you point it at the right repository.
+The split still matters. Content PRs stay in this repo. App PRs stay in **letscodeit.dev**. The agent is good at both, as long as you point it at the right repository.
 
 ## Writing back to GitHub
 
@@ -205,7 +205,7 @@ The blog repo is not read-only. When someone attaches an image to a short note i
 
 If `GITHUB_CONTENT_DIRECT_PUSH` is set, the client PUTs straight to `main`. On our protected default branch, the flow is heavier: create a short-lived branch, commit the file, open a pull request, wait until GitHub marks it mergeable, then squash-merge. The PAT needs permission to merge or bypass branch protection.
 
-Uploads validate MIME type, size (5 MB cap), and magic bytes before anything hits the API. We chose GitHub over S3 so assets stay next to markdown with normal git history.
+Uploads validate *MIME type*, size (5 MB cap), and magic bytes before anything hits the API. We chose *GitHub* over *S3* so assets stay next to markdown with normal git history.
 
 ## What we chose and what we skipped
 
@@ -230,9 +230,9 @@ Uploads validate MIME type, size (5 MB cap), and magic bytes before anything hit
 
 **Publish latency.** Markdown bodies refresh within about an hour of cache expiry. New slugs land after the next letscodeit.dev deploy. True instant publish would need a GitHub webhook calling `revalidateTag('blog-posts')`. We have not shipped that yet.
 
-**No CMS-style WYSIWYG editor.** The correct acronym is WYSIWYG (What You See Is What You Get). This stack does not ship a web admin with drag-and-drop blocks. You edit markdown in git and live with PRs. The gap is smaller than it sounds if you already write in Cursor: open any `posts/*.md` file and use the built-in Markdown preview (or side-by-side preview) to see formatted output while you type. It will not replace Notion. You are still editing markdown files, yet you are not staring at raw `#` headers blind either. If you need a non-technical author UI or component blocks, look elsewhere. For us the missing piece was a browser CMS, not a preview pane.
+**No CMS-style WYSIWYG editor.** The correct acronym is *WYSIWYG* (What You See Is What You Get). This stack does not ship a web admin with drag-and-drop blocks. You edit markdown in git and live with PRs. The gap is smaller than it sounds if you already write in *Cursor*: open any `posts/*.md` file and use the built-in Markdown preview (or side-by-side preview) to see formatted output while you type. It will not replace *Notion*. You are still editing markdown files, yet you are not staring at raw `#` headers blind either. If you need a non-technical author UI or component blocks, look elsewhere. For us the missing piece was a browser CMS, not a preview pane.
 
-**Separate repository.** Some teams treat "open another repo to publish" as friction. We treat it as a feature. Content does not mingle with application code, CI, or dependency bumps. A text editor who never touches Next.js can still work in the content repo alone. Grant them write access on `letscodeit-dev/blog`, keep letscodeit.dev restricted to engineers, and reviews stay scoped: prose PRs here, app PRs there.
+**Separate repository.** Some teams treat "open another repo to publish" as friction. We treat it as a feature. Content does not mingle with application code, CI, or dependency bumps. A text editor who never touches *Next.js* can still work in the content repo alone. Grant them write access on `letscodeit-dev/blog`, keep letscodeit.dev restricted to engineers, and reviews stay scoped: prose PRs here, app PRs there.
 
 **Draft handling.** `status: draft` hides a post from public parsers, but slug sync still records the row with a draft status in the database. Know that before sharing a draft filename.
 
@@ -252,19 +252,19 @@ A webhook from this repo to letscodeit.dev is the obvious upgrade: push to `main
 
 ### Can you use GitHub as a CMS for a Next.js blog?
 
-Yes. Store articles as markdown files in a separate GitHub repo with YAML frontmatter. The Next.js app fetches those files at runtime (cached, typically about one hour), parses them server-side with `gray-matter` and `markdown-it`, and renders HTML. Git replaces the CMS admin UI: you edit in VS Code or github.dev and merge PRs. A build step syncs slug metadata into a database for listings and likes.
+Yes. Store articles as markdown files in a separate *GitHub repo with YAML frontmatter*. The *Next.js app* fetches those files at runtime (cached, typically about one hour), parses them server-side with `gray-matter` and `markdown-it`, and renders HTML. *Git* replaces the CMS admin UI: you edit in VS Code or github.dev and merge PRs. A build step syncs slug metadata into a database for listings and likes.
 
 ### How do you fetch markdown from GitHub without hitting API rate limits?
 
-Do not call the GitHub API on every page view. Point the app at `raw.githubusercontent.com` or a CDN mirror (for example Cloudflare Pages on the content repo). Fetch markdown over HTTP with Next.js `revalidate` and `unstable_cache` (we use 3600 seconds). Keep a lightweight slug index in Postgres, populated at build time via a sync script, so listings and APIs never need to download every post body.
+Do not call the GitHub API on every page view. Point the app at `raw.githubusercontent.com` or a CDN mirror (for example Cloudflare Pages on the content repo). Fetch markdown over HTTP with *Next.js* `revalidate` and `unstable_cache` (we use 3600 seconds). Keep a lightweight slug index in Postgres, populated at build time via a sync script, so listings and APIs never need to download every post body.
 
 ### When does GitHub-as-CMS make sense vs Contentful or Sanity?
 
-GitHub-as-CMS fits solo developers or small teams already in git, publishing a few long articles per month where markdown and frontmatter are enough. Skip Contentful or Sanity when you do not need relational content, non-technical WYSIWYG editors, or complex approval workflows. Headless CMS products earn their cost when editors are not developers and you need preview URLs and structured fields across many content types.
+GitHub-as-CMS fits solo developers or small teams already in git, publishing a few long articles per month where markdown and frontmatter are enough. Skip *Contentful* or Sanity when you do not need relational content, non-technical *WYSIWYG* editors, or complex approval workflows. *Headless CMS* products earn their cost when editors are not developers and you need preview URLs and structured fields across many content types.
 
 ### Why sync slugs to Postgres if content lives on GitHub?
 
-Markdown bodies stay on GitHub or the CDN, but the app still needs a cheap index of what exists. Postgres rows power blog listings, category filters, sitemap generation, and like counters without fetching every `.md` file per request. Build-time sync also pins "published right now" even when runtime markdown cache is still warm from an older fetch.
+Markdown bodies stay on *GitHub* or the CDN, but the app still needs a cheap index of what exists. Postgres rows power blog listings, category filters, sitemap generation, and like counters without fetching every `.md` file per request. Build-time sync also pins "published right now" even when runtime markdown cache is still warm from an older fetch.
 
 ### How long until a new post appears after merge to main?
 
@@ -276,4 +276,4 @@ Add it up and the blog stack is **zero-cost** on the tiers we use. GitHub hosts 
 
 That last point matters. **Blog posts are static.** Markdown and images live in git and on the CDN. There is no `articles` table with HTML blobs, no migration every time you add a field to frontmatter. The words themselves are files, not rows.
 
-For a developer blog, that is a zero-cost pipeline: git for source, Cloudflare for public assets, Vercel for the reader. The trade is intentional simplicity. No browser CMS, no bundled DAM, no editorial workflow engine. In return you get clean URLs, public files for crawlers, and a hard line between "the site" and "the words." If that sounds like a win, a markdown repo plus a thin Next.js reader is a boring architecture in the best sense. This post is the map we wish we had on day one.
+For a developer blog, that is a zero-cost pipeline: git for source, **Cloudflare** for public assets, Vercel for the reader. The trade is intentional simplicity. No browser CMS, no bundled DAM, no editorial workflow engine. In return you get clean URLs, public files for crawlers, and a hard line between "the site" and "the words." If that sounds like a win, a markdown repo plus a thin *Next.js* reader is a boring architecture in the best sense. This post is the map we wish we had on day one.
