@@ -76,7 +76,9 @@ Internal links in markdown use **`/blog/[slug]`** (frontmatter slug), not the fi
 ```
 posts/*.md          — article + YAML frontmatter (filename may differ from slug)
 uploads/[name]/     — cover.svg, thumb.svg, figures/ (folder name is conventional, not enforced)
-.ai/                — content strategy and SEO benchmarks for this blog
+.ai/                — content strategy, topic backlog, article outlines
+.ai/content-topics.md
+.ai/content-outlines/   — per-post outlines (e.g. github-as-cms.md)
 .cursor/skills/     — blog-writing and seo-content-optimization skills
 ```
 

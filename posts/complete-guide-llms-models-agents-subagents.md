@@ -7,7 +7,7 @@ description: "LLM, model, agent, and subagent mean different things. Comparison 
 category: "AI Foundations"
 tags: ["ai", "llm", "agents", "subagents", "tool-use", "mcp", "workflows", "prompt-engineering"]
 status: "published"
-featured: true
+featured: false
 coverImage: "/uploads/complete-guide-llms-models-agents-subagents/cover.svg"
 thumbnail: "/uploads/complete-guide-llms-models-agents-subagents/thumb.svg"
 ---

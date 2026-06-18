@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 640" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="title-github-cms-cover">
+  <title id="title-github-cms-cover">GitHub as a CMS - markdown repo, CDN, Next.js reader</title>
+  <defs>
+    <marker id="arrow-cms" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#1e1f23" fill-opacity="0.7"/>
+    </marker>
+    <marker id="arrow-cms-accent" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#f54e00"/>
+    </marker>
+  </defs>
+  <rect width="1920" height="640" fill="#ffffff"/>
+
+  <g stroke="#1e1f23" stroke-opacity="0.08" stroke-width="1.2">
+    <line x1="0" y1="128" x2="1920" y2="128"/>
+    <line x1="0" y1="256" x2="1920" y2="256"/>
+    <line x1="0" y1="384" x2="1920" y2="384"/>
+    <line x1="0" y1="512" x2="1920" y2="512"/>
+  </g>
+
+  <g>
+    <rect x="80" y="148" width="520" height="400" rx="16" fill="#eeefe9" stroke="#1e1f23" stroke-opacity="0.12"/>
+    <text x="108" y="188" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="14" font-weight="700" letter-spacing="1.6" fill="#1e1f23" fill-opacity="0.85">GITHUB / blog repo</text>
+    <rect x="108" y="208" width="464" height="40" rx="8" fill="#1e1f23"/>
+    <text x="124" y="234" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13" font-weight="700" fill="#fdfdf8">letscodeit-dev/blog</text>
+    <text x="108" y="276" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="700" letter-spacing="1.2" fill="#1e1f23" fill-opacity="0.5">posts/</text>
+    <g font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="12" fill="#1e1f23" fill-opacity="0.7">
+      <rect x="108" y="288" width="464" height="32" rx="6" fill="#fdfdf8" stroke="#1e1f23" stroke-opacity="0.08"/>
+      <text x="124" y="310">token-economics.md</text>
+      <rect x="108" y="328" width="464" height="32" rx="6" fill="#fdfdf8" stroke="#1e1f23" stroke-opacity="0.08"/>
+      <text x="124" y="350">geo-generative-engine-optimization.md</text>
+      <rect x="108" y="368" width="464" height="32" rx="6" fill="#f54e00" fill-opacity="0.12" stroke="#f54e00" stroke-opacity="0.45"/>
+      <text x="124" y="390" fill="#f54e00" font-weight="700">github-as-cms-markdown-nextjs.md</text>
+    </g>
+    <text x="108" y="428" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="700" letter-spacing="1.2" fill="#1e1f23" fill-opacity="0.5">uploads/</text>
+    <rect x="108" y="440" width="200" height="28" rx="6" fill="#1e1f23" fill-opacity="0.08"/>
+    <text x="124" y="459" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" fill="#1e1f23" fill-opacity="0.55">cover.svg + thumb.svg</text>
+    <text x="108" y="508" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" fill="#1e1f23" fill-opacity="0.45">git push = source of truth</text>
+  </g>
+
+  <path d="M 620 348 L 680 348" stroke="#1e1f23" stroke-opacity="0.45" stroke-width="2.5" fill="none" marker-end="url(#arrow-cms)"/>
+
+  <g>
+    <rect x="700" y="148" width="520" height="400" rx="16" fill="#eeefe9" stroke="#1e1f23" stroke-opacity="0.12"/>
+    <text x="728" y="188" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="14" font-weight="700" letter-spacing="1.6" fill="#1e1f23" fill-opacity="0.85">CLOUDFLARE PAGES / CDN</text>
+    <rect x="728" y="212" width="464" height="56" rx="10" fill="#fdfdf8" stroke="#1e1f23" stroke-opacity="0.12"/>
+    <text x="744" y="246" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="16" font-weight="700" fill="#f54e00">cdn.letscodeit.dev</text>
+    <rect x="1080" y="222" width="96" height="36" rx="8" fill="#f54e00"/>
+    <text x="1128" y="245" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="14" font-weight="700" fill="#fdfdf8" text-anchor="middle">$0</text>
+    <g font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="12" fill="#1e1f23" fill-opacity="0.65">
+      <text x="728" y="300" font-weight="700" fill-opacity="0.5" letter-spacing="1">ENDPOINTS</text>
+      <text x="728" y="328">/posts/[slug].md</text>
+      <text x="728" y="356">/uploads/.../cover.svg</text>
+      <text x="728" y="384">auto-deploy on main</text>
+      <text x="728" y="412">SSL + edge cache + public</text>
+    </g>
+    <rect x="728" y="440" width="280" height="36" rx="8" fill="#1e1f23" fill-opacity="0.06" stroke="#1e1f23" stroke-opacity="0.1"/>
+    <text x="744" y="463" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" fill="#1e1f23" fill-opacity="0.5">free tier, no CMS bill</text>
+  </g>
+
+  <path d="M 1240 348 L 1300 348" stroke="#f54e00" stroke-width="2.5" fill="none" marker-end="url(#arrow-cms-accent)"/>
+
+  <g>
+    <rect x="1320" y="148" width="520" height="400" rx="16" fill="#eeefe9" stroke="#1e1f23" stroke-opacity="0.12"/>
+    <text x="1348" y="188" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="14" font-weight="700" letter-spacing="1.6" fill="#1e1f23" fill-opacity="0.85">NEXT.JS / VERCEL</text>
+    <rect x="1348" y="212" width="464" height="48" rx="10" fill="#1e1f23"/>
+    <text x="1364" y="242" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="15" font-weight="700" fill="#fdfdf8">letscodeit.dev/blog/[slug]</text>
+    <rect x="1348" y="280" width="464" height="120" rx="10" fill="#fdfdf8" stroke="#1e1f23" stroke-opacity="0.12"/>
+    <text x="1364" y="308" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="700" fill="#1e1f23" fill-opacity="0.45">SERVER RENDER</text>
+    <text x="1364" y="332" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="12" fill="#1e1f23" fill-opacity="0.65">gray-matter + markdown-it</text>
+    <text x="1364" y="356" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="12" fill="#1e1f23" fill-opacity="0.65">revalidate: 3600</text>
+    <text x="1364" y="380" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="12" fill="#1e1f23" fill-opacity="0.65">generateStaticParams()</text>
+    <g font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11">
+      <rect x="1348" y="420" width="140" height="32" rx="8" fill="#bfc1b7"/>
+      <text x="1418" y="441" fill="#1e1f23" text-anchor="middle" font-weight="700">Hobby $0</text>
+      <rect x="1500" y="420" width="160" height="32" rx="8" fill="#1e1f23" fill-opacity="0.08"/>
+      <text x="1580" y="441" fill="#1e1f23" fill-opacity="0.55" text-anchor="middle">static articles</text>
+    </g>
+    <text x="1348" y="508" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" fill="#1e1f23" fill-opacity="0.45">no article database</text>
+  </g>
+
+  <g font-family="ui-monospace,SFMono-Regular,Menlo,monospace" letter-spacing="2.4" fill="#1e1f23">
+    <text x="80" y="92" font-size="18" font-weight="700" fill-opacity="0.9">FIG. 01 / INDUSTRY / GITHUB AS A CMS</text>
+    <text x="80" y="118" font-size="13" fill-opacity="0.45" letter-spacing="1.6">markdown in git, CDN delivery, Next.js reader, zero-cost blog stack</text>
+  </g>
+  <g font-family="ui-monospace,SFMono-Regular,Menlo,monospace" letter-spacing="1.6" fill="#1e1f23">
+    <text x="80" y="600" font-size="13" font-weight="700" fill-opacity="0.7">GIT / CLOUDFLARE / VERCEL / MARKDOWN / STATIC</text>
+    <text x="1840" y="600" font-size="13" text-anchor="end" fill-opacity="0.4">letscodeit.dev</text>
+  </g>
+</svg>
