@@ -107,7 +107,7 @@ The like API checks `isPublishedBlogPostSlug()` before incrementing a counter. T
 
 The first version was the obvious one. We pointed `CONTENT_REPO_URL` at `raw.githubusercontent.com` and it worked. Markdown loaded, images resolved, nothing mysterious. It also looked exactly like what it was: raw git hosting. URLs were long, the hostname screamed "implementation detail," and we are vain enough to care about that.
 
-So we added a proper deployment layer. The content repo connects to [Cloudflare Workers & Pages](https://developers.cloudflare.com/pages/): link the GitHub repository, pick a branch, and every push to `main` redeploys static files automatically. No separate build command for markdown. The repo *is* the site artifact.
+So we added a proper deployment layer. The content repo connects to [Cloudflare Workers & Pages](https://developers.cloudflare.com/pages/): link the GitHub repository, pick a branch, and every push to `main` redeploys static files automatically. No separate build command for markdown. The repo *is* the site artifact. Each Pages build finishes in a few seconds for us right now, because there is nothing to compile, only static files to upload.
 
 Fair warning about the dashboard. Cloudflare groups Workers and Pages under one product name, and the UI does not make it obvious that you want a **Page** (static site from git), not a Worker (serverless script). We clicked the wrong mental model at least once 😆. Here is the path that actually worked for us.
 
@@ -158,7 +158,7 @@ We picked Cloudflare for the content repo because it stacks several jobs we did 
 
 | Benefit | What it means for a markdown repo |
 | --- | --- |
-| **Git auto-deploy** | Push to `main` → new static build. No Jenkins, no "sync assets" script. |
+| **Git auto-deploy** | Push to `main` → static build in a few seconds (our repo today). No Jenkins, no "sync assets" script. |
 | **Global CDN** | Files are served from edge nodes close to the reader (or the bot). |
 | **Edge caching** | Repeat requests for `/posts/*.md` and `/uploads/*` hit cache instead of your origin every time. |
 | **Free SSL** | Custom domain + HTTPS without managing certificates. |
