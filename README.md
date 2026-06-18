@@ -9,7 +9,7 @@ Articles, tutorials, and guides from [letscodeit.dev](https://letscodeit.dev).
 ```
 posts/          — Markdown articles with frontmatter metadata
 uploads/        — Cover images and thumbnails for each post
-.ai/            — Content strategy and SEO benchmarks
+.ai/            — Content strategy, topic backlog, article outlines
 .cursor/skills/ — blog-writing and seo-content-optimization skills
 ```
 

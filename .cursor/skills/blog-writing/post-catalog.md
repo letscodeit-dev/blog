@@ -9,6 +9,7 @@ Use these slugs for `/blog/[slug]` links. Verify slug matches frontmatter before
 | `ai-llm-glossary-terms-every-developer-should-know` | AI & LLM Glossary | AI Foundations | definitions, RAG, embeddings, RLHF |
 | `anthropic-academy-guide-free-ai-courses` | Anthropic Academy: free Claude courses reviewed (2026) | AI Foundations | Claude learning, MCP courses, free training |
 | `why-ai-wont-replace-developers` | Why AI Won't Replace Developers | Industry | developer career, AI hype, real project experience |
+| `github-as-cms-markdown-nextjs` | We skipped Contentful: GitHub as a CMS for our Next.js blog | Industry | GitHub CMS, markdown repo, Next.js architecture, Cloudflare CDN |
 | `generative-engine-optimization-what-i-tested` | What GEO is and what actually gets you cited by chatbots | AI Foundations | GEO, llms.txt, AI citation, Perplexity, ChatGPT |
 
 **Categories in use:** `AI Foundations`, `Industry`
