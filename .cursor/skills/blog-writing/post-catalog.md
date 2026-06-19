@@ -11,7 +11,8 @@ Use these slugs for `/blog/[slug]` links. Verify slug matches frontmatter before
 | `why-ai-wont-replace-developers` | Why AI Won't Replace Developers | Industry | developer career, AI hype, real project experience |
 | `github-as-cms-markdown-nextjs` | We skipped Contentful: GitHub as a CMS for our Next.js blog | Industry | GitHub CMS, markdown repo, Next.js architecture, Cloudflare CDN |
 | `generative-engine-optimization-what-i-tested` | What GEO is and what actually gets you cited by chatbots | AI Foundations | GEO, llms.txt, AI citation, Perplexity, ChatGPT |
+| `solo-founder-vs-co-founder-mvp` | Solo Founder vs Co-Founder: Can You Build an MVP Alone? | Startups | solo founder, co-founder, MVP, partnership, vibe coding, Cursor, contractors |
 
-**Categories in use:** `AI Foundations`, `Industry`
+**Categories in use:** `AI Foundations`, `Industry`, `Startups`
 
 **Canonical URL pattern:** `https://letscodeit.dev/blog/[slug]`

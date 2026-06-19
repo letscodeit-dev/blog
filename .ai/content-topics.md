@@ -138,6 +138,22 @@ Honest write-up of what we built and explicit out-of-scope boundaries.
 
 ---
 
+## Cluster 9 — Startups & shipping
+
+Practical guides for founders who ship — idea validation, founder expertise, team, stack choices, solo vs co-founder, and AI-assisted building done right. Ground in real MVP decisions (e.g. this site's Next.js + GitHub-as-CMS stack) where possible.
+
+| Format | Title | Angle |
+| --- | --- | --- |
+| Blog | **How to start a startup without chasing the dream blind** | Work the idea before you code: problem/solution fit, TAM sanity checks, early signals; monetization paths (SaaS, usage, marketplace, services) and pick criteria; read the idea through an investor lens (market, moat, unit economics, team) — when to pursue, pivot, or kill; anti-patterns: building because it feels cool |
+| Blog | **Founder expertise and building your first team** | What expertise the founder must own (domain, customer, product judgment) vs what to hire or contract out; credibility gap investors notice; when to make first hires — employee vs contractor, generalist vs specialist; how to evaluate early teammates (skills, pace, alignment); light management at MVP stage: goals, feedback, avoiding premature hierarchy; link forward to solo vs co-founder decision |
+| Blog | **What stack to pick when you need an MVP fast** | Decision matrix: time-to-ship, hiring pool, hosting cost, escape hatches; concrete stack for a content/product site vs SaaS vs mobile; what we'd pick today and what we'd defer |
+| Blog | **Solo founder vs co-founder: can you do everything yourself?** — [published](https://letscodeit.dev/blog/solo-founder-vs-co-founder-mvp) | Outline: [content-outlines/solo-founder-vs-co-founder.md](./content-outlines/solo-founder-vs-co-founder.md). Experience-backed: solo vs partner, vibe-coding debt, co-founder buyout stories, 30-min audit |
+| Blog | **Vibe coding vs vibe engineering** | Why prompt-and-ship without architecture breaks at scale; what vibe engineering adds — boundaries, tests, deployability, observability; when vibe coding is fine (throwaway prototype) vs when you need engineering discipline; tie to AI coding tools on a real repo |
+
+**Source material:** shipping letscodeit.dev (Next.js 15, content repo, Vercel), editorial workflow in Cluster 5; no dedicated pattern doc yet — opinion + guide format.
+
+---
+
 ## First-month plan
 
 One strong blog post per week; 3–4 notes per week in the same cluster.
@@ -156,9 +172,14 @@ One strong blog post per week; 3–4 notes per week in the same cluster.
 | Topic | Status |
 | --- | --- |
 | **GitHub as a CMS** | published — [letscodeit.dev/blog/github-as-cms-markdown-nextjs](https://letscodeit.dev/blog/github-as-cms-markdown-nextjs) |
+| **Solo founder vs co-founder** | published — [letscodeit.dev/blog/solo-founder-vs-co-founder-mvp](https://letscodeit.dev/blog/solo-founder-vs-co-founder-mvp) · [`posts/solo-founder-vs-co-founder.md`](../posts/solo-founder-vs-co-founder.md) |
 | Anchor 1 — blog + notes split | backlog |
 | Anchor 2 — synthetic social proof | backlog |
 | Anchor 3 — instant navigation | backlog |
 | All other cluster topics | backlog |
+| Cluster 9 — MVP stack for startups | backlog |
+| Cluster 9 — How to start a startup (idea, monetization, investor lens) | backlog |
+| Cluster 9 — Founder expertise and first team | backlog |
+| Cluster 9 — Vibe coding vs vibe engineering | backlog |
 
 Update this table when a post is drafted (`draft`) or published (`published` + link to `/blog/[slug]`).

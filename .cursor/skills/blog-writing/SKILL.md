@@ -148,7 +148,7 @@ slug: "url-slug"
 canonical: "https://letscodeit.dev/blog/url-slug"
 publishedAt: "YYYY-MM-DD"
 description: "130-160 chars. Benefit-first, no clickbait."
-category: "AI Foundations"   # or "Industry"
+category: "AI Foundations"   # or "Industry" or "Startups"
 tags: ["ai", "topic-tag"]
 status: "published"            # or "draft"
 featured: false
