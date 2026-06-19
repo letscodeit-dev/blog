@@ -7,7 +7,7 @@
 
 letscodeit.dev blog = **plain-English AI/dev education** for practitioners. Anti-hype, experiment-backed, honest about limits. Not a product catalog.
 
-**Categories:** `AI Foundations`, `Industry`
+**Categories:** `AI Foundations`, `Industry`, `Startups`
 
 ## Content patterns (validated in-repo)
 
@@ -26,8 +26,11 @@ letscodeit.dev blog = **plain-English AI/dev education** for practitioners. Anti
 | LLM fundamentals | complete-guide, ai-llm-glossary, token-economics |
 | AI career / industry | why-ai-wont-replace-developers |
 | Learning paths | anthropic-academy |
+| Startups & shipping | [solo-founder-vs-co-founder-mvp](https://letscodeit.dev/blog/solo-founder-vs-co-founder-mvp) published; Cluster 9 backlog in [content-topics.md](./content-topics.md) |
 
 When writing a new post, link into the nearest pillar. Avoid two posts competing for the same head term without a clear angle difference.
+
+**Startups category:** founder decisions (solo vs co-founder, stack, team, vibe coding). Experience-backed opinion + tables/FAQ OK on long posts. Cross-link to `Industry` (GitHub CMS, AI tools) and `AI Foundations` (LLM/agent context) where relevant — do not cannibalize head terms.
 
 ## AI-tool citation rules (Claude, ChatGPT, Perplexity, Google AI Overviews)
 
@@ -76,6 +79,13 @@ Blog content is consumed by LLMs through the **letscodeit.dev** site, not only H
 - MCP setup walkthrough (hands-on)
 - Token budget for multilingual products
 - Evaluating AI coding tools on real repos
+- **Startups:** how to start — idea validation, monetization, investor lens
+- **Startups:** founder expertise, hiring, and managing the first team
+- **Startups:** stack for a fast MVP (decision matrix + concrete picks)
+- **Startups:** solo founder vs co-founder
+- **Startups:** vibe coding vs vibe engineering
+
+Full backlog: [.ai/content-topics.md](./content-topics.md) — Cluster 9.
 
 ## Anti-patterns (all categories)
 

@@ -41,6 +41,23 @@
 - Shorter posts OK (600–1200 words)
 - One strong conclusion, no hedge-everything tone
 
+### Startups
+
+| Metric | Value | Post |
+|--------|-------|------|
+| Reference depth | ~4000 words, tables + FAQ + self-audit | solo-founder-vs-co-founder-mvp |
+| Reference tone | experience-backed (co-founder + contractor), balanced solo/partner | solo-founder-vs-co-founder-mvp |
+| Target description CTR | TBD — fill from GSC | |
+
+**Winning formula notes:**
+
+- Head term: solo founder vs co-founder (or close variant in title + opening paragraph)
+- Description must mention artifacts: tables, checklist/audit, FAQ — not only author bio
+- Personal stories OK if tied to decision framework (not product pitch)
+- Mention AI coding tools only with caveats (vibe-coding debt, experience filter)
+- 2–5 internal links; cross-link Industry/AI Foundations posts, do not duplicate their head terms
+- FAQ phrased as real founder searches (Reddit, YC forums style)
+
 ## Anti-patterns (all categories)
 
 - "Complete", "Comprehensive", "Ultimate", "Definitive" in title
@@ -52,3 +69,5 @@
 ## Update history
 
 - June 2026: initial template created (no GSC baseline yet — fill when data available)
+- June 2026: added **Startups** category benchmark (anchor post: solo-founder-vs-co-founder-mvp)
+- 2026-06-20: **solo-founder-vs-co-founder-mvp** published (Startups)

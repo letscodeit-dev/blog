@@ -92,7 +92,7 @@ slug: "public-url-slug"            # path: /blog/[slug]; may differ from filenam
 canonical: "https://letscodeit.dev/blog/public-url-slug"  # must match slug; used for SEO + OG
 publishedAt: "YYYY-MM-DD"
 description: "130-160 chars"        # llms.txt, OG, listings
-category: "AI Foundations"          # or "Industry"
+category: "AI Foundations"          # or "Industry" or "Startups"
 tags: ["ai", "..."]
 status: "published"                 # "draft" = hidden from site + llms.txt
 featured: false
