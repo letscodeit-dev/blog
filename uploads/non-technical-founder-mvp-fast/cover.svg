@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 640" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="title-mvp-cover">
+  <title id="title-mvp-cover">Vibe coding MVP stack GitHub Cursor Next.js Supabase Vercel</title>
+  <defs>
+    <marker id="arrow-mvp" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#1e1f23" fill-opacity="0.55"/>
+    </marker>
+    <marker id="arrow-mvp-accent" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#f54e00"/>
+    </marker>
+  </defs>
+  <rect width="1920" height="640" fill="#ffffff"/>
+
+  <g stroke="#1e1f23" stroke-opacity="0.06" stroke-width="1.2">
+    <line x1="0" y1="160" x2="1920" y2="160"/>
+    <line x1="0" y1="320" x2="1920" y2="320"/>
+    <line x1="0" y1="480" x2="1920" y2="480"/>
+  </g>
+
+  <g font-family="ui-monospace,SFMono-Regular,Menlo,monospace" letter-spacing="2.4" fill="#1e1f23">
+    <text x="80" y="92" font-size="18" font-weight="700" fill-opacity="0.9">FIG. 01 / STARTUPS / VIBE CODING</text>
+    <text x="80" y="118" font-size="13" fill-opacity="0.45" letter-spacing="1.6">launch an MVP without a developer - solo founder playbook</text>
+  </g>
+
+  <rect x="80" y="160" width="1760" height="380" rx="20" fill="#eeefe9" stroke="#1e1f23" stroke-opacity="0.1"/>
+
+  <!-- pipeline steps -->
+  <g font-family="ui-monospace,SFMono-Regular,Menlo,monospace" fill="#1e1f23">
+    <rect x="120" y="220" width="260" height="140" rx="12" fill="#fdfdf8" stroke="#1e1f23" stroke-opacity="0.15"/>
+    <text x="140" y="252" font-size="11" font-weight="700" fill-opacity="0.45">STEP 1</text>
+    <text x="140" y="286" font-size="18" font-weight="700">GitHub</text>
+    <text x="140" y="316" font-size="11" fill-opacity="0.5">repo + git push</text>
+    <text x="140" y="338" font-size="10" fill-opacity="0.4">new account, new repo</text>
+
+    <rect x="420" y="220" width="260" height="140" rx="12" fill="#fdfdf8" stroke="#1e1f23" stroke-opacity="0.15"/>
+    <text x="440" y="252" font-size="11" font-weight="700" fill-opacity="0.45">STEP 2</text>
+    <text x="440" y="286" font-size="18" font-weight="700">Cursor</text>
+    <text x="440" y="316" font-size="11" fill-opacity="0.5">AI agent edits code</text>
+    <text x="440" y="338" font-size="10" fill-opacity="0.4">describe, do not type</text>
+
+    <rect x="720" y="220" width="260" height="140" rx="12" fill="#fdfdf8" stroke="#1e1f23" stroke-opacity="0.15"/>
+    <text x="740" y="252" font-size="11" font-weight="700" fill-opacity="0.45">STEP 3-4</text>
+    <text x="740" y="286" font-size="18" font-weight="700">Next.js</text>
+    <text x="740" y="316" font-size="11" fill-opacity="0.5">web MVP scaffold</text>
+    <text x="740" y="338" font-size="10" fill-opacity="0.4">or mobile via agent</text>
+
+    <rect x="1020" y="220" width="260" height="140" rx="12" fill="#fdfdf8" stroke="#1e1f23" stroke-opacity="0.15"/>
+    <text x="1040" y="252" font-size="11" font-weight="700" fill-opacity="0.45">STEP 5</text>
+    <text x="1040" y="286" font-size="18" font-weight="700">Supabase</text>
+    <text x="1040" y="316" font-size="11" fill-opacity="0.5">data + auth + files</text>
+    <text x="1040" y="338" font-size="10" fill-opacity="0.4">free tier to start</text>
+
+    <rect x="1320" y="220" width="280" height="140" rx="12" fill="#fdfdf8" stroke="#f54e00" stroke-opacity="0.55"/>
+    <text x="1340" y="252" font-size="11" font-weight="700" fill="#f54e00">STEP 6</text>
+    <text x="1340" y="286" font-size="18" font-weight="700" fill="#f54e00">Vercel</text>
+    <text x="1340" y="316" font-size="11" fill-opacity="0.55">import from GitHub</text>
+    <text x="1340" y="338" font-size="10" fill-opacity="0.45">auto deploy on push</text>
+
+    <path d="M 380 290 L 420 290" stroke="#1e1f23" stroke-opacity="0.35" stroke-width="2.5" fill="none" marker-end="url(#arrow-mvp)"/>
+    <path d="M 680 290 L 720 290" stroke="#1e1f23" stroke-opacity="0.35" stroke-width="2.5" fill="none" marker-end="url(#arrow-mvp)"/>
+    <path d="M 980 290 L 1020 290" stroke="#1e1f23" stroke-opacity="0.35" stroke-width="2.5" fill="none" marker-end="url(#arrow-mvp)"/>
+    <path d="M 1280 290 L 1320 290" stroke="#f54e00" stroke-opacity="0.65" stroke-width="2.5" fill="none" marker-end="url(#arrow-mvp-accent)"/>
+
+  </g>
+
+  <!-- solo founder + CI/CD footer -->
+  <g font-family="ui-monospace,SFMono-Regular,Menlo,monospace">
+    <rect x="120" y="400" width="520" height="110" rx="12" fill="#1e1f23" fill-opacity="0.06"/>
+    <g transform="translate(160 440) scale(4) translate(-12 -12)" fill="none" stroke="#1e1f23" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.7">
+      <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
+      <circle cx="12" cy="7" r="4"/>
+    </g>
+    <text x="210" y="448" font-size="11" font-weight="700" fill="#1e1f23" fill-opacity="0.5">NON-TECHNICAL SOLO FOUNDER</text>
+    <text x="210" y="476" font-size="13" fill="#1e1f23" fill-opacity="0.75">vibe code in chat, agent runs terminal</text>
+    <text x="210" y="498" font-size="11" fill="#1e1f23" fill-opacity="0.45">no developer on payroll for v1</text>
+
+    <rect x="680" y="400" width="920" height="110" rx="12" fill="#f54e00" fill-opacity="0.12" stroke="#f54e00" stroke-opacity="0.28"/>
+    <text x="700" y="432" font-size="11" font-weight="700" fill="#f54e00">CI/CD WITHOUT JENKINS</text>
+    <text x="700" y="462" font-size="15" font-weight="700" fill="#1e1f23">commit + push = live URL</text>
+    <text x="700" y="490" font-size="11" fill="#1e1f23" fill-opacity="0.55">ask Cursor to commit. Vercel rebuilds. That is the pipeline.</text>
+  </g>
+</svg>

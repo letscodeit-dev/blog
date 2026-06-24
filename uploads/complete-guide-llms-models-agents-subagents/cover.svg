@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 640" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="title-guide-cover">
+  <title id="title-guide-cover">LLMs, Models, Agents and Subagents - hierarchy guide cover</title>
+  <defs>
+    <linearGradient id="grad-guide-cover" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f54e00"/>
+      <stop offset="100%" stop-color="#ffb38a"/>
+    </linearGradient>
+    <marker id="arrow-guide" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#fdfdf8" fill-opacity="0.75"/>
+    </marker>
+  </defs>
+  <rect width="1920" height="640" fill="url(#grad-guide-cover)"/>
+  <g stroke="#fdfdf8" stroke-opacity="0.16" stroke-width="1.2">
+    <line x1="0" y1="128" x2="1920" y2="128"/>
+    <line x1="0" y1="256" x2="1920" y2="256"/>
+    <line x1="0" y1="384" x2="1920" y2="384"/>
+    <line x1="0" y1="512" x2="1920" y2="512"/>
+  </g>
+  <g stroke="#fdfdf8" stroke-opacity="0.45" stroke-width="2" fill="none" marker-end="url(#arrow-guide)">
+    <line x1="960" y1="168" x2="960" y2="208"/>
+    <line x1="960" y1="268" x2="960" y2="308"/>
+    <line x1="960" y1="368" x2="960" y2="408"/>
+    <line x1="960" y1="468" x2="960" y2="508"/>
+  </g>
+  <g font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-weight="700" letter-spacing="1.6">
+    <rect x="760" y="108" width="400" height="56" rx="12" fill="#fdfdf8" fill-opacity="0.22" stroke="#fdfdf8" stroke-opacity="0.5"/>
+    <text x="960" y="144" font-size="20" fill="#fdfdf8" text-anchor="middle">AI</text>
+    <rect x="820" y="208" width="280" height="56" rx="12" fill="#1e1f23"/>
+    <text x="960" y="244" font-size="22" fill="#fdfdf8" text-anchor="middle">LLM</text>
+    <rect x="680" y="308" width="200" height="56" rx="12" fill="#fdfdf8"/>
+    <rect x="680" y="308" width="200" height="56" rx="12" fill="none" stroke="#1e1f23" stroke-opacity="0.08"/>
+    <text x="780" y="344" font-size="18" fill="#1e1f23" text-anchor="middle">GPT / family</text>
+    <rect x="1040" y="308" width="200" height="56" rx="12" fill="#fdfdf8"/>
+    <rect x="1040" y="308" width="200" height="56" rx="12" fill="none" stroke="#1e1f23" stroke-opacity="0.08"/>
+    <text x="1140" y="344" font-size="18" fill="#1e1f23" text-anchor="middle">GPT-4o / model</text>
+    <rect x="760" y="408" width="400" height="56" rx="12" fill="#fdfdf8"/>
+    <rect x="760" y="408" width="400" height="56" rx="12" fill="none" stroke="#1e1f23" stroke-opacity="0.08"/>
+    <text x="960" y="444" font-size="18" fill="#1e1f23" text-anchor="middle">ChatGPT / product</text>
+    <rect x="720" y="508" width="180" height="56" rx="12" fill="#f54e00"/>
+    <text x="810" y="544" font-size="18" fill="#fdfdf8" text-anchor="middle">AGENT</text>
+    <rect x="1020" y="508" width="180" height="56" rx="12" fill="#1e1f23"/>
+    <text x="1110" y="544" font-size="16" fill="#fdfdf8" text-anchor="middle">SUBAGENT</text>
+  </g>
+  <g font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13" fill="#fdfdf8" fill-opacity="0.7" letter-spacing="1.4">
+    <text x="520" y="244" text-anchor="end">knows / answers</text>
+    <text x="520" y="544" text-anchor="end">does / acts</text>
+    <text x="1400" y="344">brand - version</text>
+    <text x="1400" y="444">app / interface</text>
+  </g>
+  <g stroke="#fdfdf8" stroke-opacity="0.4" stroke-width="1.5" stroke-dasharray="5 5" fill="none">
+    <line x1="880" y1="336" x2="1040" y2="336"/>
+  </g>
+  <g stroke="#fdfdf8" stroke-opacity="0.4" stroke-width="1.5" fill="none" marker-end="url(#arrow-guide)">
+    <line x1="900" y1="536" x2="1020" y2="536"/>
+  </g>
+  <g font-family="ui-monospace,SFMono-Regular,Menlo,monospace" letter-spacing="2.4" fill="#fdfdf8">
+    <text x="120" y="92" font-size="18" font-weight="700" fill-opacity="0.95">FIG. 01 &#183; AI FOUNDATIONS / HIERARCHY</text>
+    <text x="120" y="118" font-size="13" fill-opacity="0.65" letter-spacing="1.6">llm, models, products, agents, subagents - plain english</text>
+  </g>
+  <g font-family="ui-monospace,SFMono-Regular,Menlo,monospace" letter-spacing="1.6" fill="#fdfdf8">
+    <text x="120" y="592" font-size="13" font-weight="700" fill-opacity="0.85">MODEL KNOWS &#183; AGENT DOES &#183; v1.0</text>
+    <text x="1788" y="592" font-size="13" text-anchor="end" fill-opacity="0.70">letscodeit.dev</text>
+  </g>
+</svg>

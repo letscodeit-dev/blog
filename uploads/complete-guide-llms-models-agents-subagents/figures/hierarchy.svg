@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" role="img" aria-labelledby="title-hierarchy">
+  <title id="title-hierarchy">AI hierarchy: from AI to subagents</title>
+  <defs>
+    <linearGradient id="grad-h" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fff8f4"/>
+      <stop offset="100%" stop-color="#fdfdf8"/>
+    </linearGradient>
+    <marker id="arr-h" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#f54e00"/>
+    </marker>
+  </defs>
+  <rect width="960" height="560" rx="12" fill="url(#grad-h)" stroke="#1e1f23" stroke-opacity="0.1"/>
+  <text x="480" y="36" font-family="ui-monospace,Menlo,monospace" font-size="14" font-weight="700" fill="#1e1f23" text-anchor="middle" letter-spacing="1.2">FULL STACK: WHAT SITS INSIDE WHAT</text>
+  <g font-family="ui-monospace,Menlo,monospace" font-weight="700" font-size="13" letter-spacing="0.8">
+    <rect x="330" y="52" width="300" height="40" rx="10" fill="#1e1f23" fill-opacity="0.12" stroke="#1e1f23" stroke-opacity="0.2"/>
+    <text x="480" y="78" fill="#1e1f23" text-anchor="middle">AI</text>
+    <rect x="360" y="108" width="240" height="40" rx="10" fill="#1e1f23"/>
+    <text x="480" y="134" fill="#fdfdf8" text-anchor="middle">LLM</text>
+    <rect x="300" y="164" width="160" height="36" rx="8" fill="#fdfdf8" stroke="#1e1f23" stroke-opacity="0.15"/>
+    <text x="380" y="188" fill="#1e1f23" text-anchor="middle">Family (GPT)</text>
+    <rect x="500" y="164" width="160" height="36" rx="8" fill="#fdfdf8" stroke="#1e1f23" stroke-opacity="0.15"/>
+    <text x="580" y="188" fill="#1e1f23" text-anchor="middle">Model (GPT-4o)</text>
+    <rect x="330" y="218" width="300" height="40" rx="10" fill="#fdfdf8" stroke="#f54e00" stroke-width="2"/>
+    <text x="480" y="244" fill="#1e1f23" text-anchor="middle">Product (ChatGPT)</text>
+    <rect x="300" y="276" width="360" height="36" rx="8" fill="#fdfdf8" stroke="#1e1f23" stroke-opacity="0.15" stroke-dasharray="4 3"/>
+    <text x="480" y="300" fill="#f54e00" text-anchor="middle">+ tools (search, files, API)</text>
+    <rect x="360" y="328" width="240" height="40" rx="10" fill="#f54e00"/>
+    <text x="480" y="354" fill="#fdfdf8" text-anchor="middle">AGENT</text>
+    <rect x="300" y="386" width="360" height="36" rx="8" fill="#fdfdf8" stroke="#1e1f23" stroke-opacity="0.15" stroke-dasharray="4 3"/>
+    <text x="480" y="410" fill="#1e1f23" text-anchor="middle">+ subagents (parallel workers)</text>
+    <rect x="330" y="438" width="300" height="40" rx="10" fill="#1e1f23"/>
+    <text x="480" y="464" fill="#fdfdf8" text-anchor="middle">Agent with team</text>
+  </g>
+  <g stroke="#f54e00" stroke-width="2" fill="none" marker-end="url(#arr-h)">
+    <line x1="480" y1="92" x2="480" y2="108"/>
+    <line x1="480" y1="148" x2="480" y2="164"/>
+    <line x1="480" y1="200" x2="480" y2="218"/>
+    <line x1="480" y1="258" x2="480" y2="276"/>
+    <line x1="480" y1="312" x2="480" y2="328"/>
+    <line x1="480" y1="368" x2="480" y2="386"/>
+    <line x1="480" y1="422" x2="480" y2="438"/>
+  </g>
+  <line x1="460" y1="182" x2="500" y2="182" stroke="#1e1f23" stroke-opacity="0.25" stroke-width="1.5"/>
+  <g font-family="ui-monospace,Menlo,monospace" font-size="11" fill="#1e1f23" fill-opacity="0.55">
+    <text x="48" y="134">text in / out</text>
+    <text x="48" y="244">app / UI</text>
+    <text x="48" y="354">knows -&#8594; does</text>
+    <text x="720" y="188">frozen weights</text>
+    <text x="720" y="300">hands</text>
+    <text x="720" y="410">scale</text>
+  </g>
+  <text x="480" y="530" font-family="ui-monospace,Menlo,monospace" font-size="12" fill="#1e1f23" fill-opacity="0.5" text-anchor="middle">Model knows. Agent does.</text>
+</svg>

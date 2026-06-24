@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 244" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="title-geo-thumb">
+  <title id="title-geo-thumb">GEO thumbnail - blog to chat citation</title>
+  <defs>
+    <marker id="arr-thumb" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#f54e00"/>
+    </marker>
+  </defs>
+  <rect width="352" height="244" fill="#ffffff"/>
+
+  <g stroke="#1e1f23" stroke-opacity="0.08" stroke-width="1">
+    <line x1="0" y1="61" x2="352" y2="61"/>
+    <line x1="0" y1="122" x2="352" y2="122"/>
+    <line x1="0" y1="183" x2="352" y2="183"/>
+  </g>
+
+  <rect x="16" y="24" width="120" height="100" rx="8" fill="#eeefe9" stroke="#1e1f23" stroke-opacity="0.12"/>
+  <rect x="24" y="36" width="96" height="20" rx="4" fill="#f54e00" fill-opacity="0.2" stroke="#f54e00" stroke-opacity="0.6"/>
+  <text x="72" y="50" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="7" font-weight="700" fill="#f54e00" text-anchor="middle">ANSWER</text>
+  <line x1="24" y1="68" x2="120" y2="68" stroke="#1e1f23" stroke-opacity="0.12"/>
+  <line x1="24" y1="80" x2="104" y2="80" stroke="#1e1f23" stroke-opacity="0.12"/>
+  <line x1="24" y1="92" x2="112" y2="92" stroke="#1e1f23" stroke-opacity="0.12"/>
+  <text x="24" y="114" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="6" fill="#1e1f23" fill-opacity="0.4">.md + llms.txt</text>
+
+  <path d="M 148 74 L 188 74" stroke="#f54e00" stroke-width="2" fill="none" marker-end="url(#arr-thumb)"/>
+
+  <rect x="196" y="32" width="140" height="88" rx="12" fill="#fdfdf8" stroke="#1e1f23" stroke-opacity="0.15"/>
+  <text x="208" y="52" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="7" fill="#1e1f23" fill-opacity="0.6">What is GEO?</text>
+  <rect x="208" y="62" width="100" height="14" rx="3" fill="#f54e00" fill-opacity="0.15"/>
+  <text x="214" y="72" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="6" font-weight="700" fill="#f54e00">cited</text>
+  <text x="208" y="96" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="6" fill="#1e1f23" fill-opacity="0.4">Perplexity | ChatGPT</text>
+
+  <g font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-weight="700">
+    <line x1="24" y1="200" x2="192" y2="200" stroke="#1e1f23" stroke-opacity="0.12" stroke-width="1"/>
+
+    <text x="56" y="140" font-size="8" fill="#1e1f23" fill-opacity="0.5" text-anchor="middle">SEO</text>
+    <rect x="40" y="164" width="32" height="36" rx="4" fill="#bfc1b7"/>
+    <text x="56" y="212" font-size="7" fill="#1e1f23" fill-opacity="0.45" text-anchor="middle">clicks</text>
+
+    <text x="152" y="140" font-size="8" fill="#f54e00" text-anchor="middle">GEO</text>
+    <rect x="136" y="152" width="32" height="48" rx="4" fill="#f54e00"/>
+    <text x="152" y="212" font-size="7" fill="#1e1f23" fill-opacity="0.45" text-anchor="middle">cite</text>
+  </g>
+
+  <g font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700" letter-spacing="1.2" fill="#1e1f23">
+    <text x="16" y="232" fill-opacity="0.85">GEO | CITATION</text>
+    <text x="336" y="232" text-anchor="end" fill-opacity="0.45">llms.txt</text>
+  </g>
+</svg>

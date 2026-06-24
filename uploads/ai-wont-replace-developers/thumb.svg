@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 244" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="title-replace-thumb">
+  <title id="title-replace-thumb">Augment, not replace — developers + AI</title>
+  <defs>
+    <linearGradient id="grad-replace-thumb-light" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1e1f23"/>
+      <stop offset="100%" stop-color="#4a4d56"/>
+    </linearGradient>
+    <linearGradient id="grad-replace-thumb-dark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2a2d28"/>
+      <stop offset="100%" stop-color="#4a4d56"/>
+    </linearGradient>
+  </defs>
+  <rect width="352" height="244" fill="url(#grad-replace-thumb-light)" class="svg-light-only"/>
+  <rect width="352" height="244" fill="url(#grad-replace-thumb-dark)"  class="svg-dark-only"/>
+
+  <!-- Terminal window (left) -->
+  <g>
+    <rect x="20" y="48" width="156" height="128" rx="8" fill="#0d0e10"/>
+    <circle cx="32" cy="62" r="3" fill="#f54e00"/>
+    <circle cx="42" cy="62" r="3" fill="#bfc1b7"/>
+    <circle cx="52" cy="62" r="3" fill="#4a4d56"/>
+    <g font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="9" letter-spacing="0.3">
+      <text x="32" y="86"  fill="#bfc1b7">$ git diff feature/llm</text>
+      <text x="32" y="102" fill="#bfc1b7">$ ai --review src/</text>
+      <text x="32" y="118" fill="#f54e00">  3 suggestions</text>
+      <text x="32" y="134" fill="#bfc1b7">$ git commit -m "ship"</text>
+      <text x="32" y="150" fill="#22c55e">✓ shipped together</text>
+    </g>
+  </g>
+
+  <!-- Plus connector -->
+  <g>
+    <line x1="184" y1="112" x2="220" y2="112" stroke="#fdfdf8" stroke-opacity="0.45" stroke-width="1.2"/>
+    <text x="202" y="118" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="22" font-weight="700"
+          fill="#fdfdf8" text-anchor="middle">+</text>
+  </g>
+
+  <!-- Neural cluster (right) -->
+  <g>
+    <!-- connecting lines -->
+    <g stroke="#fdfdf8" stroke-opacity="0.45" stroke-width="1">
+      <line x1="290" y1="112" x2="248" y2="74"/>
+      <line x1="290" y1="112" x2="332" y2="74"/>
+      <line x1="290" y1="112" x2="232" y2="116"/>
+      <line x1="290" y1="112" x2="348" y2="116"/>
+      <line x1="290" y1="112" x2="244" y2="156"/>
+      <line x1="290" y1="112" x2="336" y2="156"/>
+    </g>
+    <!-- center neuron -->
+    <circle cx="290" cy="112" r="28" fill="#f54e00"/>
+    <!-- satellites -->
+    <g fill="#fdfdf8">
+      <circle cx="248" cy="74"  r="5"/>
+      <circle cx="332" cy="74"  r="5"/>
+      <circle cx="232" cy="116" r="4"/>
+      <circle cx="348" cy="116" r="4"/>
+      <circle cx="244" cy="156" r="5"/>
+      <circle cx="336" cy="156" r="5"/>
+    </g>
+  </g>
+
+  <!-- Captions -->
+  <g font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="700" letter-spacing="1.4">
+    <text x="20"  y="216" fill="#fdfdf8" fill-opacity="0.85">AUGMENT · NOT REPLACE</text>
+    <text x="332" y="216" text-anchor="end" fill="#fdfdf8" fill-opacity="0.6">v2024.11</text>
+  </g>
+</svg>

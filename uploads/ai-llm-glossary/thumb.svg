@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 244" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="title-glossary-thumb">
+  <title id="title-glossary-thumb">AI &amp; LLM Glossary — field guide</title>
+  <defs>
+    <linearGradient id="grad-glossary-thumb" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f54e00"/>
+      <stop offset="100%" stop-color="#ffb38a"/>
+    </linearGradient>
+  </defs>
+  <rect width="352" height="244" fill="url(#grad-glossary-thumb)"/>
+  <!-- grid lines -->
+  <g stroke="#fdfdf8" stroke-opacity="0.18" stroke-width="1">
+    <line x1="0" y1="61"  x2="352" y2="61"/>
+    <line x1="0" y1="122" x2="352" y2="122"/>
+    <line x1="0" y1="183" x2="352" y2="183"/>
+  </g>
+  <!-- graph connectors between term cards -->
+  <g stroke="#fdfdf8" stroke-opacity="0.55" stroke-width="1" stroke-dasharray="3 3" fill="none">
+    <line x1="108" y1="76"  x2="148" y2="76"/>
+    <line x1="232" y1="76"  x2="272" y2="76"/>
+    <line x1="78"  y1="102" x2="78"  y2="142"/>
+    <line x1="202" y1="102" x2="202" y2="142"/>
+    <line x1="108" y1="168" x2="148" y2="168"/>
+  </g>
+  <!-- Term cards (rounded rects with badge + caption line) -->
+  <g font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="700" letter-spacing="1.2">
+    <!-- AI -->
+    <rect x="32"  y="50" width="78" height="52" rx="8" fill="#fdfdf8"/>
+    <rect x="32"  y="50" width="78" height="52" rx="8" fill="none" stroke="#1e1f23" stroke-opacity="0.08"/>
+    <text x="42"  y="72" fill="#1e1f23">AI</text>
+    <rect x="42"  y="82" width="48" height="3" rx="1.5" fill="#1e1f23" fill-opacity="0.18"/>
+    <rect x="42"  y="89" width="32" height="3" rx="1.5" fill="#1e1f23" fill-opacity="0.12"/>
+    <!-- ML -->
+    <rect x="150" y="50" width="78" height="52" rx="8" fill="#fdfdf8"/>
+    <rect x="150" y="50" width="78" height="52" rx="8" fill="none" stroke="#1e1f23" stroke-opacity="0.08"/>
+    <text x="160" y="72" fill="#1e1f23">ML</text>
+    <rect x="160" y="82" width="48" height="3" rx="1.5" fill="#1e1f23" fill-opacity="0.18"/>
+    <rect x="160" y="89" width="32" height="3" rx="1.5" fill="#1e1f23" fill-opacity="0.12"/>
+    <!-- LLM -->
+    <rect x="268" y="50" width="78" height="52" rx="8" fill="#1e1f23"/>
+    <text x="278" y="72" fill="#fdfdf8">LLM</text>
+    <rect x="278" y="82" width="48" height="3" rx="1.5" fill="#fdfdf8" fill-opacity="0.45"/>
+    <rect x="278" y="89" width="32" height="3" rx="1.5" fill="#fdfdf8" fill-opacity="0.30"/>
+    <!-- RAG -->
+    <rect x="32"  y="142" width="78" height="52" rx="8" fill="#fdfdf8"/>
+    <rect x="32"  y="142" width="78" height="52" rx="8" fill="none" stroke="#1e1f23" stroke-opacity="0.08"/>
+    <text x="42"  y="164" fill="#1e1f23">RAG</text>
+    <rect x="42"  y="174" width="48" height="3" rx="1.5" fill="#1e1f23" fill-opacity="0.18"/>
+    <rect x="42"  y="181" width="32" height="3" rx="1.5" fill="#1e1f23" fill-opacity="0.12"/>
+    <!-- RLHF -->
+    <rect x="150" y="142" width="78" height="52" rx="8" fill="#fdfdf8"/>
+    <rect x="150" y="142" width="78" height="52" rx="8" fill="none" stroke="#1e1f23" stroke-opacity="0.08"/>
+    <text x="160" y="164" fill="#1e1f23">RLHF</text>
+    <rect x="160" y="174" width="48" height="3" rx="1.5" fill="#1e1f23" fill-opacity="0.18"/>
+    <rect x="160" y="181" width="32" height="3" rx="1.5" fill="#1e1f23" fill-opacity="0.12"/>
+    <!-- EMB -->
+    <rect x="268" y="142" width="78" height="52" rx="8" fill="#fdfdf8"/>
+    <rect x="268" y="142" width="78" height="52" rx="8" fill="none" stroke="#1e1f23" stroke-opacity="0.08"/>
+    <text x="278" y="164" fill="#1e1f23">EMB</text>
+    <rect x="278" y="174" width="48" height="3" rx="1.5" fill="#1e1f23" fill-opacity="0.18"/>
+    <rect x="278" y="181" width="32" height="3" rx="1.5" fill="#1e1f23" fill-opacity="0.12"/>
+  </g>
+  <!-- Captions -->
+  <g font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" fill="#fdfdf8" fill-opacity="0.85" letter-spacing="1">
+    <text x="20" y="228" font-weight="700">GLOSSARY · 28 TERMS</text>
+    <text x="332" y="228" text-anchor="end">FIELD GUIDE</text>
+  </g>
+</svg>

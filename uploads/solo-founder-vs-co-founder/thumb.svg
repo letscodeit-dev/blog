@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 244" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="title-solo-thumb">
+  <title id="title-solo-thumb">Solo founder one person vs co-founder two people</title>
+  <rect width="352" height="244" fill="#eeefe9"/>
+  <text x="20" y="32" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="9" font-weight="700" letter-spacing="1" fill="#8a8d86">STARTUPS</text>
+  <text x="20" y="58" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="14" font-weight="700" fill="#1e1f23">Solo vs co-founder</text>
+
+  <!-- solo card: lucide user -->
+  <rect x="20" y="78" width="140" height="130" rx="10" fill="#fdfdf8" stroke="#1e1f23" stroke-opacity="0.15"/>
+  <g transform="translate(90 138) scale(3.6) translate(-12 -12)" fill="none" stroke="#1e1f23" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
+    <circle cx="12" cy="7" r="4"/>
+  </g>
+  <text x="40" y="200" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="9" fill="#1e1f23">solo</text>
+
+  <!-- partner card: lucide users -->
+  <rect x="192" y="78" width="140" height="130" rx="10" fill="#fdfdf8" stroke="#f54e00" stroke-opacity="0.45"/>
+  <g transform="translate(262 138) scale(3.6) translate(-12 -12)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <g stroke="#1e1f23" stroke-width="2">
+      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+      <circle cx="9" cy="7" r="4"/>
+    </g>
+    <g stroke="#f54e00" stroke-width="2">
+      <path d="M16 3.128a4 4 0 0 1 0 7.744"/>
+      <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+    </g>
+  </g>
+  <text x="210" y="200" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="9" fill="#f54e00">partner</text>
+  <text x="20" y="232" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="8" fill="#8a8d86">skills map beats folklore</text>
+</svg>
