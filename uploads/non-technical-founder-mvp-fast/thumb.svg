@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 244" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="title-mvp-thumb">
+  <title id="title-mvp-thumb">No developer MVP vibe coding stack thumb</title>
+  <rect width="352" height="244" fill="#eeefe9"/>
+  <text x="20" y="32" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="9" font-weight="700" letter-spacing="1" fill="#8a8d86">STARTUPS</text>
+  <text x="20" y="56" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="12" font-weight="700" fill="#1e1f23">No developer MVP</text>
+
+  <!-- mini pipeline -->
+  <g font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-weight="700" fill="#1e1f23">
+    <rect x="20" y="72" width="58" height="48" rx="6" fill="#fdfdf8" stroke="#1e1f23" stroke-opacity="0.15"/>
+    <text x="49" y="101" font-size="6" text-anchor="middle">GitHub</text>
+
+    <line x1="78" y1="96" x2="86" y2="96" stroke="#1e1f23" stroke-opacity="0.25" stroke-width="1.5"/>
+
+    <rect x="86" y="72" width="54" height="48" rx="6" fill="#fdfdf8" stroke="#1e1f23" stroke-opacity="0.15"/>
+    <text x="113" y="101" font-size="6" text-anchor="middle">Cursor</text>
+
+    <line x1="140" y1="96" x2="148" y2="96" stroke="#1e1f23" stroke-opacity="0.25" stroke-width="1.5"/>
+
+    <rect x="148" y="72" width="58" height="48" rx="6" fill="#fdfdf8" stroke="#1e1f23" stroke-opacity="0.15"/>
+    <text x="177" y="101" font-size="6" text-anchor="middle">Next.js</text>
+
+    <line x1="206" y1="96" x2="214" y2="96" stroke="#1e1f23" stroke-opacity="0.25" stroke-width="1.5"/>
+
+    <rect x="214" y="72" width="64" height="48" rx="6" fill="#fdfdf8" stroke="#1e1f23" stroke-opacity="0.15"/>
+    <text x="246" y="101" font-size="6" text-anchor="middle">Supabase</text>
+
+    <line x1="278" y1="96" x2="286" y2="96" stroke="#f54e00" stroke-opacity="0.5" stroke-width="1.5"/>
+
+    <rect x="286" y="72" width="46" height="48" rx="6" fill="#fdfdf8" stroke="#f54e00" stroke-opacity="0.55"/>
+    <text x="309" y="101" font-size="6" text-anchor="middle" fill="#f54e00">Vercel</text>
+  </g>
+
+  <rect x="20" y="132" width="312" height="52" rx="8" fill="#1e1f23" fill-opacity="0.06"/>
+  <text x="36" y="154" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="8" fill="#8a8d86">PIPELINE</text>
+  <text x="36" y="172" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700" fill="#1e1f23">commit + push = deploy</text>
+
+  <rect x="20" y="198" width="312" height="30" rx="8" fill="#f54e00" fill-opacity="0.12" stroke="#f54e00" stroke-opacity="0.3"/>
+  <text x="36" y="218" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="9" fill="#f54e00" font-weight="700">vibe coding solo founder</text>
+
+  <text x="36" y="234" dominant-baseline="hanging" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="7" fill="#8a8d86">GitHub to Vercel in six steps</text>
+</svg>
