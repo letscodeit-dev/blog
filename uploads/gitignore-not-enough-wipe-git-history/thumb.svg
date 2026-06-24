@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 244" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="title-git-history-thumb">
+  <title id="title-git-history-thumb">Git history wipe thumbnail - orphan branch</title>
+  <defs>
+    <marker id="arr-git-thumb" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#f54e00"/>
+    </marker>
+  </defs>
+  <rect width="352" height="244" fill="#ffffff"/>
+  <g stroke="#1e1f23" stroke-opacity="0.08" stroke-width="1">
+    <line x1="0" y1="61" x2="352" y2="61"/>
+    <line x1="0" y1="183" x2="352" y2="183"/>
+  </g>
+
+  <g font-family="ui-monospace,SFMono-Regular,Menlo,monospace">
+    <circle cx="56" cy="100" r="6" fill="#eeefe9" stroke="#1e1f23" stroke-opacity="0.2"/>
+    <circle cx="80" cy="118" r="6" fill="#eeefe9" stroke="#1e1f23" stroke-opacity="0.2"/>
+    <circle cx="104" cy="136" r="6" fill="#eeefe9" stroke="#1e1f23" stroke-opacity="0.2"/>
+    <text x="24" y="168" font-size="7" fill="#1e1f23" fill-opacity="0.4">65 commits</text>
+  </g>
+
+  <path d="M 128 118 L 168 118" stroke="#f54e00" stroke-width="2" fill="none" marker-end="url(#arr-git-thumb)"/>
+
+  <circle cx="220" cy="118" r="22" fill="#f54e00" fill-opacity="0.15" stroke="#f54e00" stroke-width="2"/>
+  <text x="220" y="122" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="8" font-weight="700" fill="#f54e00" text-anchor="middle">1</text>
+
+  <rect x="260" y="88" width="76" height="60" rx="8" fill="#eeefe9" stroke="#1e1f23" stroke-opacity="0.12"/>
+  <text x="272" y="108" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="7" fill="#1e1f23" fill-opacity="0.55">posts/</text>
+  <text x="272" y="122" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="7" fill="#1e1f23" fill-opacity="0.55">uploads/</text>
+  <text x="272" y="136" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="6" fill="#1e1f23" fill-opacity="0.35">.gitignore</text>
+
+  <text x="176" y="220" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="8" font-weight="700" fill="#1e1f23" fill-opacity="0.45" text-anchor="middle">orphan branch</text>
+</svg>

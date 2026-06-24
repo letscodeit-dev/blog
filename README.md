@@ -6,6 +6,7 @@ Articles, tutorials, and guides from [letscodeit.dev](https://letscodeit.dev).
 
 ## Posts
 
+- [.gitignore is not enough: how I wiped git history on a public content repo](https://letscodeit.dev/blog/gitignore-not-enough-wipe-git-history)
 - [Launch an MVP Without a Developer: A Solo Founder Playbook](https://letscodeit.dev/blog/non-technical-founder-mvp-fast)
 - [Solo Founder vs Co-Founder: Can You Build an MVP Alone?](https://letscodeit.dev/blog/solo-founder-vs-co-founder-mvp)
 - [We skipped Contentful: GitHub as a CMS for our Next.js blog](https://letscodeit.dev/blog/github-as-cms-markdown-nextjs)
