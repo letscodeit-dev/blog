@@ -1,0 +1,12 @@
+# Local tooling & agent config (not published)
+AGENTS.md
+.ai/
+.cursor/
+.omc/
+.opencode/
+
+# Draft posts (work in progress)
+drafts/
+
+# Dependencies
+node_modules/
