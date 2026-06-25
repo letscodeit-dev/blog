@@ -4,7 +4,7 @@ slug: "gitignore-not-enough-wipe-git-history"
 canonical: "https://letscodeit.dev/blog/gitignore-not-enough-wipe-git-history"
 publishedAt: "2026-06-25"
 description: "Deleting files does not erase git history. How I reset a public markdown repo to one commit with an orphan branch and force push without breaking my Next.js blog."
-category: "Industry"
+category: "Engineering"
 tags: ["git", "markdown", "nextjs"]
 status: "published"
 featured: false
