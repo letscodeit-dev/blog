@@ -4,7 +4,7 @@ slug: "github-as-cms-markdown-nextjs"
 canonical: "https://letscodeit.dev/blog/github-as-cms-markdown-nextjs"
 publishedAt: "2026-06-19"
 description: "Use GitHub as your CMS: separate markdown repo, Next.js reader, Cloudflare CDN. Real architecture with comparison tables, trade-offs, setup steps, and FAQ."
-category: "Industry"
+category: "Engineering"
 tags: ["nextjs", "github", "markdown", "cms", "cloudflare", "vercel", "headless-cms", "architecture"]
 status: "published"
 featured: true

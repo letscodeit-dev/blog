@@ -4,7 +4,7 @@ slug: "why-ai-wont-replace-developers"
 canonical: "https://letscodeit.dev/blog/why-ai-wont-replace-developers"
 publishedAt: "2026-04-29"
 description: "Two years of AI coding hype met real project deadlines on our team. What the tools handle well, where they break, plus why judgment beats typing speed."
-category: "Industry"
+category: "Engineering"
 tags: ["ai", "developers", "career"]
 status: "published"
 featured: false
