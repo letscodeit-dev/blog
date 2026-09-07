@@ -14,7 +14,7 @@ thumbnail: "/uploads/gitignore-not-enough-wipe-git-history/thumb.svg"
 
 Adding paths to `.gitignore` and deleting them in a new commit only removes files from the latest snapshot of your branch. Old commits on GitHub still store every blob you ever pushed. To actually erase files from a public repository you must rewrite history with [`git filter-repo`](https://github.com/newren/git-filter-repo) or an orphan branch, then `git push --force` and delete remote branches that still point at pre-rewrite commits.
 
-I learned this the hard way on the **blog** content repository that powers [my GitHub-as-CMS setup](/blog/github-as-cms-markdown-nextjs). Markdown posts and images belong in public git. Agent instructions, editorial strategy notes, and Cursor skill files do not. They were in the tree anyway because it was convenient for local AI workflows. Convenient for me. Public on `raw.githubusercontent.com`.
+I learned this the hard way on the **blog** content repository that powers [my GitHub-as-CMS setup](/blog/github-as-cms-markdown-nextjs). Markdown posts and images belong in public git. Agent instructions, editorial strategy notes, and editor skill files do not. They were in the tree anyway because it was convenient for local AI workflows. Convenient for me. Public on `raw.githubusercontent.com`.
 
 ## What I accidentally published
 
@@ -61,7 +61,7 @@ Step two was the actual cleanup: rewrite history or live with those blobs foreve
 
 You have two serious options. Pick based on whether you need to preserve the commit graph.
 
-Once `.gitignore` was merged, I turned to that second step. I asked a Cursor agent how to wipe the old blobs from GitHub. The answer came back quickly: use **`git filter-repo`**, the modern recommended way to strip paths from every commit. Fair. That is what most guides point to.
+Once `.gitignore` was merged, I turned to that second step. I asked a coding agent how to wipe the old blobs from GitHub. The answer came back quickly: use **`git filter-repo`**, the modern recommended way to strip paths from every commit. Fair. That is what most guides point to.
 
 I read up on it. New CLI to install. Every private path listed with `--invert-paths`. The tool strips your `origin` remote when it runs. Then force-push all branches and tell everyone to re-clone. I never ran any of that. On paper it is the correct approach. For a solo markdown repo with about sixty commits it still felt like more machinery than I wanted to babysit.
 
@@ -139,7 +139,7 @@ I kept publishing only what readers need.
 
 The README no longer advertised `.ai/` or linked to agent instructions. It lists published articles with links to letscodeit.dev instead. The public repo should read like a content catalog, not an agent workspace.
 
-Local tooling stayed on disk. Cursor agents still read skills from `.cursor/skills/`. I only stopped shipping that folder to GitHub.
+Local tooling stayed on disk. Agents still read skills from `/skills`. I only stopped shipping that folder to GitHub.
 
 ## What does not go away
 

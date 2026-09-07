@@ -191,11 +191,11 @@ export async function generateStaticParams() {
 
 No headless CMS SDK. No MDX pipeline in the content repo. `gray-matter` plus `markdown-it` on the server, asset URLs rewritten to the CDN, heading anchors injected for the table of contents.
 
-### Vibe-coded in [Cursor](https://cursor.com/referral?code=3JFUY1BG5OKF)
+### Vibe-coded with coding agents
 
-Almost all of this was vibe-coded in [Cursor](https://cursor.com/referral?code=3JFUY1BG5OKF) with agent mode. We started from the architecture sketch (git repo + CDN + Next reader) and iterated in the `letscodeit.dev` codebase. Most of the first working version landed with **Claude Opus 4.8** as the agent model. **Composer 2.5** (current as of writing this post) handles the same class of task well too: wire a server component, add slug sync, fix cache tags. Turn on Auto mode and keep talking to it.
+Almost all of this was vibe-coded with an AI coding agent in the repo. We started from the architecture sketch (git repo + CDN + Next reader) and iterated in the `letscodeit.dev` codebase. Most of the first working version landed with **Claude Opus 4.8** as the agent model. A solid mid-tier coding model handles the same class of task well too: wire a server component, add slug sync, fix cache tags. Keep the agent pointed at one repo and one concrete next step.
 
-You do not need an enterprise budget to try this workflow. *Cursor* has a free **Hobby** tier that is enough to spike an architecture like ours. **Pro** was **$16/month on annual billing** when we wrote this (June 2026). Check [cursor.com](https://cursor.com/referral?code=3JFUY1BG5OKF) for current pricing before you commit.
+You do not need an enterprise budget to try this workflow. Free and low-cost agent tiers are enough to spike an architecture like ours. Paid plans vary by product; check current pricing before you commit.
 
 The split still matters. Content PRs stay in this repo. App PRs stay in **letscodeit.dev**. The agent is good at both, as long as you point it at the right repository.
 
@@ -230,7 +230,7 @@ Uploads validate *MIME type*, size (5 MB cap), and magic bytes before anything h
 
 **Publish latency.** Markdown bodies refresh within about an hour of cache expiry. New slugs land after the next letscodeit.dev deploy. True instant publish would need a GitHub webhook calling `revalidateTag('blog-posts')`. We have not shipped that yet.
 
-**No CMS-style WYSIWYG editor.** The correct acronym is *WYSIWYG* (What You See Is What You Get). This stack does not ship a web admin with drag-and-drop blocks. You edit markdown in git and live with PRs. The gap is smaller than it sounds if you already write in *Cursor*: open any `posts/*.md` file and use the built-in Markdown preview (or side-by-side preview) to see formatted output while you type. It will not replace *Notion*. You are still editing markdown files, yet you are not staring at raw `#` headers blind either. If you need a non-technical author UI or component blocks, look elsewhere. For us the missing piece was a browser CMS, not a preview pane.
+**No CMS-style WYSIWYG editor.** The correct acronym is *WYSIWYG* (What You See Is What You Get). This stack does not ship a web admin with drag-and-drop blocks. You edit markdown in git and live with PRs. The gap is smaller than it sounds if your editor has Markdown preview: open any `posts/*.md` file and use side-by-side preview to see formatted output while you type. It will not replace *Notion*. You are still editing markdown files, yet you are not staring at raw `#` headers blind either. If you need a non-technical author UI or component blocks, look elsewhere. For us the missing piece was a browser CMS, not a preview pane.
 
 **Separate repository.** Some teams treat "open another repo to publish" as friction. We treat it as a feature. Content does not mingle with application code, CI, or dependency bumps. A text editor who never touches *Next.js* can still work in the content repo alone. Grant them write access on `letscodeit-dev/blog`, keep letscodeit.dev restricted to engineers, and reviews stay scoped: prose PRs here, app PRs there.
 

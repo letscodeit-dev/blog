@@ -51,7 +51,7 @@ Family examples: **GPT** (OpenAI), **Claude** (Anthropic), **Llama** (Meta), plu
 
 A **specific model** is a **checkpoint** after training: fixed weights for that release, with a known size and version name. The math doesn't change until someone trains and ships a new version.
 
-What you use day to day is often different. ChatGPT, Claude.ai, and Cursor may swap which checkpoint they route to, add tools, or change the system prompt, even when the marketing name stays the same. For production APIs, many providers let you **pin a snapshot** (e.g. `gpt-4o-2024-08-06`) so behavior stays closer to what you tested.
+What you use day to day is often different. ChatGPT, Claude.ai, and other AI products may swap which checkpoint they route to, add tools, or change the system prompt, even when the marketing name stays the same. For production APIs, many providers let you **pin a snapshot** (e.g. `gpt-4o-2024-08-06`) so behavior stays closer to what you tested.
 
 Examples: **GPT-4o, o1** · **Claude Opus 4.6, Sonnet 4.6, Haiku 4.5** · **Llama 3.1 70B** · and counterparts from Gemini, DeepSeek, Qwen.
 
@@ -65,14 +65,14 @@ Opus 4.6 and Sonnet 4.6 are **different** models: different weights, different s
 
 ### Products are not models
 
-**ChatGPT, Claude Code, GitHub Copilot, Cursor** are **products**: applications that *use* models inside them.
+**ChatGPT, Claude Code, GitHub Copilot** are **products**: applications that *use* models inside them.
 
 - **ChatGPT**: a web UI for GPT models
 - **Claude Code**: a coding tool built on Claude
 - **Copilot**: an editor extension that uses various models
 - **Codex**: OpenAI's coding **agent** (CLI and IDE integrations), powered by Codex-specific models. It goes beyond "just chat," and it isn't the old standalone API name by itself
 
-**Analogy.** The model is the **CPU**. The product is the **OS**. You work in the OS. The processor underneath isn't something you see or configure. In Cursor it's a different OS. It might use the same CPU (GPT-4o, Claude Sonnet 4.6) with a different interface and features.
+**Analogy.** The model is the **CPU**. The product is the **OS**. You work in the OS. The processor underneath isn't something you see or configure. Claude Code is a different OS from ChatGPT. It might use the same CPU (GPT-4o, Claude Sonnet 4.6) with a different interface and features.
 
 > **Common mistake.** ChatGPT **won't edit files in your local project by itself**. The browser product has no access until you grant it (uploads and connectors are different; still not the same as an agent working in your repo). Expecting "chat in the browser" to act on your machine means confusing a product with an agent.
 
@@ -109,7 +109,7 @@ Same model, same question "How do I solve 5x + 2 = 3?":
 - without a system prompt: straight to "x = 0.2";
 - with a prompt like "you're a tutor, don't give the final answer, guide step by step": questions instead of the answer.
 
-**ChatGPT**, **Cursor**, **Claude Code**: each has its own system prompt (helpful assistant, code, files).
+**ChatGPT**, **Claude Code**, **GitHub Copilot**: each has its own system prompt (helpful assistant, code, files).
 
 ### Prompt engineering: not magic, a loop
 
@@ -247,7 +247,7 @@ Confuse agent and subagent → you overcomplicate simple work. Three subagents f
 
 **Product (ChatGPT in the browser).** Nice back-and-forth; files on disk still don't change on their own.
 
-**Agent (Cursor, GitHub Copilot coding agent in VS Code).** "Add auth to my project" → finds files, writes code, checks the build.
+**Agent (Claude Code, GitHub Copilot coding agent in VS Code).** "Add auth to my project" → finds files, writes code, checks the build.
 
 **Agent + subagents.** "Auth plus tests plus docs" → one writes code, another runs tests, a third updates docs; the lead agent checks consistency.
 
@@ -260,7 +260,7 @@ Same model inside. Different experience outside.
 | **GPT, Claude…** | Family name, not a version |
 | **LLM / model** | Text predictor: knows, doesn't act |
 | **GPT-4o, Sonnet 4.6…** | One trained checkpoint (pin versions in APIs) |
-| **ChatGPT, Cursor…** | Product around a model |
+| **ChatGPT, Claude Code…** | Product around a model |
 | **Agent** | Model + tools + plan |
 | **Subagent** | Helper agent for a subtask |
 

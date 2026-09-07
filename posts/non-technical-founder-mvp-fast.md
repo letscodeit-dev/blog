@@ -3,9 +3,9 @@ title: "Launch an MVP Without a Developer: A Solo Founder Playbook"
 slug: "non-technical-founder-mvp-fast"
 canonical: "https://letscodeit.dev/blog/non-technical-founder-mvp-fast"
 publishedAt: "2026-06-24"
-description: "Five steps for a non-technical solo founder: GitHub, Cursor, Next.js, Supabase, Vercel. Vibe-code an MVP and ship with git push as your deploy pipeline."
+description: "Five steps for a non-technical solo founder: GitHub, an AI coding agent, Next.js, Supabase, Vercel. Vibe-code an MVP and ship with git push as your deploy pipeline."
 category: "Startups"
-tags: ["startups", "mvp", "solo-founder", "vibe-coding", "cursor", "nextjs"]
+tags: ["startups", "mvp", "solo-founder", "vibe-coding", "nextjs"]
 status: "published"
 featured: false
 coverImage: "/uploads/non-technical-founder-mvp-fast/cover.svg"
@@ -14,7 +14,7 @@ thumbnail: "/uploads/non-technical-founder-mvp-fast/thumb.svg"
 
 ## TL;DR
 
-A **non-technical solo founder** can ship an MVP in 2026 with **vibe coding**: GitHub → Cursor → Next.js (or mobile tooling) → Supabase → Vercel, then **commit and push** for auto-deploy.
+A **non-technical solo founder** can ship an MVP in 2026 with **vibe coding**: GitHub → AI coding agent → Next.js (or mobile tooling) → Supabase → Vercel, then **commit and push** for auto-deploy.
 
 If you have **never been near software development**, you will still have to pick up new basics: repos, deploy URLs, env vars, and how to steer an agent without pretending you read the code. That learning curve is real. The path below is still the fastest one I know without hiring a developer first.
 
@@ -26,23 +26,23 @@ Signup is free. You do not need to understand git on day one. The agent in step 
 
 ![GitHub sign up form with email password username and Create account](/uploads/non-technical-founder-mvp-fast/github-signup.png)
 
-After signup, open **New repository**. Pick a name, leave **Private** if you are not ready to go public, and click **Create repository**. Defaults for README, `.gitignore`, and license are fine; the Cursor agent can add those when it scaffolds the project.
+After signup, open **New repository**. Pick a name, leave **Private** if you are not ready to go public, and click **Create repository**. Defaults for README, `.gitignore`, and license are fine; the agent can add those when it scaffolds the project.
 
 ![GitHub Create a new repository form with repository name field](/uploads/non-technical-founder-mvp-fast/github-new-repo.png)
 
-## 2. Install Cursor
+## 2. Pick an AI coding agent
 
-Download [Cursor](https://cursor.com/referral?code=3JFUY1BG5OKF). It is a code editor built around AI agents. You type what you want in chat; the agent edits files in a project folder on your machine.
+Install a code editor or CLI that can edit files in a local project through chat. Options change fast: **Claude Code**, **GitHub Copilot** in VS Code, and similar agent tools all work for this playbook. You type what you want; the agent edits files on your machine.
 
-The **Hobby** tier is free. **Pro** is about **$20/month** (check [cursor.com](https://cursor.com/referral?code=3JFUY1BG5OKF) for current pricing). For an MVP spike, free is enough.
+Start on a free or trial tier if you can. Paid plans help once you are iterating daily. For an MVP spike, free is often enough.
 
-Open Cursor, start a new chat, and stay in **Agent** mode when you want it to create or change multiple files at once.
+Open a new chat in the project folder, and use **agent** mode (or the equivalent that can create and change multiple files) when you want scaffolding done for you.
 
 ## 3. Web or mobile? Do not default to Next.js
 
 **Most MVPs can start in a browser.** If that is true for you, skip to step 4 and use Next.js.
 
-If the product **is** a mobile app (users live on the phone, not on a marketing site), Next.js is the wrong first step. Describe the idea in Cursor chat: what the app does, iOS or Android or both, and that you are non-technical.
+If the product **is** a mobile app (users live on the phone, not on a marketing site), Next.js is the wrong first step. Describe the idea in chat: what the app does, iOS or Android or both, and that you are non-technical.
 
 Ask the agent to **install the dev tools you need** on your machine and scaffold the project. A typical prompt: *"I want to build [idea] as a mobile MVP for iOS and Android. I am a beginner. Install everything required (Node, Expo or React Native tooling, simulators) and create the starter project."*
 
@@ -68,7 +68,7 @@ For a database and user accounts without running your own server, use **[Supabas
 
 Click **Start for Free** on the **Free** plan, then create a project in the dashboard.
 
-In Cursor, ask the agent to connect Supabase: copy the URL and anon key into `.env.local`, and wire a simple table or signup flow. Keep v1 tiny: one table, one form, one read path.
+Ask the agent to connect Supabase: copy the URL and anon key into `.env.local`, and wire a simple table or signup flow. Keep v1 tiny: one table, one form, one read path.
 
 Do not paste service-role keys into chat. Use `.env.local` for secrets and add `.env.local` to `.gitignore` (the agent usually does this; double-check).
 
@@ -90,7 +90,7 @@ From here, every **push to your main branch** triggers a new production deploy. 
 
 ## Ship changes: commit and push
 
-When you change copy, add a page, or fix a bug, describe the change in Cursor chat. The agent edits the files. Then ask it to **commit and push to GitHub**.
+When you change copy, add a page, or fix a bug, describe the change in chat. The agent edits the files. Then ask it to **commit and push to GitHub**.
 
 Example prompt: *"Change the hero headline to X, then commit and push to main."*
 
