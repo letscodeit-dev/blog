@@ -42,13 +42,13 @@ As a contractor, the clearest signal was always the brief. Strong founders knew 
 
 For a long time, the "ideal" founding pair was a technical partner plus a marketer. That made sense when build was slow, when shipping meant months of engineering before you could test anything, and when a non-technical founder could not get a credible MVP without someone on the cap table who lived in the repo.
 
-*LLMs and coding agents* moved that line. The build job is still real. It is no longer always a reason to split equity on day one. A non-technical founder with clear product judgment can get surprisingly far solo: download a free tier [Cursor](https://cursor.com/referral?code=3JFUY1BG5OKF), point an agent at a bounded feature, and ship scaffolding that used to require a junior dev week. I'm not saying the code is production-perfect on the first pass. I'm saying the old rule "you must find a technical co-founder before you start" is *weaker* than it was five years ago.
+*LLMs and coding agents* moved that line. The build job is still real. It is no longer always a reason to split equity on day one. A non-technical founder with clear product judgment can get surprisingly far solo: pick a free-tier coding agent, point it at a bounded feature, and ship scaffolding that used to require a junior dev week. I'm not saying the code is production-perfect on the first pass. I'm saying the old rule "you must find a technical co-founder before you start" is *weaker* than it was five years ago.
 
 That does not mean solo is easy or that agents replace experience. Plenty of work still hurts without reps: debugging production, security basics, data modeling that survives growth, knowing when the MVP should stop growing. Distribution did not get easier because chatbots write functions. [Why AI won't replace developers](/blog/why-ai-wont-replace-developers) is about engineering judgment, not hype about solo unicorns.
 
 [Pieter Levels](https://levels.io) is the name people throw around here. He ships solo, publicly, across domains most founders would not touch alone. Treat him as an existence proof, not a template. He has years of pattern recognition, an audience, and a tolerance for rough edges that most first-time founders do not have on month one.
 
-If you can't hire contractors yet, the bar goes up. You need either a very narrow wedge or genuinely broad experience across product and distribution, plus enough technical literacy to steer the agents without fooling yourself. Cursor can lower the floor on build. It does not remove the five jobs. It changes who can cover the build row today.
+If you can't hire contractors yet, the bar goes up. You need either a very narrow wedge or genuinely broad experience across product and distribution, plus enough technical literacy to steer the agents without fooling yourself. Coding agents can lower the floor on build. They do not remove the five jobs. They change who can cover the build row today.
 
 You can read up on domains you do not own. Surface knowledge arrives fast. Professional depth does not. Becoming strong in engineering, marketing, or ops takes years of doing the work, not a month of theory and agent prompts. If you only need shallow coverage, pay a contractor. If you need a lane owned daily, that is co-founder or hire territory, not YouTube depth.
 
@@ -56,7 +56,7 @@ You can read up on domains you do not own. Surface knowledge arrives fast. Profe
 
 Solo wins when the critical path fits one brain and you deliberately narrow scope. It also wins when you already have the experience and you know what you are doing across the jobs that matter for your wedge. In that case, partnership is optional, not missing.
 
-AI magnifies whatever you bring in. Strong founders use agents to move faster through work they already understand: sharper iterations, less typing, more experiments per week. The same tools amplify weak lanes. They multiply mistakes at autocomplete speed. That asymmetry is why "solo plus Cursor" means different things for a ten-year engineer and for a first-time founder who just cleared a bug.
+AI magnifies whatever you bring in. Strong founders use agents to move faster through work they already understand: sharper iterations, less typing, more experiments per week. The same tools amplify weak lanes. They multiply mistakes at autocomplete speed. That asymmetry is why "solo plus agents" means different things for a ten-year engineer and for a first-time founder who just cleared a bug.
 
 | Condition | Why it works |
 | --- | --- |
@@ -87,7 +87,7 @@ Vibe coding can get you to a prototype. It does not replace vibe engineering: bo
 
 Solo makes both traps worse because there is no co-founder in the room to say the direction is wrong, and no engineer on the cap table who owns the cost of shortcuts.
 
-That is why I still take the co-founder conversation seriously even when Cursor lowers the build floor. Agents multiply output. They also multiply confident mistakes when the person steering them has no outside check on product direction or technical debt. Experience is the filter. Without it, AI mostly speeds up the snowball.
+That is why I still take the co-founder conversation seriously even when agents lower the build floor. Agents multiply output. They also multiply confident mistakes when the person steering them has no outside check on product direction or technical debt. Experience is the filter. Without it, AI mostly speeds up the snowball.
 
 ## Blind faith vs a business
 
