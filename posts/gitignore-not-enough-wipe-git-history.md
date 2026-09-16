@@ -14,7 +14,6 @@ author: "Anton Kuptsov"
 authorBio: "Full-stack engineer focused on Next.js, TypeScript, and AI tooling"
 authorLink: "https://www.linkedin.com/in/anton-kuptsov-dev/"
 authorAvatar: "https://avatars.githubusercontent.com/u/39290991?v=4&size=64"
-
 ---
 
 Adding paths to `.gitignore` and deleting them in a new commit only removes files from the latest snapshot of your branch. Old commits on GitHub still store every blob you ever pushed. To actually erase files from a public repository you must rewrite history with [`git filter-repo`](https://github.com/newren/git-filter-repo) or an orphan branch, then `git push --force` and delete remote branches that still point at pre-rewrite commits.
