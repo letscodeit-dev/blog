@@ -13,7 +13,7 @@ thumbnail: "/uploads/anthropic-academy/thumb.svg"
 author: "Anton Kuptsov"
 authorBio: "Full-stack engineer focused on Next.js, TypeScript, and AI tooling"
 authorLink: "https://www.linkedin.com/in/anton-kuptsov-dev/"
-authorAvatar: "https://avatars.githubusercontent.com/u/39290991?v=4&size=64"
+authorImage: "https://avatars.githubusercontent.com/u/39290991?v=4&size=64"
 ---
 
 Anthropic Academy is Anthropic's free learning platform on [Skilljar](https://anthropic.skilljar.com/). As of June 2026, it hosts self-paced courses on Claude chat, the API, Claude Code, MCP, plus role-specific AI fluency tracks. You do not need a paid Claude subscription to enroll. Sign up, pick a course, and work through modules at your own pace.
