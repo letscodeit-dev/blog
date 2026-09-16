@@ -10,6 +10,10 @@ status: "published"
 featured: true
 coverImage: "/uploads/github-as-cms-markdown-nextjs/cover.svg"
 thumbnail: "/uploads/github-as-cms-markdown-nextjs/thumb.svg"
+author: "Anton Kuptsov"
+authorBio: "Full-stack engineer focused on Next.js, TypeScript, and AI tooling"
+authorLink: "https://www.linkedin.com/in/anton-kuptsov-dev/"
+authorAvatar: "https://avatars.githubusercontent.com/u/39290991?v=4&size=64"
 ---
 
 We publish *letscodeit.dev blog posts* from a separate *GitHub* repository. The *Next.js* app fetches markdown at runtime with a one-hour cache, syncs slug metadata into *Postgres* on every build, and writes some assets back through the *GitHub Contents API*. There is no admin UI for long-form articles. <u>Git is the editor.</u>

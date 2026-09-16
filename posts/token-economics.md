@@ -10,6 +10,10 @@ status: "published"
 featured: true
 coverImage: "/uploads/token-economics/cover.svg"
 thumbnail: "/uploads/token-economics/thumb.svg"
+author: "Anton Kuptsov"
+authorBio: "Full-stack engineer focused on Next.js, TypeScript, and AI tooling"
+authorLink: "https://www.linkedin.com/in/anton-kuptsov-dev/"
+authorAvatar: "https://avatars.githubusercontent.com/u/39290991?v=4&size=64"
 ---
 
 When you send a message to an LLM, you are not paying for characters or words. You pay for **tokens**.
