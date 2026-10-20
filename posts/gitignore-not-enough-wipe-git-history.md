@@ -34,7 +34,7 @@ Sitting next to those folders on disk:
 | Session state | `.omc/`, `.opencode/` | Tooling noise, not editorial content |
 | Drafts | `drafts/` | Work in progress |
 
-None of this was meant for readers, or for the AI crawlers I [invite to the CDN copy of these posts](/blog/generative-engine-optimization-what-i-tested). It was still reachable if you knew where to look in git history. GitHub's file history UI would happily show "deleted in commit X" and let you open the previous version.
+None of this was meant for readers, or for the AI crawlers that fetch the CDN copy of my posts as part of my [generative engine optimization](/blog/generative-engine-optimization-what-i-tested) setup. It was still reachable if you knew where to look in git history. GitHub's file history UI would happily show "deleted in commit X" and let you open the previous version.
 
 I am not going to reproduce private file contents here. The mistake was structural: I treated the **content repo** like a monorepo for "everything related to the blog," including tooling that should never have been pushed.
 
