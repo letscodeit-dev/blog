@@ -34,7 +34,7 @@ Sitting next to those folders on disk:
 | Session state | `.omc/`, `.opencode/` | Tooling noise, not editorial content |
 | Drafts | `drafts/` | Work in progress |
 
-None of this was meant for readers or for [GEO](/blog/generative-engine-optimization-what-i-tested) citation. It was still reachable if you knew where to look in git history. GitHub's file history UI would happily show "deleted in commit X" and let you open the previous version.
+None of this was meant for readers, or for the AI crawlers I deliberately let into this repo. It was still reachable if you knew where to look in git history. GitHub's file history UI would happily show "deleted in commit X" and let you open the previous version.
 
 I am not going to reproduce private file contents here. The mistake was structural: I treated the **content repo** like a monorepo for "everything related to the blog," including tooling that should never have been pushed.
 
@@ -59,13 +59,13 @@ git show <old-sha>:AGENTS.md
 | `git rm --cached` + commit | Removes from latest snapshot | No |
 | Merge PR to `main` | Same | No |
 
-Step two was the actual cleanup: rewrite history or live with those blobs forever. If your repo is public, assume **git history is part of the attack surface**. That is especially true when the same repository backs a CDN mirror, as I described in the [GitHub-as-CMS architecture post](/blog/github-as-cms-markdown-nextjs). Paths matter more than commit SHAs for my app. History still matters for anything you ever committed.
+Step two was the actual cleanup: rewrite history or live with those blobs forever. If your repo is public, assume **git history is part of the attack surface**. That is especially true when the same repository backs a CDN mirror. My app only cares about file paths, not commit SHAs, but anyone browsing the repo can walk every commit.
 
 ## Two ways to erase history
 
 You have two serious options. Pick based on whether you need to preserve the commit graph.
 
-Once `.gitignore` was merged, I turned to that second step. I asked a coding agent how to wipe the old blobs from GitHub. The answer came back quickly: use **`git filter-repo`**, the modern recommended way to strip paths from every commit. Fair. That is what most guides point to.
+I asked a coding agent how to wipe the old blobs from GitHub. The answer came back quickly: use **`git filter-repo`**, the modern recommended way to strip paths from every commit. Fair. That is what most guides point to.
 
 I read up on it. New CLI to install. Every private path listed with `--invert-paths`. The tool strips your `origin` remote when it runs. Then force-push all branches and tell everyone to re-clone. I never ran any of that. On paper it is the correct approach. For a solo markdown repo with about sixty commits it still felt like more machinery than I wanted to babysit.
 
@@ -128,7 +128,7 @@ GitHub printed a warning about bypassed violations even while the push succeeded
 
 Old pull requests still exist on GitHub. They point at commits that are no longer on `main`. That is fine. Do not merge them after a rewrite.
 
-If you are following the [solo founder MVP playbook](/blog/non-technical-founder-mvp-fast) and using GitHub for the first time, branch protection is easy to add early. Just remember it blocks the cleanup maneuver too.
+Branch protection is still worth adding early. Just remember it blocks this cleanup too, so plan the bypass before you start.
 
 ## Public vs local after cleanup
 
@@ -143,11 +143,9 @@ I kept publishing only what readers need.
 
 The README no longer advertised `.ai/` or linked to agent instructions. It lists published articles with links to letscodeit.dev instead. The public repo should read like a content catalog, not an agent workspace.
 
-Local tooling stayed on disk. Agents still read skills from `/skills`. I only stopped shipping that folder to GitHub.
+Local tooling stayed on disk. Agents still read skills from `.cursor/skills/`. I only stopped shipping that folder to GitHub.
 
 ## What does not go away
-
-Be realistic about limits.
 
 - **Forks** keep old history until the owner deletes or resets the fork.
 - **Other clones** still have old objects until `git fetch` + `git reset --hard origin/main` or a fresh clone.
@@ -175,23 +173,15 @@ I would never commit agent config to the content repo in the first place. Skills
 
 A pre-commit hook that rejects `AGENTS.md`, `.ai/`, and `.cursor/` in this repository would have been cheaper than a history reset.
 
-If I needed an audit trail of editorial changes, I would pick `git filter-repo` over an orphan branch. I traded commit archaeology for a single clean root. For a marketing content repo that was the right trade.
+If I needed an audit trail of editorial changes, I would pick `git filter-repo` over an orphan branch. I traded commit archaeology for a single clean root. For a content repo with one maintainer that was the right trade.
 
-## When this pattern fits
-
-**Good fit:** public markdown or static content repos, accidentally committed drafts or internal notes, small team comfortable coordinating a force push.
-
-**Poor fit:** compliance regimes that require immutable history, many open PRs depending on old SHAs, or committed secrets you cannot rotate. That last case is an incident, not a git cleanup task.
+I would not reach for an orphan reset if other people pushed to the repo, if open PRs still depended on old SHAs, or if a compliance rule required immutable history. And if the leak had been an API key instead of agent notes, I would have rotated the key first and treated the history rewrite as cleanup after the incident, not the fix.
 
 ## Questions before you force-push
 
 ### Does `.gitignore` remove files from git history?
 
 No. `.gitignore` only affects untracked files and future commits. Blobs already reachable from old commits stay in the object database until you rewrite history or garbage-collect unreachable objects on every clone that ever fetched them.
-
-### What is a git orphan branch?
-
-An orphan branch is created with `git checkout --orphan <name>`. It has no parents, so the first commit starts a new history graph. You typically `git reset`, stage the tree you want public, commit once, and force-push to replace `main`.
 
 ### Is force push safe for a content repo tied to Next.js?
 
@@ -200,7 +190,3 @@ Usually yes if the app fetches by file path, not commit SHA. My setup reads `CON
 ### Should I use an orphan branch or `git filter-repo`?
 
 Orphan branch for small solo repos where one root commit is acceptable. `git filter-repo` when you must keep commit dates, branch topology, or SHAs referenced by automation. Both require force push and branch cleanup on GitHub.
-
-### Do forks lose old history when I force-push `main`?
-
-No. Forks are independent copies. Someone who forked before your rewrite still has the old graph until they delete the fork or reset it manually.
