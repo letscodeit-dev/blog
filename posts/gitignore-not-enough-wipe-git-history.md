@@ -30,11 +30,11 @@ Sitting next to those folders on disk:
 | --- | --- | --- |
 | Agent instructions | `AGENTS.md` | Describes repo wiring, CDN URLs, editorial contracts |
 | Content planning | `.ai/` strategy, outlines, SEO benchmarks | Draft angles I have not shipped |
-| Editor tooling | `.cursor/skills/` | Blog-writing prompts, validators, voice rules |
+| Editor tooling | `/skills` | Blog-writing prompts, validators, voice rules |
 | Session state | `.omc/`, `.opencode/` | Tooling noise, not editorial content |
 | Drafts | `drafts/` | Work in progress |
 
-None of this was meant for readers or for [GEO](/blog/generative-engine-optimization-what-i-tested) citation. It was still reachable if you knew where to look in git history. GitHub's file history UI would happily show "deleted in commit X" and let you open the previous version.
+None of this was meant for readers, or for the AI crawlers that fetch the CDN copy of my posts as part of my [generative engine optimization](/blog/generative-engine-optimization-what-i-tested) setup. It was still reachable if you knew where to look in git history. GitHub's file history UI would happily show "deleted in commit X" and let you open the previous version.
 
 I am not going to reproduce private file contents here. The mistake was structural: I treated the **content repo** like a monorepo for "everything related to the blog," including tooling that should never have been pushed.
 
@@ -59,17 +59,15 @@ git show <old-sha>:AGENTS.md
 | `git rm --cached` + commit | Removes from latest snapshot | No |
 | Merge PR to `main` | Same | No |
 
-Step two was the actual cleanup: rewrite history or live with those blobs forever. If your repo is public, assume **git history is part of the attack surface**. That is especially true when the same repository backs a CDN mirror, as I described in the [GitHub-as-CMS architecture post](/blog/github-as-cms-markdown-nextjs). Paths matter more than commit SHAs for my app. History still matters for anything you ever committed.
+Step two was the actual cleanup: rewrite history or live with those blobs forever. If your repo is public, assume **git history is part of the attack surface**. That is especially true when the same repository backs a public CDN mirror, like the [Cloudflare Pages setup behind this blog](/blog/github-as-cms-markdown-nextjs). Anyone browsing the repo can walk every commit, not just the files the CDN serves today.
 
 ## Two ways to erase history
 
-You have two serious options. Pick based on whether you need to preserve the commit graph.
-
-Once `.gitignore` was merged, I turned to that second step. I asked a coding agent how to wipe the old blobs from GitHub. The answer came back quickly: use **`git filter-repo`**, the modern recommended way to strip paths from every commit. Fair. That is what most guides point to.
+I asked a coding agent how to wipe the old blobs from GitHub. The answer came back quickly: use **`git filter-repo`**, the modern recommended way to strip paths from every commit. Fair. That is what most guides point to.
 
 I read up on it. New CLI to install. Every private path listed with `--invert-paths`. The tool strips your `origin` remote when it runs. Then force-push all branches and tell everyone to re-clone. I never ran any of that. On paper it is the correct approach. For a solo markdown repo with about sixty commits it still felt like more machinery than I wanted to babysit.
 
-So I looked for a simpler mental model.
+So I looked for a simpler mental model. There are two serious options, and the choice comes down to whether you need to preserve the commit graph.
 
 ![Decision tree comparing git filter-repo and orphan branch for history cleanup](/uploads/gitignore-not-enough-wipe-git-history/figures/decision-tree.svg)
 
@@ -83,7 +81,7 @@ brew install git-filter-repo
 git filter-repo --force \
   --path AGENTS.md --invert-paths \
   --path .ai --invert-paths \
-  --path .cursor --invert-paths \
+  --path skills --invert-paths \
   --path .omc --invert-paths
 ```
 
@@ -95,7 +93,7 @@ If you need the commit graph to survive, this is still the right call. I just di
 
 An **orphan branch** has no parent commits. You snapshot the current working tree, make one root commit, and replace `main`. No filter flags. No path surgery across dozens of SHAs. One clean starting point.
 
-That fit my constraints: solo maintainer, small repo, no need to preserve old SHAs, and a hard line between "content catalog" and "agent workspace."
+That fit my constraints: solo maintainer, small repo, no need to preserve old SHAs, and a hard line between published content and local tooling.
 
 ```bash
 git checkout main
@@ -128,7 +126,7 @@ GitHub printed a warning about bypassed violations even while the push succeeded
 
 Old pull requests still exist on GitHub. They point at commits that are no longer on `main`. That is fine. Do not merge them after a rewrite.
 
-If you are following the [solo founder MVP playbook](/blog/non-technical-founder-mvp-fast) and using GitHub for the first time, branch protection is easy to add early. Just remember it blocks the cleanup maneuver too.
+If you are new to GitHub and following the [solo founder MVP playbook](/blog/non-technical-founder-mvp-fast), branch protection is easy to add early and worth it. Just remember it blocks this cleanup too, so plan the bypass before you start.
 
 ## Public vs local after cleanup
 
@@ -138,7 +136,7 @@ I kept publishing only what readers need.
 | --- | --- |
 | `posts/*.md` | `AGENTS.md` |
 | `uploads/**` | `.ai/` |
-| `README.md` with post index | `.cursor/skills/` |
+| `README.md` with post index | `/skills` |
 | `LICENSE`, `.gitignore` | `.omc/`, `.opencode/`, `drafts/` |
 
 The README no longer advertised `.ai/` or linked to agent instructions. It lists published articles with links to letscodeit.dev instead. The public repo should read like a content catalog, not an agent workspace.
@@ -146,8 +144,6 @@ The README no longer advertised `.ai/` or linked to agent instructions. It lists
 Local tooling stayed on disk. Agents still read skills from `/skills`. I only stopped shipping that folder to GitHub.
 
 ## What does not go away
-
-Be realistic about limits.
 
 - **Forks** keep old history until the owner deletes or resets the fork.
 - **Other clones** still have old objects until `git fetch` + `git reset --hard origin/main` or a fresh clone.
@@ -161,7 +157,7 @@ I can say `main` on the canonical repo is clean. I cannot promise every copy on 
 
 1. Define the publish surface up front: `posts/`, `uploads/`, minimal root docs.
 2. Put `.gitignore` in commit #1 if you can. At minimum before the first push of tooling folders.
-3. Audit: `git log --all -- AGENTS.md .ai .cursor`.
+3. Audit: `git log --all -- AGENTS.md .ai skills`.
 4. Choose orphan branch vs `git filter-repo`.
 5. Backup: `git clone --mirror` before any force push.
 6. Force-push `main`. Delete obsolete remote branches.
@@ -173,15 +169,11 @@ I can say `main` on the canonical repo is clean. I cannot promise every copy on 
 
 I would never commit agent config to the content repo in the first place. Skills belong in a private dotfiles repo, a separate tooling monorepo, or purely local paths.
 
-A pre-commit hook that rejects `AGENTS.md`, `.ai/`, and `.cursor/` in this repository would have been cheaper than a history reset.
+A pre-commit hook that rejects `AGENTS.md`, `.ai/`, and `/skills` in this repository would have been cheaper than a history reset.
 
-If I needed an audit trail of editorial changes, I would pick `git filter-repo` over an orphan branch. I traded commit archaeology for a single clean root. For a marketing content repo that was the right trade.
+If I needed an audit trail of editorial changes, I would pick `git filter-repo` over an orphan branch. I traded commit archaeology for a single clean root. For a content repo with one maintainer that was the right trade.
 
-## When this pattern fits
-
-**Good fit:** public markdown or static content repos, accidentally committed drafts or internal notes, small team comfortable coordinating a force push.
-
-**Poor fit:** compliance regimes that require immutable history, many open PRs depending on old SHAs, or committed secrets you cannot rotate. That last case is an incident, not a git cleanup task.
+If other people pushed to this repo or open PRs still depended on old SHAs, I would have taken Option A instead. If a compliance rule required immutable history, neither option would be on the table.
 
 ## Questions before you force-push
 
