@@ -181,6 +181,10 @@ If other people pushed to this repo or open PRs still depended on old SHAs, I wo
 
 No. `.gitignore` only affects untracked files and future commits. Blobs already reachable from old commits stay in the object database until you rewrite history or garbage-collect unreachable objects on every clone that ever fetched them.
 
+### What is a git orphan branch?
+
+An orphan branch is created with `git checkout --orphan <name>`. It has no parents, so the first commit starts a new history graph. You typically `git reset`, stage the tree you want public, commit once, and force-push to replace `main`.
+
 ### Is force push safe for a content repo tied to Next.js?
 
 Usually yes if the app fetches by file path, not commit SHA. My setup reads `CONTENT_REPO_URL/posts/{filename}` with HTTP caching. Replacing history did not change paths or filenames. Coordinate with anyone else pushing to the same repo before you force-push.
