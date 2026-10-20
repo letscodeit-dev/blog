@@ -30,7 +30,7 @@ Sitting next to those folders on disk:
 | --- | --- | --- |
 | Agent instructions | `AGENTS.md` | Describes repo wiring, CDN URLs, editorial contracts |
 | Content planning | `.ai/` strategy, outlines, SEO benchmarks | Draft angles I have not shipped |
-| Editor tooling | `skills/` | Blog-writing prompts, validators, voice rules |
+| Editor tooling | `/skills` | Blog-writing prompts, validators, voice rules |
 | Session state | `.omc/`, `.opencode/` | Tooling noise, not editorial content |
 | Drafts | `drafts/` | Work in progress |
 
@@ -136,12 +136,12 @@ I kept publishing only what readers need.
 | --- | --- |
 | `posts/*.md` | `AGENTS.md` |
 | `uploads/**` | `.ai/` |
-| `README.md` with post index | `skills/` |
+| `README.md` with post index | `/skills` |
 | `LICENSE`, `.gitignore` | `.omc/`, `.opencode/`, `drafts/` |
 
 The README no longer advertised `.ai/` or linked to agent instructions. It lists published articles with links to letscodeit.dev instead. The public repo should read like a content catalog, not an agent workspace.
 
-Local tooling stayed on disk. Agents still read skills from the local `skills/` folder. I only stopped shipping that folder to GitHub.
+Local tooling stayed on disk. Agents still read skills from `/skills`. I only stopped shipping that folder to GitHub.
 
 ## What does not go away
 
@@ -169,7 +169,7 @@ I can say `main` on the canonical repo is clean. I cannot promise every copy on 
 
 I would never commit agent config to the content repo in the first place. Skills belong in a private dotfiles repo, a separate tooling monorepo, or purely local paths.
 
-A pre-commit hook that rejects `AGENTS.md`, `.ai/`, and `skills/` in this repository would have been cheaper than a history reset.
+A pre-commit hook that rejects `AGENTS.md`, `.ai/`, and `/skills` in this repository would have been cheaper than a history reset.
 
 If I needed an audit trail of editorial changes, I would pick `git filter-repo` over an orphan branch. I traded commit archaeology for a single clean root. For a content repo with one maintainer that was the right trade.
 
