@@ -188,3 +188,7 @@ Usually yes if the app fetches by file path, not commit SHA. My setup reads `CON
 ### Should I use an orphan branch or `git filter-repo`?
 
 Orphan branch for small solo repos where one root commit is acceptable. `git filter-repo` when you must keep commit dates, branch topology, or SHAs referenced by automation. Both require force push and branch cleanup on GitHub.
+
+### Do forks lose old history when I force-push `main`?
+
+No. Forks are independent copies. Someone who forked before your rewrite still has the old graph until they delete the fork or reset it manually.
